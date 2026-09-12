@@ -445,22 +445,85 @@ a:hover { color: var(--ink); }
   white-space: nowrap;
 }
 
-/* Writing */
-.writing-grid {
+/* Education */
+.edu-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: start;
 }
-.writing-card {
-  background: #fffdf8;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.9rem 1.7rem;
-  box-shadow: 0 10px 30px -18px rgba(23, 19, 16, 0.25);
+.subhead {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1.1rem;
 }
-.writing-card h3 { color: var(--gold); font-size: 1.35rem; }
-.writing-card p { margin: 0; font-size: 0.99rem; color: #2e2820; }
-.writing-card strong { color: var(--ink); }
+.edu-list, .honors-list { list-style: none; margin: 0; padding: 0; }
+.edu-list li, .honors-list li {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.edu-list li:first-child, .honors-list li:first-child { border-top: 1px solid var(--line); }
+.edu-year, .h-year { font-weight: 600; color: var(--gold); }
+.edu-list div, .honors-list div { color: var(--ink-soft); font-size: 0.99rem; }
+.edu-list strong { color: var(--ink); font-weight: 600; }
+.fineprint { margin-top: 1.1rem; font-size: 0.9rem; color: var(--ink-faint); font-style: italic; }
+
+/* More performances */
+.more-perf { margin-top: clamp(2.4rem, 4vw, 3.6rem); }
+.more-perf h3 { font-size: 1.7rem; margin-bottom: 1rem; }
+.highlight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 3rem;
+}
+.highlight-list li {
+  break-inside: avoid;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+.highlight-list li span { font-weight: 600; color: var(--gold); margin-right: 0.55rem; }
+
+/* Publications */
+.pub-list { list-style: none; margin: 0 0 2.2rem; padding: 0; }
+.pub-list li {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.pub-list li:first-child { border-top: 1px solid var(--line); }
+.pub-year { font-weight: 600; color: var(--gold); }
+.pub-list div { color: var(--ink-soft); }
+.pub-list strong { color: var(--ink); font-weight: 600; }
+.pub-note { max-width: 44rem; color: var(--ink-soft); margin-bottom: 0; }
+
+/* CV download */
+.btn-outline {
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+.btn-outline:hover { background: var(--gold); color: #fff; }
+.bio-cta { margin-top: 1.9rem; }
+
+/* Contact phone */
+.contact-phone { color: #b9b0a0; margin: 0 0 0.4rem; font-size: 1.05rem; }
+.contact-phone a { color: var(--gold-light); font-weight: 600; text-decoration: none; }
+.contact-phone a:hover { color: #fff; }
 
 /* Contact */
 .contact-grid {
@@ -522,7 +585,8 @@ a:focus-visible, button:focus-visible {
 
 /* Responsive */
 @media (max-width: 960px) {
-  .video-grid, .writing-grid, .contact-grid { grid-template-columns: 1fr; }
+  .video-grid, .contact-grid, .edu-grid { grid-template-columns: 1fr; }
+  .highlight-list { columns: 1; }
   .bio-grid { grid-template-columns: 1fr; }
   .bio-portrait { position: static; max-width: 420px; }
   .role-list li { grid-template-columns: 1fr; gap: 0.2rem; }
