@@ -1,7 +1,15 @@
 const fs = require("fs");
 const path = require("path");
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
+// GitHub Pages serves this repo at /adan-fernandez-site/, not at the root, so
+// every absolute path in the templates would 404. The templates stay written
+// as if the site lived at the root and this plugin rewrites the output.
+// When a custom domain is added: set this to "/" and update url in site.json.
+const PATH_PREFIX = "/adan-fernandez-site/";
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
   // The editor is copied verbatim and never run through Nunjucks, or its
@@ -81,6 +89,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: PATH_PREFIX,
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
