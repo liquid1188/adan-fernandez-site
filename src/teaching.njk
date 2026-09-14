@@ -1,0 +1,48 @@
+---
+layout: base.njk
+permalink: /teaching/
+active: teaching
+bodyClass: on-paper
+title: Teaching
+description: "Organ, piano and music theory at California Lutheran University and the Colburn School, plus masterclasses, residencies and workshops for parish musicians."
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Teaching</p>
+    <h1>Students, studios, and lofts.</h1>
+    <p class="lede">{{ teaching.intro }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cards">
+    {%- for a in teaching.areas %}
+      <div class="card reveal">
+        <h3>{{ a.title }}</h3>
+        <p class="fine" style="margin:-.2rem 0 .8rem;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;color:var(--brass-deep)">{{ a.place }}</p>
+        <p>{{ a.body }}</p>
+      </div>
+    {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Beyond the studio</span><span class="rule"></span></div>
+      <h2>What he brings on the road.</h2>
+    </div>
+    <div class="reveal">
+      <div class="stack">
+      {%- for o in teaching.offers %}
+        <div class="entry"><span class="yr">&mdash;</span><div>{{ o }}</div></div>
+      {%- endfor %}
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-brass" href="/contact/">Ask about teaching</a>
+      </div>
+    </div>
+  </div>
+</section>

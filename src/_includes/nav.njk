@@ -1,0 +1,18 @@
+<header class="nav" id="nav">
+  <a class="brand" href="/">
+    <span class="brand-name">Adán Fernández</span>
+    <span class="brand-tag">{{ site.roles }}</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="links" id="navLinks" aria-label="Primary">
+    <a href="/about/"{% if active == 'about' %} class="active" aria-current="page"{% endif %}>About</a>
+    <a href="/listen/"{% if active == 'listen' %} class="active" aria-current="page"{% endif %}>Listen</a>
+    <a href="/performing/"{% if active == 'performing' %} class="active" aria-current="page"{% endif %}>Performing</a>
+    <a href="/teaching/"{% if active == 'teaching' %} class="active" aria-current="page"{% endif %}>Teaching</a>
+    <a href="/writing/"{% if active == 'writing' %} class="active" aria-current="page"{% endif %}>Writing</a>
+    <a href="/upcoming/"{% if active == 'upcoming' %} class="active" aria-current="page"{% endif %}>Calendar</a>
+    <a class="nav-cta{% if active == 'contact' %} is-current{% endif %}" href="/contact/">Contact</a>
+  </nav>
+</header>

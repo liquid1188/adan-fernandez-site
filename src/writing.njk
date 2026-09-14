@@ -1,0 +1,56 @@
+---
+layout: base.njk
+permalink: /writing/
+active: writing
+bodyClass: on-paper
+title: Writing & scholarship
+description: "Publications, editions and lectures by Adán Fernández on liturgy, hymnody and the sacred music of Latin America."
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Writing &amp; scholarship</p>
+    <h1>Composer, editor, and writer.</h1>
+    <p class="lede">{{ writing.intro }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Selected publications</span><span class="rule"></span></div>
+    <div class="stack">
+    {%- for p in writing.publications %}
+      <div class="entry reveal">
+        <span class="yr">{{ p.year }}</span>
+        <div>
+          <strong>{{ p.title }}</strong>
+          <span class="sub">{{ p.kind }} &middot; <em>{{ p.where }}</em></span>
+        </div>
+      </div>
+    {%- endfor %}
+    </div>
+    <p class="fine reveal" style="margin-top:1.6rem">The complete list of publications, compositions and lectures is in his <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass-deep)">curriculum vitae</a>.</p>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Published by</span><span class="rule"></span></div>
+    <div class="cards">
+    {%- for pub in writing.publishers %}
+      <div class="card reveal"><h3>{{ pub.name }}</h3><p>{{ pub.note }}</p></div>
+    {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Lectures</span><span class="rule"></span></div>
+    <h2 class="reveal">Talks and papers.</h2>
+    <p class="lede reveal" style="margin-top:1rem">He lectures regularly on Latin American and indigenous sacred music, on the vernacular liturgy, and on hymnody — for parishes, universities, and societies. Several talks are recorded.</p>
+    <div class="cta-row reveal">
+      <a class="btn btn-ghost" href="/listen/#lectures">Watch a lecture</a>
+      <a class="btn btn-brass" href="/contact/">Invite him to speak</a>
+    </div>
+  </div>
+</section>

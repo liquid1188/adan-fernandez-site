@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "date": "2026-06-17",
+      "title": "Montecito International Music Festival Gala",
+      "tag": "",
+      "venue": "Samuelson Chapel, California Lutheran University",
+      "city": "Thousand Oaks, CA"
+    },
+    {
+      "date": "2026-05-08",
+      "title": "Afternoon Organ Recital Series",
+      "tag": "Borg Peterson Memorial Organ",
+      "venue": "Samuelson Chapel, California Lutheran University",
+      "city": "Thousand Oaks, CA"
+    },
+    {
+      "date": "2026-04-10",
+      "title": "Afternoon Organ Recital Series",
+      "tag": "Borg Peterson Memorial Organ",
+      "venue": "Samuelson Chapel, California Lutheran University",
+      "city": "Thousand Oaks, CA"
+    },
+    {
+      "date": "2026-03-13",
+      "title": "Colburn Faculty Recital",
+      "tag": "Harpsichord, with Ian Pritchard",
+      "venue": "Thayer Hall, The Colburn School",
+      "city": "Los Angeles, CA"
+    },
+    {
+      "date": "2026-02-16",
+      "title": "Los Angeles AGO Chapter — President's Day Festival",
+      "tag": "",
+      "venue": "Samuelson Chapel, California Lutheran University",
+      "city": "Thousand Oaks, CA"
+    },
+    {
+      "date": "2026-02-13",
+      "title": "Afternoon Organ Recital Series",
+      "tag": "Borg Peterson Memorial Organ",
+      "venue": "Samuelson Chapel, California Lutheran University",
+      "city": "Thousand Oaks, CA"
+    },
+    {
+      "date": "2025-11-07",
+      "title": "Requiem in Commemoration of St. Oscar Romero",
+      "tag": "Conductor",
+      "venue": "Cathedral of Our Lady of the Angels",
+      "city": "Los Angeles, CA"
+    },
+    {
+      "date": "2024-09-28",
+      "title": "Artist Recital: Preludes and Fugues",
+      "tag": "Bach · Brahms · Buxtehude · Boulay",
+      "venue": "Holy Family Catholic Church",
+      "city": "Glendale, CA"
+    }
+  ],
+  "highlights": [
+    { "year": "2026", "text": "“Miserere: Musical Meditations on the Passion” — organist and director, Holy Family, Glendale" },
+    { "year": "2026", "text": "“Sounds About Town” — organist, Colburn Orchestra, Walt Disney Concert Hall" },
+    { "year": "2025", "text": "“Bachathon: the Complete Organ Works of Bach” — organ soloist, Christ Cathedral, Garden Grove" },
+    { "year": "2025", "text": "“Requiem de los Campesinos” for St. Oscar Romero — director, Cathedral of Our Lady of the Angels" },
+    { "year": "2025", "text": "“Sounds of Summer” — organist and choral preparation, Walt Disney Concert Hall" },
+    { "year": "2025", "text": "“Padilla Villancicos” — harpsichordist and director; first performance in 300 years" },
+    { "year": "2024", "text": "World premiere of “Concert of Silences” — Choral Arts Initiative, Concordia University Irvine" },
+    { "year": "2023", "text": "“Concertino for Organ” by Eric Ewazen — organ soloist, Westlake Village Orchestra" },
+    { "year": "2022", "text": "Beethoven's Ninth — guest tenor, Los Angeles Chamber Orchestra" }
+  ]
+}

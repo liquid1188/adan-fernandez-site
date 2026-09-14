@@ -1,0 +1,42 @@
+{
+  "featured": ["yZceRjjgHLg", "qzz8-QKwQjM", "y5YLUZqMKaE"],
+  "items": [
+    { "id": "yZceRjjgHLg", "group": "Organ", "piece": "Variations on “America”", "composer": "Charles Ives" },
+    { "id": "qzz8-QKwQjM", "group": "Organ", "piece": "Rubrics", "composer": "Dan Locklair" },
+    { "id": "SN326-wd4Ak", "group": "Organ", "piece": "Allegro Vivace, Organ Symphony No. 5", "composer": "Charles-Marie Widor" },
+    { "id": "hs2yrRuwaYE", "group": "Organ", "piece": "Trio Sonata No. 2: Vivace", "composer": "Johann Sebastian Bach" },
+    { "id": "p8i9fZSO0I8", "group": "Organ", "piece": "Passacaglia and Fugue, BWV 582", "composer": "Johann Sebastian Bach" },
+    { "id": "j8GbMfqQ5Mw", "group": "Organ", "piece": "Fugue in E minor, BWV 548", "composer": "Johann Sebastian Bach" },
+    { "id": "zEqEuEMdWdU", "group": "Organ", "piece": "Toccata and Fugue in D minor, BWV 565", "composer": "Johann Sebastian Bach" },
+    { "id": "O3nd36vDcUI", "group": "Organ", "piece": "Toccata in D minor", "composer": "Dieterich Buxtehude" },
+    { "id": "XAkhqbxVjA4", "group": "Organ", "piece": "Prelude and Fugue on B-A-C-H", "composer": "Franz Liszt" },
+    { "id": "_8Y9jk3iX-Y", "group": "Organ", "piece": "Chorale in B minor", "composer": "César Franck" },
+    { "id": "JpeHV3cW-vA", "group": "Organ", "piece": "L'Ascension, movements II and III", "composer": "Olivier Messiaen" },
+    { "id": "EmDF6HmqIoo", "group": "Organ", "piece": "Ave Maria", "composer": "Marcel Dupré" },
+    { "id": "6_usauMvFCQ", "group": "Organ", "piece": "Dance of Fury of the Rod of Iron", "composer": "Norberto Guinaldo" },
+    { "id": "WPDnbZexASo", "group": "Organ", "piece": "Improvisation on a hymn tune", "composer": "Adán Fernández" },
+
+    { "id": "y5YLUZqMKaE", "group": "Harpsichord & early music", "piece": "Villancicos", "composer": "Juan Gutiérrez de Padilla", "note": "First performance in three hundred years" },
+    { "id": "lfLeHnRL2Ok", "group": "Harpsichord & early music", "piece": "Stabat Mater", "composer": "Juan Gutiérrez de Padilla" },
+    { "id": "Yw6fRA5aiZc", "group": "Harpsichord & early music", "piece": "Tristis est anima mea", "composer": "Juan Gutiérrez de Padilla" },
+    { "id": "xVLE8zFW0dU", "group": "Harpsichord & early music", "piece": "Sonata I: Andante", "composer": "George Frideric Handel" },
+    { "id": "ynLpxvyumQ0", "group": "Harpsichord & early music", "piece": "Trio No. 11: Largo", "composer": "Georg Philipp Telemann" },
+
+    { "id": "NtTXG6wxpVg", "group": "Conducting", "piece": "Magnificat-Alleluia", "composer": "Heitor Villa-Lobos" },
+    { "id": "XkBDV7oj5nQ", "group": "Conducting", "piece": "Lamentaciones de Jeremías Profeta", "composer": "Alberto Ginastera" },
+    { "id": "yeAs8GuAtto", "group": "Conducting", "piece": "Requiem: Las Lamentaciones de Rufina Amaya", "composer": "Carlos Colón" },
+    { "id": "I6p6QYJsE7M", "group": "Conducting", "piece": "Te Deum", "composer": "Carlos Colón" },
+    { "id": "A6nJl5SgG18", "group": "Conducting", "piece": "¡Ayúdame!", "composer": "Carlos Cordero" },
+    { "id": "n2MaLQpSG7g", "group": "Conducting", "piece": "Agnus Dei, from the Requiem", "composer": "Maurice Duruflé" },
+    { "id": "sV6DCPe2NWg", "group": "Conducting", "piece": "Adoramus te, Christe", "composer": "Théodore Dubois" },
+    { "id": "HMd8xpOFB_8", "group": "Conducting", "piece": "Cada valle, from El Mesías", "composer": "George Frideric Handel", "note": "Handel's Messiah in Spanish" },
+    { "id": "8CbxCSZyv4U", "group": "Conducting", "piece": "Sinfony, from El Mesías", "composer": "George Frideric Handel" },
+
+    { "id": "WCuWLkhduxY", "group": "His own music", "piece": "Te Cubrirá", "composer": "Adán Fernández" },
+    { "id": "w6xluVF3x98", "group": "His own music", "piece": "Concert of Silences", "composer": "Adán Fernández", "note": "Premiered by the Choral Arts Initiative" },
+
+    { "id": "LPoB5pZwxQM", "group": "Lectures", "piece": "Martin Luther's German Mass and its hymnody", "composer": "Lecture" },
+    { "id": "zoujbOF8Vx4", "group": "Lectures", "piece": "Martin Luther, Deutsche Messe", "composer": "Lecture and performance" },
+    { "id": "ZhJXBEZ7Qt8", "group": "Lectures", "piece": "Folk masses of the post-conciliar era", "composer": "Lecture" }
+  ]
+}

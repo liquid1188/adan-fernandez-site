@@ -1,0 +1,31 @@
+{
+  "intro": "Adán teaches organ, piano, and music theory across three institutions, and works with church musicians and student conductors in workshops and residencies.",
+  "areas": [
+    {
+      "title": "Organ studio",
+      "place": "California Lutheran University",
+      "body": "As University Organist he mentors a studio of young organists on the Borg Peterson Memorial Organ in Samuelson Chapel, and runs a recital series that brings international artists to the console — including the monthly Afternoon Bach Recital Series, which his students hear and play in."
+    },
+    {
+      "title": "Piano",
+      "place": "California Lutheran University",
+      "body": "Applied piano on the university's music faculty, with a background in collaborative playing that shapes how he teaches accompanying and chamber work."
+    },
+    {
+      "title": "Music theory",
+      "place": "The Colburn School, Los Angeles",
+      "body": "Theory for conservatory-track students, taught with an ear toward repertoire rather than exercises."
+    },
+    {
+      "title": "Choral and orchestral direction",
+      "place": "Holy Family, Glendale, and the Glendale Youth Symphony",
+      "body": "Five ensembles at Holy Family, from the St. Cecilia Chorale to the Cherubim and Seraphim children's choirs, and a community youth orchestra he founded and still directs."
+    }
+  ],
+  "offers": [
+    "Masterclasses in organ literature and service playing",
+    "University residencies combining a recital, a masterclass, and a lecture",
+    "Workshops for parish musicians on liturgy, hymnody, and choir building",
+    "Lectures on Latin American and indigenous sacred music"
+  ]
+}

@@ -1,0 +1,71 @@
+---
+layout: base.njk
+permalink: /about/
+active: about
+bodyClass: on-paper
+title: About
+description: "Dr. Adán Alejándro Fernández — organist, harpsichordist, conductor, composer and writer. Biography, positions, education and honors."
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Biography</p>
+    <h1>A musician of the Church.</h1>
+    <p class="lede">{{ bio.oneLine }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap two-col">
+    <div class="prose reveal">
+      {%- for p in bio.long %}
+      <p{% if loop.first %} class="first"{% endif %}>{{ p }}</p>
+      {%- endfor %}
+      <div class="cta-row">
+        <a class="btn btn-outline" href="{{ site.cv }}" download>Download the full CV (PDF)</a>
+      </div>
+    </div>
+    <figure class="portrait-frame reveal" style="margin:0">
+      <img src="/assets/img/portrait.jpg" alt="Portrait of Adán Fernández" width="1200" height="1200" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Positions</span><span class="rule"></span></div>
+    <h2 class="reveal" style="margin-bottom:2rem">Where he serves.</h2>
+    <ul class="roles">
+    {%- for r in positions.items %}
+      <li class="reveal">
+        <span class="r-title">{{ r.title }}</span>
+        <span class="r-place">{{ r.place }}, {{ r.city }}{% if r.note %}<em>{{ r.note }}</em>{% endif %}</span>
+      </li>
+    {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Education</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for e in education.degrees %}
+        <div class="entry">
+          <span class="yr">{{ e.year }}</span>
+          <div><strong>{{ e.award }}</strong><span class="sub">{{ e.school }}{% if e.note %} — {{ e.note }}{% endif %}</span></div>
+        </div>
+      {%- endfor %}
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Fellowships &amp; awards</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for h in education.honors %}
+        <div class="entry"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
+      {%- endfor %}
+      </div>
+      <p class="fine" style="margin-top:1.4rem">{{ education.credential }}</p>
+    </div>
+  </div>
+</section>

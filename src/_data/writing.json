@@ -1,0 +1,17 @@
+{
+  "intro": "Adán writes and lectures on liturgy, hymnody, and the sacred music of Latin America. He is a columnist for GIA Publications and an editor for the Hymn Society, and his choral music is published by MusicSpoke and GIA, with a focus on Latin American and indigenous composers.",
+  "publications": [
+    { "year": "2026", "title": "Nueva Canción: Devotional Music as Holy Witness", "where": "Hymn Society, Princeton", "kind": "Paper" },
+    { "year": "2025", "title": "The Precedent for Vernacular and Multilingual Liturgies in the Catholic Church in Latin America", "where": "Religions", "kind": "Journal article" },
+    { "year": "2023", "title": "Tres Corales de Bach", "where": "GIA Publications", "kind": "Edition" },
+    { "year": "2023", "title": "The Music of the Great Religions: The Philosophy of a New Course at Cal Lutheran University", "where": "CrossAccent", "kind": "Journal article" },
+    { "year": "2022", "title": "Liberationist Perspectives on the Misa Criolla by Ariel Ramírez", "where": "Religions", "kind": "Journal article" },
+    { "year": "2018", "title": "The Role Music Plays in Racial Identity", "where": "ChorTeach", "kind": "Article" },
+    { "year": "2017", "title": "Culture of Singing", "where": "Reformed Worship", "kind": "Article" }
+  ],
+  "publishers": [
+    { "name": "GIA Publications", "note": "Choral music and editions, plus a regular column" },
+    { "name": "MusicSpoke", "note": "Choral music" },
+    { "name": "The Hymn Society", "note": "Editorial work" }
+  ]
+}

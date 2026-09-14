@@ -1,0 +1,195 @@
+backend:
+  name: github
+  repo: liquid1188/adan-fernandez-site
+  branch: main
+
+media_folder: src/assets/img
+public_folder: /assets/img
+
+collections:
+  - name: calendar
+    label: Calendar
+    icon: calendar_month
+    description: "Add a recital and it appears under Upcoming. On the day after, it moves itself to Past — you never have to come back and tidy up."
+    files:
+      - name: performances
+        label: Performances
+        file: src/_data/performances.json
+        fields:
+          - name: items
+            label: Dated performances
+            label_singular: Performance
+            widget: list
+            summary: "{{fields.date}}  ·  {{fields.title}}"
+            fields:
+              - { name: date, label: Date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, picker_utc: true }
+              - { name: title, label: Title, widget: string }
+              - { name: tag, label: "Small label (optional)", hint: "Something like 'Conductor' or the name of the organ.", widget: string, required: false }
+              - { name: venue, label: Venue, widget: string }
+              - { name: city, label: "City and state", widget: string }
+          - name: highlights
+            label: "Earlier highlights (undated)"
+            label_singular: Highlight
+            widget: list
+            summary: "{{fields.year}}  ·  {{fields.text}}"
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: text, label: Description, widget: text }
+
+  - name: recordings
+    label: Recordings
+    icon: play_circle
+    description: "Paste the eleven-character YouTube ID from the video's address — in youtube.com/watch?v=ABC123, the ID is ABC123."
+    files:
+      - name: videos
+        label: Videos
+        file: src/_data/videos.json
+        fields:
+          - name: featured
+            label: "Featured on the home page (three IDs)"
+            widget: list
+            field: { name: id, label: YouTube ID, widget: string }
+          - name: items
+            label: All recordings
+            label_singular: Recording
+            widget: list
+            summary: "{{fields.piece}}  ·  {{fields.composer}}"
+            fields:
+              - { name: id, label: YouTube ID, widget: string }
+              - name: group
+                label: Section
+                widget: select
+                options: ["Organ", "Harpsichord & early music", "Conducting", "His own music", "Lectures"]
+              - { name: piece, label: Piece, widget: string }
+              - { name: composer, label: Composer, widget: string }
+              - { name: note, label: "Note (optional)", widget: string, required: false }
+
+  - name: biography
+    label: Biography
+    icon: person
+    files:
+      - name: bio
+        label: Biography
+        file: src/_data/bio.json
+        fields:
+          - { name: oneLine, label: "One line", widget: text }
+          - { name: short, label: "Short biography", widget: text }
+          - name: long
+            label: "Full biography (one entry per paragraph)"
+            label_singular: Paragraph
+            widget: list
+            field: { name: p, label: Paragraph, widget: text }
+      - name: positions
+        label: Positions
+        file: src/_data/positions.json
+        fields:
+          - name: items
+            label: Positions
+            label_singular: Position
+            widget: list
+            summary: "{{fields.title}}  ·  {{fields.place}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: place, label: Institution, widget: string }
+              - { name: city, label: "City and state", widget: string }
+              - { name: note, label: "Note (optional)", widget: text, required: false }
+      - name: education
+        label: "Education & honors"
+        file: src/_data/education.json
+        fields:
+          - name: degrees
+            label: Degrees
+            label_singular: Degree
+            widget: list
+            summary: "{{fields.year}}  ·  {{fields.award}}"
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: award, label: Degree, widget: string }
+              - { name: school, label: Institution, widget: string }
+              - { name: note, label: "Teachers or note (optional)", widget: string, required: false }
+          - name: honors
+            label: "Fellowships & awards"
+            label_singular: Award
+            widget: list
+            summary: "{{fields.year}}  ·  {{fields.text}}"
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: text, label: Description, widget: text }
+          - { name: credential, label: "Closing line", widget: string }
+
+  - name: writing
+    label: "Writing & scholarship"
+    icon: article
+    files:
+      - name: writing
+        label: "Writing & scholarship"
+        file: src/_data/writing.json
+        fields:
+          - { name: intro, label: Introduction, widget: text }
+          - name: publications
+            label: Publications
+            label_singular: Publication
+            widget: list
+            summary: "{{fields.year}}  ·  {{fields.title}}"
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: where, label: "Journal or publisher", widget: string }
+              - { name: kind, label: "Kind", hint: "Journal article, Edition, Paper, Article", widget: string }
+          - name: publishers
+            label: Publishers
+            label_singular: Publisher
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: note, label: Note, widget: string }
+
+  - name: teaching
+    label: Teaching
+    icon: school
+    files:
+      - name: teaching
+        label: Teaching
+        file: src/_data/teaching.json
+        fields:
+          - { name: intro, label: Introduction, widget: text }
+          - name: areas
+            label: "What he teaches"
+            label_singular: Area
+            widget: list
+            summary: "{{fields.title}}  ·  {{fields.place}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: place, label: Institution, widget: string }
+              - { name: body, label: Description, widget: text }
+          - name: offers
+            label: "Masterclasses and residencies"
+            label_singular: Offering
+            widget: list
+            field: { name: item, label: Offering, widget: string }
+
+  - name: settings
+    label: Contact details
+    icon: settings
+    files:
+      - name: site
+        label: Contact details
+        file: src/_data/site.json
+        fields:
+          - { name: name, label: "Full name", widget: string }
+          - { name: shortName, label: "Short name", widget: string }
+          - { name: roles, label: "Roles line", widget: string }
+          - { name: url, label: "Site address", widget: string }
+          - { name: email, label: Email, widget: string }
+          - { name: phone, label: "Phone (as displayed)", widget: string }
+          - { name: phoneHref, label: "Phone (dialable, +1…)", widget: string }
+          - { name: youtube, label: "YouTube channel", widget: string }
+          - name: management
+            label: Management
+            widget: object
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: url, label: Link, widget: string }
+          - { name: cv, label: "CV path", widget: string }
+          - { name: photoCredit, label: "Photo credit line", widget: string }

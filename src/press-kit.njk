@@ -1,0 +1,76 @@
+---
+layout: base.njk
+permalink: /press-kit/
+active: press
+bodyClass: on-paper
+title: Press kit
+description: "Biographies at three lengths, photographs, and the curriculum vitae for Adán Fernández — ready for programs, posters and listings."
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Press kit</p>
+    <h1>Everything a program needs.</h1>
+    <p class="lede">Copy any of these straight into a concert program, a poster, or a listing. No permission needed.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Name &amp; billing</span><span class="rule"></span></div>
+    <div class="stack" style="max-width:70ch">
+      <div class="entry reveal"><span class="yr">Full</span><div>{{ site.name }}</div></div>
+      <div class="entry reveal"><span class="yr">Short</span><div>{{ site.shortName }}</div></div>
+      <div class="entry reveal"><span class="yr">Billing</span><div>Dr. Adán Alejándro Fernández, organist</div></div>
+      <div class="entry reveal"><span class="yr">Roles</span><div>{{ site.roles }}</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Biography, one line</span><span class="rule"></span></div>
+    <p class="lede reveal" style="margin-bottom:3rem">{{ bio.oneLine }}</p>
+
+    <div class="rule-head reveal"><span class="lbl">Biography, short</span><span class="rule"></span></div>
+    <div class="prose reveal" style="margin-bottom:3rem"><p>{{ bio.short }}</p></div>
+
+    <div class="rule-head reveal"><span class="lbl">Biography, full</span><span class="rule"></span></div>
+    <div class="prose reveal">
+      {%- for p in bio.long %}<p>{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Photographs</span><span class="rule"></span></div>
+    <p class="lede reveal" style="margin-bottom:2rem">{{ site.photoCredit }} Please carry the credit wherever they appear.</p>
+    <div class="cards">
+      <div class="card reveal" style="padding:0;overflow:hidden">
+        <img src="/assets/img/hero-organ.jpg" alt="Adán Fernández at the organ console" width="1920" height="1280" loading="lazy">
+        <div style="padding:1.2rem 1.4rem">
+          <p class="fine" style="margin:0 0 .8rem">Landscape · 1920 × 1280</p>
+          <a class="btn btn-outline" href="/assets/img/hero-organ.jpg" download>Download</a>
+        </div>
+      </div>
+      <div class="card reveal" style="padding:0;overflow:hidden">
+        <img src="/assets/img/portrait.jpg" alt="Portrait of Adán Fernández" width="1200" height="1200" loading="lazy">
+        <div style="padding:1.2rem 1.4rem">
+          <p class="fine" style="margin:0 0 .8rem">Square · 1200 × 1200</p>
+          <a class="btn btn-outline" href="/assets/img/portrait.jpg" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Documents &amp; links</span><span class="rule"></span></div>
+    <div class="cards">
+      <a class="card reveal" href="{{ site.cv }}" download><h3>Curriculum vitae</h3><p>Full education, positions, performance history, publications and compositions.</p><span class="go">Download PDF &rarr;</span></a>
+      <a class="card reveal" href="{{ site.youtube }}" rel="noopener"><h3>Recordings</h3><p>Organ, harpsichord, conducting and lectures, on his YouTube channel.</p><span class="go">Open the channel &rarr;</span></a>
+      <a class="card reveal" href="{{ site.management.url }}" rel="noopener"><h3>Artist management</h3><p>{{ site.management.name }}.</p><span class="go">Management page &rarr;</span></a>
+    </div>
+  </div>
+</section>

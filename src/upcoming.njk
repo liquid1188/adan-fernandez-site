@@ -1,0 +1,69 @@
+---
+layout: base.njk
+permalink: /upcoming/
+active: upcoming
+bodyClass: on-paper
+title: Calendar
+description: "Upcoming and past performances by Adán Fernández — organ and harpsichord recitals, conducting engagements, and festival appearances."
+---
+{%- set next = performances.items | upcoming %}
+{%- set gone = performances.items | past %}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Calendar</p>
+    <h1>Where to hear him.</h1>
+    <p class="lede">Dates move from Upcoming to Past on their own. For a full engagement history, see the <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass)">CV</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Upcoming</span><span class="rule"></span></div>
+    {%- if next | length %}
+    <ol class="events">
+    {%- for e in next %}
+      <li class="event reveal">
+        <div class="date"><span class="m">{{ e.date | mon }}</span><span class="d">{{ e.date | day }}</span><span class="y">{{ e.date | year }}</span></div>
+        <div>
+          <h3>{{ e.title }}{% if e.tag %}<span class="tag">{{ e.tag }}</span>{% endif %}</h3>
+          <p>{{ e.venue }} &middot; {{ e.city }}</p>
+          <p class="fine">{{ e.date | longDate }}</p>
+        </div>
+      </li>
+    {%- endfor %}
+    </ol>
+    {%- else %}
+    <p class="lede reveal">Nothing on the public calendar at the moment. New dates go up as they are confirmed — <a href="/contact/" style="border-bottom:1px solid var(--brass-deep)">get in touch</a> about booking one.</p>
+    {%- endif %}
+  </div>
+</section>
+
+{%- if gone | length %}
+<section class="section tint">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Past</span><span class="rule"></span></div>
+    <ol class="events">
+    {%- for e in gone %}
+      <li class="event reveal">
+        <div class="date"><span class="m">{{ e.date | mon }}</span><span class="d">{{ e.date | day }}</span><span class="y">{{ e.date | year }}</span></div>
+        <div>
+          <h3>{{ e.title }}{% if e.tag %}<span class="tag">{{ e.tag }}</span>{% endif %}</h3>
+          <p>{{ e.venue }} &middot; {{ e.city }}</p>
+        </div>
+      </li>
+    {%- endfor %}
+    </ol>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Earlier</span><span class="rule"></span></div>
+    <div class="stack">
+    {%- for h in performances.highlights %}
+      <div class="entry reveal"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
+    {%- endfor %}
+    </div>
+  </div>
+</section>

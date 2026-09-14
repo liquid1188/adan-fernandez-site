@@ -1,0 +1,35 @@
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <p class="foot-name">{{ site.name }}</p>
+      <p class="foot-roles">{{ site.roles }}</p>
+    </div>
+    <nav class="foot-col" aria-label="Footer">
+      <p class="foot-h">The work</p>
+      <a href="/about/">About</a>
+      <a href="/listen/">Listen &amp; watch</a>
+      <a href="/performing/">Performing</a>
+      <a href="/teaching/">Teaching</a>
+      <a href="/writing/">Writing &amp; scholarship</a>
+    </nav>
+    <nav class="foot-col" aria-label="Footer, more">
+      <p class="foot-h">Get in touch</p>
+      <a href="/upcoming/">Calendar</a>
+      <a href="/contact/">Contact</a>
+      <a href="/press-kit/">Press kit</a>
+      <a href="{{ site.cv }}" download>Curriculum vitae</a>
+      <a href="{{ site.youtube }}" rel="noopener">YouTube</a>
+    </nav>
+    <div class="foot-col">
+      <p class="foot-h">Management</p>
+      <a href="{{ site.management.url }}" rel="noopener">{{ site.management.name }}</a>
+      <p class="foot-h" style="margin-top:1.4rem">Direct</p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+    </div>
+  </div>
+  <div class="wrap foot-rule">
+    <p>&copy; <span id="year">2026</span> {{ site.name }}</p>
+    <p>{{ site.photoCredit }}</p>
+  </div>
+</footer>
