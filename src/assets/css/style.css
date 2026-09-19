@@ -394,8 +394,11 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 .dark .tl-y { color: var(--brass-soft); }
 .tl-year ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
 .tl-year li { line-height: 1.5; }
-.tl-year li a { color: inherit; border-bottom: 1px solid var(--brass-deep); }
-.dark .tl-year li a { border-bottom-color: var(--brass-soft); }
+.tl-year li a { color: inherit; border-bottom: 0; }
+.tl-year li a .lk { display: inline-block; margin-left: .35em; font-size: .78em; color: var(--brass-deep); transition: transform .2s; }
+.dark .tl-year li a .lk { color: var(--brass-soft); }
+.tl-year li a:hover { color: var(--brass-deep); }
+.tl-year li a:hover .lk { transform: translate(2px, -2px); }
 .tl-sub { display: block; font-size: .88rem; color: var(--ink-2); margin-top: .1rem; }
 .dark .tl-sub { color: var(--dim); }
 .tl-sub em { font-style: italic; }
