@@ -1,0 +1,105 @@
+{
+  "credit": "Photographs courtesy of Seven Eight Artists.",
+  "items": [
+    {
+      "file": "/assets/img/press/portrait-purple.jpg",
+      "web": "/assets/img/press/portrait-purple-web.jpg",
+      "alt": "Portrait, dark jacket and purple shirt",
+      "w": 2400,
+      "h": 2805,
+      "ww": 1369,
+      "wh": 1600,
+      "shape": "Portrait"
+    },
+    {
+      "file": "/assets/img/press/portrait-grey.jpg",
+      "web": "/assets/img/press/portrait-grey-web.jpg",
+      "alt": "Portrait, grey sweater",
+      "w": 960,
+      "h": 960,
+      "ww": 960,
+      "wh": 960,
+      "shape": "Square"
+    },
+    {
+      "file": "/assets/img/press/console-smiling.jpg",
+      "web": "/assets/img/press/console-smiling-web.jpg",
+      "alt": "At the organ console, facing the camera",
+      "w": 3000,
+      "h": 2000,
+      "ww": 1600,
+      "wh": 1067,
+      "shape": "Landscape"
+    },
+    {
+      "file": "/assets/img/press/console-playing.jpg",
+      "web": "/assets/img/press/console-playing-web.jpg",
+      "alt": "At the organ console, playing",
+      "w": 3000,
+      "h": 2000,
+      "ww": 1600,
+      "wh": 1067,
+      "shape": "Landscape"
+    },
+    {
+      "file": "/assets/img/press/console-wide.jpg",
+      "web": "/assets/img/press/console-wide-web.jpg",
+      "alt": "The organ console from the loft",
+      "w": 3000,
+      "h": 2000,
+      "ww": 1600,
+      "wh": 1067,
+      "shape": "Landscape"
+    },
+    {
+      "file": "/assets/img/press/conducting-church.jpg",
+      "web": "/assets/img/press/conducting-church-web.jpg",
+      "alt": "Conducting in the church",
+      "w": 960,
+      "h": 958,
+      "ww": 960,
+      "wh": 958,
+      "shape": "Square"
+    },
+    {
+      "file": "/assets/img/press/conducting-bw.jpg",
+      "web": "/assets/img/press/conducting-bw-web.jpg",
+      "alt": "Conducting, black and white",
+      "w": 960,
+      "h": 960,
+      "ww": 960,
+      "wh": 960,
+      "shape": "Square"
+    },
+    {
+      "file": "/assets/img/press/conducting-orchestra.jpg",
+      "web": "/assets/img/press/conducting-orchestra-web.jpg",
+      "alt": "Conducting the youth orchestra",
+      "w": 638,
+      "h": 638,
+      "ww": 638,
+      "wh": 638,
+      "shape": "Square"
+    },
+    {
+      "file": "/assets/img/press/harpsichord.jpg",
+      "web": "/assets/img/press/harpsichord-web.jpg",
+      "alt": "At the harpsichord",
+      "w": 1536,
+      "h": 2048,
+      "ww": 1200,
+      "wh": 1600,
+      "shape": "Portrait"
+    },
+    {
+      "file": "/assets/img/press/portrait-scarf.jpg",
+      "web": "/assets/img/press/portrait-scarf-web.jpg",
+      "alt": "Portrait outdoors, in a scarf",
+      "w": 960,
+      "h": 958,
+      "ww": 960,
+      "wh": 958,
+      "shape": "Square"
+    }
+  ]
+}

@@ -45,21 +45,13 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Photographs</span><span class="rule"></span></div>
     <p class="lede reveal" style="margin-bottom:2rem">{{ site.photoCredit }} Please carry the credit wherever they appear.</p>
-    <div class="cards">
-      <div class="card reveal" style="padding:0;overflow:hidden">
-        <img src="/assets/img/hero-organ.jpg" alt="Adán Fernández at the organ console" width="1920" height="1280" loading="lazy">
-        <div style="padding:1.2rem 1.4rem">
-          <p class="fine" style="margin:0 0 .8rem">Landscape · 1920 × 1280</p>
-          <a class="btn btn-outline" href="/assets/img/hero-organ.jpg" download>Download</a>
-        </div>
-      </div>
-      <div class="card reveal" style="padding:0;overflow:hidden">
-        <img src="/assets/img/portrait.jpg" alt="Portrait of Adán Fernández" width="1200" height="1200" loading="lazy">
-        <div style="padding:1.2rem 1.4rem">
-          <p class="fine" style="margin:0 0 .8rem">Square · 1200 × 1200</p>
-          <a class="btn btn-outline" href="/assets/img/portrait.jpg" download>Download</a>
-        </div>
-      </div>
+    <div class="photo-grid">
+    {%- for p in photos.items %}
+      <figure class="photo reveal">
+        <a href="{{ p.file }}" download><img src="{{ p.web }}" alt="{{ p.alt }}" width="{{ p.ww }}" height="{{ p.wh }}" loading="lazy"></a>
+        <figcaption><span>{{ p.alt }}</span><span class="fine">{{ p.shape }} &middot; {{ p.w }} &times; {{ p.h }}</span><a class="dl" href="{{ p.file }}" download>Download</a></figcaption>
+      </figure>
+    {%- endfor %}
     </div>
   </div>
 </section>
