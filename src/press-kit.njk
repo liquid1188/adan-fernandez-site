@@ -133,13 +133,13 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
 <section class="section dark">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Documents &amp; links</span><span class="rule"></span></div>
-    <div class="cards">
-      <a class="card reveal" href="{{ site.cv }}" download><h3>Curriculum vitae</h3><p>Full education, positions, performance history, publications and compositions.</p><span class="go">Download PDF &rarr;</span></a>
-      <a class="card reveal" href="{{ site.youtube }}" rel="noopener"><h3>Recordings</h3><p>Organ, harpsichord, conducting and lectures, on his YouTube channel.</p><span class="go">Open the channel &rarr;</span></a>
-      <a class="card reveal" href="{{ site.management.url }}" rel="noopener"><h3>Artist management</h3><p>{{ site.management.name }}. Bookings through {{ site.management.contact }}, {{ site.management.email }}.</p><span class="go">Management page &rarr;</span></a>
-      <a class="card reveal" href="{{ presskit.onesheet }}" download><h3>One-sheet</h3><p>Name, billing, short biography, positions, honors, and contacts on a single page for programs and press.</p><span class="go">Download PDF &rarr;</span></a>
-      <a class="card reveal" href="/assets/img/mark.svg" download><h3>Mark</h3><p>His organ-pipes mark for posters and programs, as SVG. Brass on dark or ink on light; do not recolour it.</p><span class="go">Download SVG &rarr;</span></a>
-      <a class="card reveal" href="/assets/img/press/portrait-purple.jpg" download><h3>Headshot</h3><p>The portrait most programs use, 2400 by 2805, with the credit to Seven Eight Artists.</p><span class="go">Download JPG &rarr;</span></a>
-    </div>
+    <ul class="linklist reveal">
+      <li><a href="{{ presskit.onesheet }}" download>{% set icon = "sheet" %}{% include "icons.njk" %}<span class="lk-t">One-sheet</span><span class="lk-d">Name, billing, short biography, positions, honors and contacts on one page</span><span class="lk-k">PDF</span></a></li>
+      <li><a href="{{ site.cv }}" download>{% set icon = "doc" %}{% include "icons.njk" %}<span class="lk-t">Curriculum vitae</span><span class="lk-d">Education, positions, performance history, publications and compositions</span><span class="lk-k">PDF</span></a></li>
+      <li><a href="/assets/img/press/portrait-purple.jpg" download>{% set icon = "image" %}{% include "icons.njk" %}<span class="lk-t">Headshot</span><span class="lk-d">The portrait most programs use, 2400 by 2805, credit Seven Eight Artists</span><span class="lk-k">JPG</span></a></li>
+      <li><a href="/assets/img/mark.svg" download>{% set icon = "mark" %}{% include "icons.njk" %}<span class="lk-t">Mark</span><span class="lk-d">His organ-pipes mark for posters and programs, brass on dark or ink on light</span><span class="lk-k">SVG</span></a></li>
+      <li><a href="{{ site.youtube }}" rel="noopener">{% set icon = "youtube" %}{% include "icons.njk" %}<span class="lk-t">Recordings</span><span class="lk-d">Organ, harpsichord, conducting and lectures on his channel</span><span class="lk-k">YouTube</span></a></li>
+      <li><a href="{{ site.management.url }}" rel="noopener">{% set icon = "people" %}{% include "icons.njk" %}<span class="lk-t">Artist management</span><span class="lk-d">{{ site.management.name }}. Bookings through {{ site.management.contact }}, {{ site.management.email }}</span><span class="lk-k">Web</span></a></li>
+    </ul>
   </div>
 </section>
