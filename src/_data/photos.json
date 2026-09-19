@@ -12,16 +12,6 @@
       "shape": "Portrait"
     },
     {
-      "file": "/assets/img/press/portrait-grey.jpg",
-      "web": "/assets/img/press/portrait-grey-web.jpg",
-      "alt": "Portrait, grey sweater",
-      "w": 960,
-      "h": 960,
-      "ww": 960,
-      "wh": 960,
-      "shape": "Square"
-    },
-    {
       "file": "/assets/img/press/console-smiling.jpg",
       "web": "/assets/img/press/console-smiling-web.jpg",
       "alt": "At the organ console, facing the camera",
@@ -69,36 +59,6 @@
       "h": 960,
       "ww": 960,
       "wh": 960,
-      "shape": "Square"
-    },
-    {
-      "file": "/assets/img/press/conducting-orchestra.jpg",
-      "web": "/assets/img/press/conducting-orchestra-web.jpg",
-      "alt": "Conducting the youth orchestra",
-      "w": 638,
-      "h": 638,
-      "ww": 638,
-      "wh": 638,
-      "shape": "Square"
-    },
-    {
-      "file": "/assets/img/press/harpsichord.jpg",
-      "web": "/assets/img/press/harpsichord-web.jpg",
-      "alt": "At the harpsichord",
-      "w": 1536,
-      "h": 2048,
-      "ww": 1200,
-      "wh": 1600,
-      "shape": "Portrait"
-    },
-    {
-      "file": "/assets/img/press/portrait-scarf.jpg",
-      "web": "/assets/img/press/portrait-scarf-web.jpg",
-      "alt": "Portrait outdoors, in a scarf",
-      "w": 960,
-      "h": 958,
-      "ww": 960,
-      "wh": 958,
       "shape": "Square"
     }
   ]

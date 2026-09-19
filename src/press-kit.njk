@@ -122,8 +122,8 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
     <div class="photo-grid">
     {%- for p in photos.items %}
       <figure class="photo reveal">
-        <a href="{{ p.file }}" download><img src="{{ p.web }}" alt="{{ p.alt }}" width="{{ p.ww }}" height="{{ p.wh }}" loading="lazy"></a>
-        <figcaption><span>{{ p.alt }}</span><span class="fine">{{ p.shape }} &middot; {{ p.w }} &times; {{ p.h }}</span><a class="dl" href="{{ p.file }}" download>Download</a></figcaption>
+        <a href="{{ p.file }}" download title="Download, {{ p.w }} by {{ p.h }}"><img src="{{ p.web }}" alt="{{ p.alt }}" width="{{ p.ww }}" height="{{ p.wh }}" loading="lazy"><span class="dl-hint">Download &middot; {{ p.w }} &times; {{ p.h }}</span></a>
+        <figcaption>{{ p.alt }}</figcaption>
       </figure>
     {%- endfor %}
     </div>
