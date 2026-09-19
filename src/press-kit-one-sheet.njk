@@ -13,8 +13,8 @@ eleventyExcludeFromCollections: true
   @page { size: letter; margin: 0; }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: #fff; }
-  body { width: 8.5in; height: 11in; overflow: hidden; font-family: Inter, system-ui, sans-serif; color: #16202b; font-size: 9.2pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .sheet { width: 8.5in; height: 11in; display: grid; grid-template-columns: 2.55in 1fr; }
+  body { width: 8.5in; height: 11in; overflow: hidden; font-family: Inter, system-ui, sans-serif; color: #16202b; font-size: 8.8pt; line-height: 1.4; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { width: 8.5in; height: 11in; overflow: hidden; display: grid; grid-template-columns: 2.55in 1fr; }
   .side { background: #101a26; color: #f6f2e9; padding: .55in .38in .5in; display: flex; flex-direction: column; background-image: url("/assets/img/tile.svg"); background-size: 72px 72px; background-blend-mode: normal; }
   .side img.photo { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border: 1px solid rgba(221,177,115,.4); }
   .mark { width: 34px; height: 34px; color: #c08a3e; margin-bottom: .32in; }
@@ -61,7 +61,7 @@ eleventyExcludeFromCollections: true
       <div>
         <h2>Honors</h2>
         <ul>
-        {%- for h in presskit.honors | limit(6) %}<li><b>{{ h.year }}</b>{{ h.text }}</li>{% endfor %}
+        {%- for h in presskit.honors | limit(5) %}<li><b>{{ h.year }}</b>{{ h.text }}</li>{% endfor %}
         </ul>
       </div>
       <div>
