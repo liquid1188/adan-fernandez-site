@@ -12,7 +12,7 @@ description: "Upcoming and recent performances by Adán Fernández: organ and ha
   <div class="wrap">
     <p class="eyebrow">Calendar</p>
     <h1>Where to hear him.</h1>
-    <p class="lede">Recitals, services, and concerts, with the venue for each. The full engagement history is in the <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass)">CV</a>.</p>
+    <p class="lede">Recitals, services, and concerts, with the venue for each.</p>
   </div>
 </section>
 
@@ -32,6 +32,7 @@ description: "Upcoming and recent performances by Adán Fernández: organ and ha
       </li>
     {%- endfor %}
     </ol>
+    <p class="fine reveal" style="margin-top:1.6rem">New dates go up as they are confirmed. To book one, <a href="/contact/" style="border-bottom:1px solid var(--brass-deep)">get in touch</a>. The full engagement history is in his <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass-deep)">curriculum vitae</a>.</p>
   </div>
 </section>
 {%- endif %}
@@ -51,23 +52,7 @@ description: "Upcoming and recent performances by Adán Fernández: organ and ha
       </li>
     {%- endfor %}
     </ol>
+    <p class="fine reveal" style="margin-top:1.6rem">New dates go up as they are confirmed. To book one, <a href="/contact/" style="border-bottom:1px solid var(--brass-deep)">get in touch</a>. The full engagement history is in his <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass-deep)">curriculum vitae</a>.</p>
   </div>
 </section>
 {%- endif %}
-
-<section class="section dark">
-  <div class="wrap">
-    <div class="rule-head reveal"><span class="lbl">Highlights</span><span class="rule"></span></div>
-    <div class="stack">
-    {%- for h in performances.highlights %}
-      <div class="entry reveal"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
-    {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section tint">
-  <div class="wrap">
-    <p class="lede reveal">New dates go up as they are confirmed. To book one, <a href="/contact/" style="border-bottom:1px solid var(--brass-deep)">get in touch</a>.</p>
-  </div>
-</section>

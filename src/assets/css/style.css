@@ -299,11 +299,13 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 }
 
 /* press photographs */
-.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.6rem 1.4rem; }
+.photo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.6rem 1.2rem; }
+@media (max-width: 1000px) { .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
 .photo { margin: 0; }
-.photo a { display: block; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--rule-light); background: var(--bone-2); }
+.photo > a { display: block; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--rule-light); background: var(--bone-2); }
 .photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
-.photo a:hover img { transform: scale(1.03); }
+.photo > a:hover img { transform: scale(1.03); }
 .photo figcaption { padding-top: .6rem; font-size: .92rem; }
 .photo figcaption span { display: block; }
 .photo figcaption .fine { color: var(--ink-2); margin-top: .15rem; }
@@ -326,15 +328,15 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 @media (max-width: 640px) { .vmodal-close { top: -40px; right: 0; } }
 
 /* affiliations band */
-.affil { background: var(--night-2); border-top: 1px solid var(--rule-dark); border-bottom: 1px solid var(--rule-dark); padding: clamp(36px, 5vw, 56px) 0; }
-.affil .eyebrow { color: var(--brass-soft); margin-bottom: 1.6rem; }
+.affil { background: var(--bone-2); border-top: 1px solid var(--rule-light); border-bottom: 1px solid var(--rule-light); padding: clamp(36px, 5vw, 56px) 0; }
+.affil .eyebrow { color: var(--brass-deep); margin-bottom: 1.6rem; }
 .affil-row { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.6rem clamp(2rem, 4vw, 3.4rem); }
 .affil-row li { display: flex; align-items: center; }
-.affil-row a { display: flex; align-items: center; opacity: .62; transition: opacity .2s; text-decoration: none; }
+.affil-row a { display: flex; align-items: center; opacity: .55; transition: opacity .2s; text-decoration: none; }
 .affil-row a:hover { opacity: 1; }
 .affil-row img { height: 40px; width: auto; display: block; }
-.wordmark { font-family: "EB Garamond", Georgia, serif; font-size: 1.28rem; color: var(--bone); line-height: 1.05; display: flex; flex-direction: column; text-align: center; }
-.wordmark small { font-family: Inter, system-ui, sans-serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--brass-soft); margin-top: .25rem; }
+.wordmark { font-family: "EB Garamond", Georgia, serif; font-size: 1.28rem; color: var(--ink); line-height: 1.05; display: flex; flex-direction: column; text-align: center; }
+.wordmark small { font-family: Inter, system-ui, sans-serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--brass-deep); margin-top: .25rem; }
 @media (max-width: 640px) { .affil-row img { height: 32px; } .wordmark { font-size: 1.1rem; } .affil-row { gap: 1.2rem 1.6rem; } }
 
 /* featured work cards on the writing page */
