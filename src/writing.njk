@@ -10,7 +10,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
   <div class="wrap">
   <div class="head-text">
     <p class="eyebrow">Writing &amp; scholarship</p>
-    <h1>Composer, editor, and writer.</h1>
+    <h1>Composer, editor, <em>and writer.</em></h1>
     <p class="lede">{{ writing.intro }}</p>
   </div>
   <figure class="head-photo"><img src="/assets/img/press/portrait-grey-web.jpg" alt="" width="960" height="960" style="object-position:50% 30%" loading="eager"></figure>
@@ -45,7 +45,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 <section class="section tint">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Published by</span><span class="rule"></span></div>
-    <div class="cards">
+    <div class="cards four">
     {%- for p in writing.publishers %}
       {% if p.link %}<a class="card reveal" href="{{ p.link }}" rel="noopener"><h3>{{ p.name }}</h3><p>{{ p.note }}</p></a>{% else %}<div class="card reveal"><h3>{{ p.name }}</h3><p>{{ p.note }}</p></div>{% endif %}
     {%- endfor %}
@@ -63,7 +63,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 <section class="section dark">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Lectures</span><span class="rule"></span></div>
-    <h2 class="reveal">Talks and papers.</h2>
+    <h2 class="reveal">Talks <em>and papers.</em></h2>
     <p class="lede reveal" style="margin-top:1rem">For parishes, universities, and societies. Several talks are recorded.</p>
     <div class="cta-row reveal">
       <a class="btn btn-ghost" href="/listen/#lectures">Watch a lecture</a>
