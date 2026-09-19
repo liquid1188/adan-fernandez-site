@@ -22,6 +22,11 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
       <div class="entry reveal"><span class="yr">Short</span><div>{{ site.shortName }}</div></div>
       <div class="entry reveal"><span class="yr">Billing</span><div>Dr. Adán Alejándro Fernández, organist</div></div>
       <div class="entry reveal"><span class="yr">Roles</span><div>{{ site.roles }}</div></div>
+      <div class="entry reveal"><span class="yr">Say it</span><div>{{ presskit.pronunciation }}</div></div>
+    </div>
+    <div class="cta-row reveal" style="margin-top:2rem">
+      <a class="btn btn-brass" href="{{ presskit.onesheet }}" download>Download the one-sheet (PDF)</a>
+      <a class="btn btn-outline" href="{{ site.cv }}" download>Curriculum vitae (PDF)</a>
     </div>
   </div>
 </section>
@@ -37,6 +42,75 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
     <div class="rule-head reveal"><span class="lbl">Biography, full</span><span class="rule"></span></div>
     <div class="prose reveal">
       {%- for p in bio.long %}<p>{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">At a glance</span><span class="rule"></span></div>
+    <div class="stack" style="max-width:80ch">
+    {%- for g in presskit.glance %}
+      <div class="entry reveal"><span class="yr">{{ g.k }}</span><div>{{ g.v }}</div></div>
+    {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Programs</span><span class="rule"></span></div>
+    <p class="lede reveal" style="margin-bottom:2rem">Six programs he has given and can bring. Every program is tailored to the instrument and the occasion; these are starting points.</p>
+    <div class="cards">
+    {%- for p in presskit.programs %}
+      <div class="card reveal"><h3>{{ p.title }}</h3><p>{{ p.desc }}</p></div>
+    {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Masterclass &amp; lecture topics</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for x in presskit.topics %}
+        <div class="entry"><span class="yr">&mdash;</span><div>{{ x }}</div></div>
+      {%- endfor %}
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Has performed at and with</span><span class="rule"></span></div>
+      <p>{{ presskit.venues }}</p>
+      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Media</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for m in presskit.media %}
+        <div class="entry"><span class="yr">&mdash;</span><div>{{ m }}</div></div>
+      {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Honors &amp; fellowships</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for h in presskit.honors %}
+        <div class="entry"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
+      {%- endfor %}
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Service</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for s in presskit.service %}
+        <div class="entry"><span class="yr">&mdash;</span><div>{{ s }}</div></div>
+      {%- endfor %}
+      </div>
+      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Technical &amp; hospitality</span><span class="rule"></span></div>
+      <p>{{ presskit.technical }}</p>
     </div>
   </div>
 </section>
@@ -62,7 +136,10 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
     <div class="cards">
       <a class="card reveal" href="{{ site.cv }}" download><h3>Curriculum vitae</h3><p>Full education, positions, performance history, publications and compositions.</p><span class="go">Download PDF &rarr;</span></a>
       <a class="card reveal" href="{{ site.youtube }}" rel="noopener"><h3>Recordings</h3><p>Organ, harpsichord, conducting and lectures, on his YouTube channel.</p><span class="go">Open the channel &rarr;</span></a>
-      <a class="card reveal" href="{{ site.management.url }}" rel="noopener"><h3>Artist management</h3><p>{{ site.management.name }}.</p><span class="go">Management page &rarr;</span></a>
+      <a class="card reveal" href="{{ site.management.url }}" rel="noopener"><h3>Artist management</h3><p>{{ site.management.name }}. Bookings through {{ site.management.contact }}, {{ site.management.email }}.</p><span class="go">Management page &rarr;</span></a>
+      <a class="card reveal" href="{{ presskit.onesheet }}" download><h3>One-sheet</h3><p>Name, billing, short biography, positions, honors, and contacts on a single page for programs and press.</p><span class="go">Download PDF &rarr;</span></a>
+      <a class="card reveal" href="/assets/img/mark.svg" download><h3>Mark</h3><p>His organ-pipes mark for posters and programs, as SVG. Brass on dark or ink on light; do not recolour it.</p><span class="go">Download SVG &rarr;</span></a>
+      <a class="card reveal" href="/assets/img/press/portrait-purple.jpg" download><h3>Headshot</h3><p>The portrait most programs use, 2400 by 2805, with the credit to Seven Eight Artists.</p><span class="go">Download JPG &rarr;</span></a>
     </div>
   </div>
 </section>

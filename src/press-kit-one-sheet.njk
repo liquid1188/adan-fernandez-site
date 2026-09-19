@@ -1,0 +1,85 @@
+---
+permalink: /press-kit/one-sheet/
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ site.name }} · One-sheet</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #fff; }
+  body { width: 8.5in; height: 11in; overflow: hidden; font-family: Inter, system-ui, sans-serif; color: #16202b; font-size: 9.2pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { width: 8.5in; height: 11in; display: grid; grid-template-columns: 2.55in 1fr; }
+  .side { background: #101a26; color: #f6f2e9; padding: .55in .38in .5in; display: flex; flex-direction: column; background-image: url("/assets/img/tile.svg"); background-size: 72px 72px; background-blend-mode: normal; }
+  .side img.photo { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border: 1px solid rgba(221,177,115,.4); }
+  .mark { width: 34px; height: 34px; color: #c08a3e; margin-bottom: .32in; }
+  .lbl { font-size: 6.6pt; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; color: #ddb173; margin: .26in 0 .08in; }
+  .side p { margin: 0 0 .06in; font-size: 8.6pt; color: #e2dccf; }
+  .side a { color: #f6f2e9; text-decoration: none; }
+  .side .foot { margin-top: auto; font-size: 7.2pt; color: #a9b6c2; }
+  .main { padding: .5in .48in .4in .46in; background-color: #f6f2e9; }
+  .eyebrow { font-size: 7pt; letter-spacing: .26em; text-transform: uppercase; font-weight: 600; color: #97682a; margin: 0 0 .1in; }
+  h1 { font-family: "EB Garamond", Georgia, serif; font-weight: 500; font-size: 27pt; line-height: 1.02; margin: 0 0 .06in; color: #16202b; }
+  .roles { font-family: "EB Garamond", Georgia, serif; font-style: italic; font-size: 12pt; color: #97682a; margin: 0 0 .22in; }
+  h2 { font-family: "EB Garamond", Georgia, serif; font-weight: 500; font-size: 12.5pt; margin: .16in 0 .05in; padding-bottom: .04in; border-bottom: 1px solid #ddd4c1; }
+  p { margin: 0 0 .08in; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 .3in; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  li { padding: .035in 0; border-bottom: 1px solid #ece5d7; font-size: 8.8pt; }
+  li b { color: #97682a; font-weight: 600; margin-right: .08in; font-variant-numeric: tabular-nums; }
+  .quote { font-family: "EB Garamond", Georgia, serif; font-size: 11pt; line-height: 1.35; color: #16202b; border-left: 2px solid #c08a3e; padding-left: .16in; margin: .06in 0 .1in; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <aside class="side">
+    {% set cls = "mark" %}{% include "mark.njk" %}
+    <img class="photo" src="/assets/img/press/portrait-purple-web.jpg" alt="">
+    <p class="lbl">Positions</p>
+    <p>Director of Music and Liturgy and Organist, Holy Family Catholic Church, Glendale</p>
+    <p>University Organist, California Lutheran University</p>
+    <p>Music Theory Faculty, The Colburn School</p>
+    <p class="lbl">Booking</p>
+    <p>{{ site.management.name }}<br>{{ site.management.contact }}<br><a href="mailto:{{ site.management.email }}">{{ site.management.email }}</a></p>
+    <p class="lbl">Direct</p>
+    <p><a href="mailto:{{ site.email }}">{{ site.email }}</a><br>{{ site.phone }}</p>
+    <p class="lbl">Online</p>
+    <p>{{ site.url | replace("https://", "") }}<br>youtube.com/@AdanFernandezMusic</p>
+    <p class="foot">Photograph courtesy of Seven Eight Artists. Say it: {{ presskit.pronunciation }}.</p>
+  </aside>
+  <main class="main">
+    <p class="eyebrow">Organist · Harpsichordist · Conductor</p>
+    <h1>{{ site.name }}</h1>
+    <p class="roles">{{ bio.oneLine }}</p>
+    <p class="quote">{{ bio.short }}</p>
+    <div class="two">
+      <div>
+        <h2>Honors</h2>
+        <ul>
+        {%- for h in presskit.honors | limit(6) %}<li><b>{{ h.year }}</b>{{ h.text }}</li>{% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>Programs</h2>
+        <ul>
+        {%- for p in presskit.programs %}<li>{{ p.title }}</li>{% endfor %}
+        </ul>
+        <h2>Education</h2>
+        <ul>
+        {%- for d in education.degrees %}{% if d.award != "Certificate, Worship Leadership" %}<li><b>{{ d.year }}</b>{{ d.award }}, {{ d.school }}</li>{% endif %}{% endfor %}
+        </ul>
+      </div>
+    </div>
+    <h2>Writing and music</h2>
+    <p>{{ writing.intro }} Articles in <em>Religions</em>, <em>CrossAccent</em>, <em>ChorTeach</em>, and <em>Reformed Worship</em>; an edition of three Bach chorales for GIA; the choral works <em>Concert of Silences</em> and <em>Te Cubrirá</em>.</p>
+    <h2>Has performed at and with</h2>
+    <p>{{ presskit.venues }}</p>
+  </main>
+</div>
+</body>
+</html>
