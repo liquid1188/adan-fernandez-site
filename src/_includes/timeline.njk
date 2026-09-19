@@ -1,0 +1,12 @@
+<div class="timeline">
+{%- for g in items | groupBy(key or "year") %}
+  <div class="tl-year reveal">
+    <span class="tl-y">{{ g.name }}</span>
+    <ul>
+    {%- for it in g.items %}
+      <li>{% if it.link %}<a href="{{ it.link }}" rel="noopener">{{ it.title or it.text }}</a>{% else %}{{ it.title or it.text }}{% endif %}{% if it.where or it.kind %}<span class="tl-sub">{% if it.kind %}{{ it.kind }}{% endif %}{% if it.kind and it.where %} &middot; {% endif %}{% if it.where %}<em>{{ it.where }}</em>{% endif %}</span>{% endif %}</li>
+    {%- endfor %}
+    </ul>
+  </div>
+{%- endfor %}
+</div>

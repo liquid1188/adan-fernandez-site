@@ -34,17 +34,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 <section class="section tint">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Selected publications</span><span class="rule"></span></div>
-    <div class="stack">
-    {%- for p in writing.publications %}
-      <div class="entry reveal">
-        <span class="yr">{{ p.year }}</span>
-        <div>
-          <strong>{% if p.link %}<a href="{{ p.link }}" rel="noopener" style="border-bottom:1px solid var(--brass-deep)">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</strong>
-          <span class="sub">{{ p.kind }} &middot; <em>{{ p.where }}</em></span>
-        </div>
-      </div>
-    {%- endfor %}
-    </div>
+    {% set items = writing.publications %}{% set key = "year" %}{% include "timeline.njk" %}
     <p class="fine reveal" style="margin-top:1.6rem">The complete list of publications, compositions and lectures is in his <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass-deep)">curriculum vitae</a>.</p>
   </div>
 </section>
@@ -63,11 +53,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 <section class="section">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Selected lectures</span><span class="rule"></span></div>
-    <div class="stack">
-    {%- for l in writing.lectures %}
-      <div class="entry reveal"><span class="yr">{{ l.year }}</span><div><strong>{{ l.title }}</strong><span class="sub">{{ l.where }}</span></div></div>
-    {%- endfor %}
-    </div>
+    {% set items = writing.lectures %}{% set key = "year" %}{% include "timeline.njk" %}
   </div>
 </section>
 

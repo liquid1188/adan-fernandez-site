@@ -35,14 +35,16 @@ description: "Dr. Adán Alejándro Fernández, organist, harpsichordist, and con
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Positions</span><span class="rule"></span></div>
     <h2 class="reveal" style="margin-bottom:2rem">Where he serves.</h2>
-    <ul class="roles">
+    <div class="posts">
     {%- for r in positions.items %}
-      <li class="reveal">
-        <span class="r-title">{{ r.title }}</span>
-        <span class="r-place">{{ r.place }}, {{ r.city }}{% if r.note %}<em>{{ r.note }}</em>{% endif %}</span>
-      </li>
+      <div class="post reveal">
+        <p class="post-title">{{ r.title }}</p>
+        <h3>{{ r.place }}</h3>
+        <p class="post-city">{{ r.city }}</p>
+        {%- if r.note %}<p class="post-note">{{ r.note }}</p>{% endif %}
+      </div>
     {%- endfor %}
-    </ul>
+    </div>
   </div>
 </section>
 
@@ -50,22 +52,18 @@ description: "Dr. Adán Alejándro Fernández, organist, harpsichordist, and con
   <div class="wrap two-col">
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Education</span><span class="rule"></span></div>
-      <div class="stack">
+      <div class="degrees">
       {%- for e in education.degrees %}
-        <div class="entry">
-          <span class="yr">{{ e.year }}</span>
-          <div><strong>{{ e.award }}</strong><span class="sub">{{ e.school }}{% if e.note %} — {{ e.note }}{% endif %}</span></div>
+        <div class="degree">
+          <span class="deg-year">{{ e.year }}</span>
+          <div><h3>{{ e.school }}</h3><p class="deg-award">{{ e.award }}</p>{% if e.note %}<p class="deg-note">{{ e.note }}</p>{% endif %}</div>
         </div>
       {%- endfor %}
       </div>
     </div>
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Fellowships &amp; awards</span><span class="rule"></span></div>
-      <div class="stack">
-      {%- for h in education.honors %}
-        <div class="entry"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
-      {%- endfor %}
-      </div>
+      {% set items = education.honors %}{% set key = "year" %}{% include "timeline.njk" %}
       <p class="fine" style="margin-top:1.4rem">{{ education.credential }}</p>
     </div>
   </div>

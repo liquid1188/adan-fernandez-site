@@ -39,11 +39,9 @@ description: "Organ, piano and music theory at California Lutheran University an
       </figure>
     </div>
     <div class="reveal">
-      <div class="stack">
-      {%- for o in teaching.offers %}
-        <div class="entry"><span class="yr">&mdash;</span><div>{{ o }}</div></div>
-      {%- endfor %}
-      </div>
+      <ul class="pills">
+      {%- for o in teaching.offers %}<li>{{ o }}</li>{% endfor %}
+      </ul>
       <div class="cta-row">
         <a class="btn btn-brass" href="/contact/">Ask about teaching</a>
       </div>

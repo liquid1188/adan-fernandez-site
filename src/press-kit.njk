@@ -73,21 +73,17 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
   <div class="wrap two-col">
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Masterclass &amp; lecture topics</span><span class="rule"></span></div>
-      <div class="stack">
-      {%- for x in presskit.topics %}
-        <div class="entry"><span class="yr">&mdash;</span><div>{{ x }}</div></div>
-      {%- endfor %}
-      </div>
+      <ul class="pills">
+      {%- for x in presskit.topics %}<li>{{ x }}</li>{% endfor %}
+      </ul>
     </div>
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Has performed at and with</span><span class="rule"></span></div>
       <p>{{ presskit.venues }}</p>
       <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Media</span><span class="rule"></span></div>
-      <div class="stack">
-      {%- for m in presskit.media %}
-        <div class="entry"><span class="yr">&mdash;</span><div>{{ m }}</div></div>
-      {%- endfor %}
-      </div>
+      <ul class="plain">
+      {%- for m in presskit.media %}<li>{{ m }}</li>{% endfor %}
+      </ul>
     </div>
   </div>
 </section>
@@ -96,19 +92,13 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
   <div class="wrap two-col">
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Honors &amp; fellowships</span><span class="rule"></span></div>
-      <div class="stack">
-      {%- for h in presskit.honors %}
-        <div class="entry"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
-      {%- endfor %}
-      </div>
+      {% set items = presskit.honors %}{% set key = "year" %}{% include "timeline.njk" %}
     </div>
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Service</span><span class="rule"></span></div>
-      <div class="stack">
-      {%- for s in presskit.service %}
-        <div class="entry"><span class="yr">&mdash;</span><div>{{ s }}</div></div>
-      {%- endfor %}
-      </div>
+      <ul class="plain">
+      {%- for s in presskit.service %}<li>{{ s }}</li>{% endfor %}
+      </ul>
       <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Technical &amp; hospitality</span><span class="rule"></span></div>
       <p>{{ presskit.technical }}</p>
     </div>

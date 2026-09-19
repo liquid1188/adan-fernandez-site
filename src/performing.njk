@@ -37,11 +37,7 @@ description: "Organ and harpsichord recitals, concerto appearances and conductin
 <section class="section tint">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Recent highlights</span><span class="rule"></span></div>
-    <div class="stack">
-    {%- for h in performances.highlights %}
-      <div class="entry reveal"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
-    {%- endfor %}
-    </div>
+    {% set items = performances.highlights %}{% set key = "year" %}{% include "timeline.njk" %}
     <p class="fine reveal" style="margin-top:1.6rem">The complete performance history is in his <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass-deep)">curriculum vitae</a>.</p>
   </div>
 </section>

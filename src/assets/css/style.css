@@ -375,3 +375,44 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 .linklist a:hover .lk-t { color: var(--brass-soft); }
 .linklist a:hover .lk-k { border-color: var(--brass); }
 @media (max-width: 560px) { .linklist a { grid-template-columns: 24px 1fr; grid-template-areas: "i t" "i d" "i k"; } .linklist .lk-k { justify-self: start; margin: .5rem 0 0; } }
+
+/* ---------- list treatments ---------- */
+/* timeline: the year once, large, in brass; entries under it */
+.timeline { border-top: 1px solid var(--rule-light); }
+.dark .timeline { border-top-color: var(--rule-dark); }
+.tl-year { display: grid; grid-template-columns: 96px 1fr; gap: 1.2rem 1.6rem; padding: 1.2rem 0; border-bottom: 1px solid var(--rule-light); }
+.dark .tl-year { border-bottom-color: var(--rule-dark); }
+.tl-y { font-family: "EB Garamond", Georgia, serif; font-size: 2rem; line-height: 1; color: var(--brass-deep); font-variant-numeric: tabular-nums; }
+.dark .tl-y { color: var(--brass-soft); }
+.tl-year ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.tl-year li { line-height: 1.5; }
+.tl-year li a { color: inherit; border-bottom: 1px solid var(--brass-deep); }
+.dark .tl-year li a { border-bottom-color: var(--brass-soft); }
+.tl-sub { display: block; font-size: .88rem; color: var(--ink-2); margin-top: .1rem; }
+.dark .tl-sub { color: var(--dim); }
+.tl-sub em { font-style: italic; }
+@media (max-width: 560px) { .tl-year { grid-template-columns: 1fr; gap: .4rem; } .tl-y { font-size: 1.4rem; } }
+/* pills: short offerings that don't need a rule each */
+.pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.pills li { border: 1px solid var(--rule-light); padding: .55rem .95rem; font-size: .92rem; border-radius: 999px; }
+.dark .pills li { border-color: var(--rule-dark); color: var(--bone); }
+/* plain: a short list with brass markers */
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.plain li { position: relative; padding-left: 1.3rem; }
+.plain li::before { content: ""; position: absolute; left: 0; top: .62em; width: .55rem; height: 1px; background: var(--brass); }
+/* positions on About: institution first, in a grid */
+.posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem 2.4rem; }
+.post { border-top: 1px solid var(--rule-dark); padding-top: 1.1rem; }
+.post-title { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--brass-soft); margin: 0 0 .5rem; }
+.post h3 { font-size: 1.45rem; margin: 0 0 .25rem; line-height: 1.15; }
+.post-city { color: var(--dim); margin: 0; font-size: .92rem; }
+.post-note { color: #8496a5; font-size: .9rem; margin: .6rem 0 0; }
+@media (max-width: 860px) { .posts { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .posts { grid-template-columns: 1fr; } }
+/* degrees on About: the school leads */
+.degrees { display: grid; gap: 1.2rem; border-top: 1px solid var(--rule-light); }
+.degree { display: grid; grid-template-columns: 64px 1fr; gap: 1.2rem; padding: 1.1rem 0 1.2rem; border-bottom: 1px solid var(--rule-light); }
+.deg-year { font-family: "EB Garamond", Georgia, serif; font-size: 1.5rem; color: var(--brass-deep); line-height: 1.1; }
+.degree h3 { font-size: 1.25rem; margin: 0 0 .2rem; }
+.deg-award { margin: 0; }
+.deg-note { margin: .3rem 0 0; font-size: .88rem; color: var(--ink-2); }
