@@ -1,0 +1,61 @@
+{
+  "items": [
+    {
+      "name": "Holy Family Catholic Church, Glendale",
+      "url": "https://hfglendale.org",
+      "text": "Holy Family",
+      "sub": "Catholic Church, Glendale"
+    },
+    {
+      "name": "California Lutheran University",
+      "url": "https://www.callutheran.edu",
+      "img": "/assets/img/affil/cal-lutheran.png",
+      "w": 196,
+      "h": 120
+    },
+    {
+      "name": "The Colburn School",
+      "url": "https://www.colburnschool.edu",
+      "text": "The Colburn School"
+    },
+    {
+      "name": "Glendale Youth Symphony",
+      "url": "https://www.glendaleyouthsymphony.org",
+      "text": "Glendale Youth Symphony"
+    },
+    {
+      "name": "American Guild of Organists",
+      "url": "https://www.agohq.org",
+      "img": "/assets/img/affil/ago.png",
+      "w": 221,
+      "h": 120
+    },
+    {
+      "name": "GIA Publications",
+      "url": "https://www.giamusic.com",
+      "img": "/assets/img/affil/gia.png",
+      "w": 127,
+      "h": 120
+    },
+    {
+      "name": "The Hymn Society",
+      "url": "https://thehymnsociety.org",
+      "img": "/assets/img/affil/hymn-society.png",
+      "w": 459,
+      "h": 120
+    },
+    {
+      "name": "MusicSpoke",
+      "url": "https://www.musicspoke.com",
+      "img": "/assets/img/affil/musicspoke.png",
+      "w": 545,
+      "h": 120
+    },
+    {
+      "name": "Seven Eight Artists",
+      "url": "https://www.seveneightartists.com/fernandez",
+      "text": "Seven Eight Artists",
+      "sub": "Management"
+    }
+  ]
+}

@@ -136,6 +136,7 @@ collections:
               - { name: title, label: Title, widget: string }
               - { name: where, label: "Journal or publisher", widget: string }
               - { name: kind, label: "Kind", hint: "Journal article, Edition, Paper, Article", widget: string }
+              - { name: link, label: "Link (optional)", widget: string, required: false }
           - name: publishers
             label: Publishers
             label_singular: Publisher
@@ -153,6 +154,17 @@ collections:
               - { name: title, label: Title, widget: string }
               - { name: note, label: Note, widget: string, required: false }
               - { name: video, label: "YouTube ID (optional)", widget: string, required: false }
+          - name: featured
+            label: Featured work
+            label_singular: Work
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: kicker, label: "Where and when", widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: blurb, label: "One or two sentences", widget: text }
+              - { name: link, label: Link, widget: string }
+              - { name: cta, label: "Link text", widget: string }
           - name: lectures
             label: Selected lectures
             label_singular: Lecture

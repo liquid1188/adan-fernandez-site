@@ -87,6 +87,18 @@ active: home
 </section>
 {%- endif %}
 
+
+<section class="affil">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center">Affiliations</p>
+    <ul class="affil-row">
+    {%- for a in affiliations.items %}
+      <li><a href="{{ a.url }}" rel="noopener" title="{{ a.name }}">{% if a.img %}<img src="{{ a.img }}" alt="{{ a.name }}" width="{{ a.w }}" height="{{ a.h }}" loading="lazy">{% else %}<span class="wordmark">{{ a.text }}{% if a.sub %}<small>{{ a.sub }}</small>{% endif %}</span>{% endif %}</a></li>
+    {%- endfor %}
+    </ul>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Work with Adán</span><span class="rule"></span></div>

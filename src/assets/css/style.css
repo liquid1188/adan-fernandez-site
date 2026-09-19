@@ -324,3 +324,26 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 .vmodal-close { position: absolute; right: -8px; top: -46px; background: none; border: 0; color: var(--bone); font-size: 2rem; line-height: 1; cursor: pointer; padding: 6px 10px; }
 .vmodal-close:hover { color: var(--brass-soft); }
 @media (max-width: 640px) { .vmodal-close { top: -40px; right: 0; } }
+
+/* affiliations band */
+.affil { background: var(--night-2); border-top: 1px solid var(--rule-dark); border-bottom: 1px solid var(--rule-dark); padding: clamp(36px, 5vw, 56px) 0; }
+.affil .eyebrow { color: var(--brass-soft); margin-bottom: 1.6rem; }
+.affil-row { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.6rem clamp(2rem, 4vw, 3.4rem); }
+.affil-row li { display: flex; align-items: center; }
+.affil-row a { display: flex; align-items: center; opacity: .62; transition: opacity .2s; text-decoration: none; }
+.affil-row a:hover { opacity: 1; }
+.affil-row img { height: 40px; width: auto; display: block; }
+.wordmark { font-family: "EB Garamond", Georgia, serif; font-size: 1.28rem; color: var(--bone); line-height: 1.05; display: flex; flex-direction: column; text-align: center; }
+.wordmark small { font-family: Inter, system-ui, sans-serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--brass-soft); margin-top: .25rem; }
+@media (max-width: 640px) { .affil-row img { height: 32px; } .wordmark { font-size: 1.1rem; } .affil-row { gap: 1.2rem 1.6rem; } }
+
+/* featured work cards on the writing page */
+.feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+@media (max-width: 720px) { .feat-grid { grid-template-columns: 1fr; } }
+.feat { border: 1px solid var(--rule-light); border-top: 3px solid var(--brass); background: var(--bone); padding: clamp(1.5rem, 3vw, 2.2rem); display: flex; flex-direction: column; }
+.feat-kicker { font-family: "EB Garamond", Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--brass-deep); margin: 0 0 .7rem; }
+.feat h3 { font-size: 1.5rem; line-height: 1.2; margin: 0 0 .8rem; }
+.feat h3 a { color: var(--ink); }
+.feat h3 a:hover { color: var(--brass-deep); }
+.feat p { color: var(--ink-2); font-size: .97rem; margin: 0; }
+.feat .go { font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--brass-deep); margin-top: auto; padding-top: 1.2rem; }
