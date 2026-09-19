@@ -58,14 +58,37 @@
     }
   ],
   "highlights": [
-    { "year": "2026", "text": "“Miserere: Musical Meditations on the Passion” — organist and director, Holy Family, Glendale" },
-    { "year": "2026", "text": "“Sounds About Town” — organist, Colburn Orchestra, Walt Disney Concert Hall" },
-    { "year": "2025", "text": "“Bachathon: the Complete Organ Works of Bach” — organ soloist, Christ Cathedral, Garden Grove" },
-    { "year": "2025", "text": "“Requiem de los Campesinos” for St. Oscar Romero — director, Cathedral of Our Lady of the Angels" },
-    { "year": "2025", "text": "“Sounds of Summer” — organist and choral preparation, Walt Disney Concert Hall" },
-    { "year": "2025", "text": "“Padilla Villancicos” — harpsichordist and director; first performance in 300 years" },
-    { "year": "2024", "text": "World premiere of “Concert of Silences” — Choral Arts Initiative, Concordia University Irvine" },
-    { "year": "2023", "text": "“Concertino for Organ” by Eric Ewazen — organ soloist, Westlake Village Orchestra" },
-    { "year": "2022", "text": "Beethoven's Ninth — guest tenor, Los Angeles Chamber Orchestra" }
+    {
+      "year": "2026",
+      "text": "“Miserere: Musical Meditations on the Passion” — organist and director, Holy Family, Glendale"
+    },
+    {
+      "year": "2026",
+      "text": "“Sounds About Town” — organist, Colburn Orchestra, Walt Disney Concert Hall"
+    },
+    {
+      "year": "2025",
+      "text": "“Bachathon: the Complete Organ Works of Bach” — organ soloist, Christ Cathedral, Garden Grove"
+    },
+    {
+      "year": "2025",
+      "text": "“Requiem de los Campesinos” for St. Oscar Romero — director, Cathedral of Our Lady of the Angels"
+    },
+    {
+      "year": "2025",
+      "text": "“Sounds of Summer” — organist and choral preparation, Walt Disney Concert Hall"
+    },
+    {
+      "year": "2025",
+      "text": "“Padilla Villancicos” — harpsichordist and director; first performance in 300 years"
+    },
+    {
+      "year": "2024",
+      "text": "World premiere of “Concert of Silences” — Choral Arts Initiative, Concordia University Irvine"
+    },
+    {
+      "year": "2023",
+      "text": "“Concertino for Organ” by Eric Ewazen — organ soloist, Westlake Village Orchestra"
+    }
   ]
 }

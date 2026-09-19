@@ -11,12 +11,12 @@ active: home
   <img class="hero-img" src="/assets/img/hero-organ.jpg" alt="Adán Fernández at the organ console" width="1920" height="1280" fetchpriority="high">
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="wrap hero-content">
-    <p class="eyebrow">{{ site.roles }}</p>
+    <p class="eyebrow hero-eyebrow">{{ site.roles }}</p>
     <h1>Adán Alejándro<br>Fernández</h1>
     <p class="hero-sub"><strong>Director of Music &amp; Liturgy and Organist</strong>, Holy Family Catholic Church, Glendale &nbsp;·&nbsp; <strong>University Organist</strong>, California Lutheran University</p>
     <div class="cta-row">
       <a class="btn btn-brass" href="/listen/">Hear him play</a>
-      <a class="btn btn-ghost" href="/contact/">Book a date</a>
+      <a class="btn btn-ghost" href="/contact/">Book a recital</a>
     </div>
   </div>
 </section>
@@ -26,7 +26,7 @@ active: home
     <span><b>Organ</b> recitals &amp; residencies</span>
     <span><b>Harpsichord</b> &amp; early music</span>
     <span><b>Conducting</b> choral &amp; orchestral</span>
-    <span><b>Lectures</b> on Latin American sacred music</span>
+    <span><b>Lectures</b> &amp; masterclasses</span>
   </div>
 </div>
 
@@ -35,8 +35,7 @@ active: home
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Biography</span><span class="rule"></span></div>
       <div class="prose">
-        <p class="first">{{ bio.long[0] }}</p>
-        <p>{{ bio.long[1] }}</p>
+        <p class="first">{{ bio.short }}</p>
       </div>
       <div class="cta-row">
         <a class="btn btn-outline" href="/about/">Read the full biography</a>
@@ -50,14 +49,14 @@ active: home
 
 <section class="section dark">
   <div class="wrap">
-    <div class="rule-head reveal"><span class="lbl">Watch &amp; listen</span><span class="rule"></span></div>
+    <div class="rule-head reveal"><span class="lbl">Listen</span><span class="rule"></span></div>
     <h2 class="reveal">At the console, and in front of the choir.</h2>
-    <p class="lede reveal" style="margin-top:1rem;margin-bottom:2.6rem">Ives on the organ, Locklair's <em>Rubrics</em>, and the Padilla villancicos — sung for the first time in three hundred years.</p>
+    <p class="lede reveal" style="margin-top:1rem;margin-bottom:2.6rem">Ives and Locklair at the organ, and the Padilla villancicos from the podium.</p>
     <div class="video-grid">
     {%- for v in feat %}
       <figure class="vid reveal">
         <div class="frame" data-yt="{{ v.id }}" role="button" tabindex="0" aria-label="Play {{ v.piece }} by {{ v.composer }}">
-          <img src="https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <img src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'" alt="" loading="lazy" width="1280" height="720">
           <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
         </div>
         <figcaption><span class="piece">{{ v.piece }}</span><span class="composer">{{ v.composer }}</span>{% if v.note %}<span class="note">{{ v.note }}</span>{% endif %}</figcaption>
@@ -83,7 +82,7 @@ active: home
       </li>
     {%- endfor %}
     </ol>
-    <div class="cta-row"><a class="btn btn-outline" href="/upcoming/">Full calendar</a></div>
+    <div class="cta-row"><a class="btn btn-outline" href="/calendar/">Full calendar</a></div>
   </div>
 </section>
 {%- endif %}
@@ -94,17 +93,17 @@ active: home
     <div class="cards">
       <a class="card reveal" href="/performing/">
         <h3>Performing</h3>
-        <p>Organ and harpsichord recitals, concerto appearances, and conducting engagements, from parish lofts to Walt Disney Concert Hall.</p>
+        <p>Organ and harpsichord recitals, concerto appearances, and conducting engagements, from parish churches to Walt Disney Concert Hall.</p>
         <span class="go">See the repertoire &rarr;</span>
       </a>
       <a class="card reveal" href="/teaching/">
         <h3>Teaching</h3>
-        <p>An organ studio at Cal Lutheran, theory at the Colburn School, and masterclasses and residencies for church musicians.</p>
+        <p>An organ and piano studio at Cal Lutheran, theory at the Colburn School, and masterclasses and residencies for church musicians.</p>
         <span class="go">What he teaches &rarr;</span>
       </a>
       <a class="card reveal" href="/writing/">
         <h3>Writing &amp; scholarship</h3>
-        <p>Published on liturgy, hymnody, and the sacred music of Latin America, with choral editions from GIA and MusicSpoke.</p>
+        <p>Articles, lectures, and choral music, published by GIA, MusicSpoke, and the Hymn Society.</p>
         <span class="go">Read the work &rarr;</span>
       </a>
     </div>

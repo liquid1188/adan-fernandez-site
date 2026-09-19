@@ -3,12 +3,12 @@ layout: base.njk
 permalink: /listen/
 active: listen
 bodyClass: on-paper
-title: Listen & watch
+title: Listen
 description: "Recordings of Adán Fernández at the organ and harpsichord, conducting choral and orchestral works, and his own compositions."
 ---
 <section class="page-head">
   <div class="wrap">
-    <p class="eyebrow">Watch &amp; listen</p>
+    <p class="eyebrow">Listen</p>
     <h1>Recordings.</h1>
     <p class="lede">Organ and harpsichord, choral and orchestral conducting, his own music, and a few lectures. Everything here is on his <a href="{{ site.youtube }}" rel="noopener" style="border-bottom:1px solid var(--brass)">YouTube channel</a>, which holds a good deal more.</p>
   </div>
@@ -22,7 +22,7 @@ description: "Recordings of Adán Fernández at the organ and harpsichord, condu
     {%- for v in g.items %}
       <figure class="vid reveal">
         <div class="frame" data-yt="{{ v.id }}" role="button" tabindex="0" aria-label="Play {{ v.piece }} by {{ v.composer }}">
-          <img src="https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <img src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'" alt="" loading="lazy" width="1280" height="720">
           <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
         </div>
         <figcaption>

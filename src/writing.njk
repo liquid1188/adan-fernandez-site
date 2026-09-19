@@ -33,11 +33,32 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 </section>
 
 <section class="section tint">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Choral music</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for c in writing.choral %}
+        <div class="entry"><span class="yr">&mdash;</span><div><strong>{{ c.title }}</strong><span class="sub">{{ c.note }}{% if c.video %} &middot; <a href="https://www.youtube.com/watch?v={{ c.video }}" rel="noopener" style="border-bottom:1px solid var(--brass-deep)">Listen</a>{% endif %}</span></div></div>
+      {%- endfor %}
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Published by</span><span class="rule"></span></div>
+      <div class="stack">
+      {%- for p in writing.publishers %}
+        <div class="entry"><span class="yr">&mdash;</span><div><strong>{{ p.name }}</strong><span class="sub">{{ p.note }}</span></div></div>
+      {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
-    <div class="rule-head reveal"><span class="lbl">Published by</span><span class="rule"></span></div>
-    <div class="cards">
-    {%- for pub in writing.publishers %}
-      <div class="card reveal"><h3>{{ pub.name }}</h3><p>{{ pub.note }}</p></div>
+    <div class="rule-head reveal"><span class="lbl">Selected lectures</span><span class="rule"></span></div>
+    <div class="stack">
+    {%- for l in writing.lectures %}
+      <div class="entry reveal"><span class="yr">{{ l.year }}</span><div><strong>{{ l.title }}</strong><span class="sub">{{ l.where }}</span></div></div>
     {%- endfor %}
     </div>
   </div>
@@ -47,7 +68,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Lectures</span><span class="rule"></span></div>
     <h2 class="reveal">Talks and papers.</h2>
-    <p class="lede reveal" style="margin-top:1rem">He lectures regularly on Latin American and indigenous sacred music, on the vernacular liturgy, and on hymnody — for parishes, universities, and societies. Several talks are recorded.</p>
+    <p class="lede reveal" style="margin-top:1rem">He lectures on Latin American and indigenous sacred music, the vernacular liturgy, and hymnody, for parishes, universities, and societies. Several talks are recorded.</p>
     <div class="cta-row reveal">
       <a class="btn btn-ghost" href="/listen/#lectures">Watch a lecture</a>
       <a class="btn btn-brass" href="/contact/">Invite him to speak</a>

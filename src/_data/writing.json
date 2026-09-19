@@ -1,17 +1,114 @@
 {
-  "intro": "Adán writes and lectures on liturgy, hymnody, and the sacred music of Latin America. He is a columnist for GIA Publications and an editor for the Hymn Society, and his choral music is published by MusicSpoke and GIA, with a focus on Latin American and indigenous composers.",
+  "intro": "Adán writes and lectures on liturgy, hymnody, and the sacred music of Latin America. He is a columnist for GIA Publications and an editor for the Hymn Society, and his choral music is published by MusicSpoke and GIA.",
   "publications": [
-    { "year": "2026", "title": "Nueva Canción: Devotional Music as Holy Witness", "where": "Hymn Society, Princeton", "kind": "Paper" },
-    { "year": "2025", "title": "The Precedent for Vernacular and Multilingual Liturgies in the Catholic Church in Latin America", "where": "Religions", "kind": "Journal article" },
-    { "year": "2023", "title": "Tres Corales de Bach", "where": "GIA Publications", "kind": "Edition" },
-    { "year": "2023", "title": "The Music of the Great Religions: The Philosophy of a New Course at Cal Lutheran University", "where": "CrossAccent", "kind": "Journal article" },
-    { "year": "2022", "title": "Liberationist Perspectives on the Misa Criolla by Ariel Ramírez", "where": "Religions", "kind": "Journal article" },
-    { "year": "2018", "title": "The Role Music Plays in Racial Identity", "where": "ChorTeach", "kind": "Article" },
-    { "year": "2017", "title": "Culture of Singing", "where": "Reformed Worship", "kind": "Article" }
+    {
+      "year": "2026",
+      "title": "Nueva Canción: Devotional Music as Holy Witness",
+      "where": "Hymn Society, Princeton",
+      "kind": "Paper"
+    },
+    {
+      "year": "2025",
+      "title": "The Precedent for Vernacular and Multilingual Liturgies in the Catholic Church in Latin America",
+      "where": "Religions",
+      "kind": "Journal article"
+    },
+    {
+      "year": "2023",
+      "title": "Tres Corales de Bach",
+      "where": "GIA Publications",
+      "kind": "Edition"
+    },
+    {
+      "year": "2023",
+      "title": "The Music of the Great Religions: The Philosophy of a New Course at Cal Lutheran University",
+      "where": "CrossAccent",
+      "kind": "Journal article"
+    },
+    {
+      "year": "2022",
+      "title": "Liberationist Perspectives on the Misa Criolla by Ariel Ramírez",
+      "where": "Religions",
+      "kind": "Journal article"
+    },
+    {
+      "year": "2018",
+      "title": "The Role Music Plays in Racial Identity",
+      "where": "ChorTeach",
+      "kind": "Article"
+    },
+    {
+      "year": "2017",
+      "title": "Culture of Singing",
+      "where": "Reformed Worship",
+      "kind": "Article"
+    }
   ],
   "publishers": [
-    { "name": "GIA Publications", "note": "Choral music and editions, plus a regular column" },
-    { "name": "MusicSpoke", "note": "Choral music" },
-    { "name": "The Hymn Society", "note": "Editorial work" }
+    {
+      "name": "GIA Publications",
+      "note": "Choral music and editions, plus a regular column"
+    },
+    {
+      "name": "MusicSpoke",
+      "note": "Choral music"
+    },
+    {
+      "name": "The Hymn Society",
+      "note": "Editorial work"
+    }
+  ],
+  "choral": [
+    {
+      "title": "Concert of Silences",
+      "note": "Premiered by the Choral Arts Initiative, Concordia University Irvine, 2024",
+      "video": "w6xluVF3x98"
+    },
+    {
+      "title": "Te Cubrirá",
+      "note": "Choral, with a recording on the channel",
+      "video": "WCuWLkhduxY"
+    },
+    {
+      "title": "Tres Corales de Bach",
+      "note": "Edition, GIA Publications, 2023"
+    }
+  ],
+  "lectures": [
+    {
+      "year": "2026",
+      "title": "St. Oscar Romero: Music of the Martyrs",
+      "where": "North American Academy of Liturgy, Emory University"
+    },
+    {
+      "year": "2025",
+      "title": "Pipe Organ for Pianists; Improvisation at the Organ in Latin American Styles; Creating a Children's Choir Ministry",
+      "where": "GIA Summer Music Institute, North Central College"
+    },
+    {
+      "year": "2024",
+      "title": "Retrieving Identity: The Music of South and Central American Masses after Vatican II",
+      "where": "The Center for Congregational Song, and Red Crearte with the Hymn Society, Barranquilla, Colombia"
+    },
+    {
+      "year": "2024",
+      "title": "Syncretism in Latin American Choral Music",
+      "where": "ACDA Western Region"
+    },
+    {
+      "year": "2023",
+      "title": "The Sacred Choral Music of Latin America after Vatican II",
+      "where": "The Hymn Society, Montreal"
+    },
+    {
+      "year": "2019",
+      "title": "Sacred Counterpoint: Emotion and Reason in the Sixteenth-Century Motet",
+      "where": "Christian Congregational Music Conference, Ripon College Cuddesdon"
+    },
+    {
+      "year": "2018",
+      "title": "Music and the Prosperity Gospel",
+      "where": "American Academy of Religion, Berkeley"
+    }
   ]
 }

@@ -26,13 +26,34 @@
     }
   ],
   "honors": [
-    { "year": "2026", "text": "Conducting Fellow, Kansas City Chorale" },
-    { "year": "2025", "text": "Fellow, Yale Sacred Music Academy" },
-    { "year": "2024", "text": "Grants from UCLA, the California Choral Directors Association, and the American Bach Society" },
-    { "year": "2023", "text": "Artistic Fellow, Bach Collegium San Diego" },
-    { "year": "2021", "text": "Holy Family choirs named National Finalist, the American Prize" },
-    { "year": "2018", "text": "Fellow, Oregon Bach Festival Organ Institute, with Paul Jacobs" },
-    { "year": "2014", "text": "Second Prize, International Liszt Organ Competition" }
+    {
+      "year": "2026",
+      "text": "Conducting Fellow, Kansas City Chorale"
+    },
+    {
+      "year": "2025",
+      "text": "Fellow, Yale Sacred Music Academy"
+    },
+    {
+      "year": "2024",
+      "text": "Grants from UCLA, the California Choral Directors Association, and the American Bach Society"
+    },
+    {
+      "year": "2023",
+      "text": "Artistic Fellow, Bach Collegium San Diego"
+    },
+    {
+      "year": "2021",
+      "text": "Holy Family choirs named National Finalist, the American Prize"
+    },
+    {
+      "year": "2018",
+      "text": "Fellow, Oregon Bach Festival Organ Institute, with Paul Jacobs"
+    },
+    {
+      "year": "2014",
+      "text": "Second Prize, International Liszt Organ Competition"
+    }
   ],
-  "credential": "Colleague and Choirmaster, American Guild of Organists."
+  "credential": "Certified Colleague (CAGO) and Choirmaster (ChM), American Guild of Organists."
 }

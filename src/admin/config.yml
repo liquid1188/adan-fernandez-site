@@ -144,6 +144,24 @@ collections:
             fields:
               - { name: name, label: Name, widget: string }
               - { name: note, label: Note, widget: string }
+          - name: choral
+            label: Choral music
+            label_singular: Work
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: note, label: Note, widget: string, required: false }
+              - { name: video, label: "YouTube ID (optional)", widget: string, required: false }
+          - name: lectures
+            label: Selected lectures
+            label_singular: Lecture
+            widget: list
+            summary: "{{fields.year}} {{fields.title}}"
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: where, label: Where, widget: string }
 
   - name: teaching
     label: Teaching

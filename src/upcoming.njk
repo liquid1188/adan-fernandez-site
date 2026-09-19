@@ -1,10 +1,10 @@
 ---
 layout: base.njk
-permalink: /upcoming/
-active: upcoming
+permalink: /calendar/
+active: calendar
 bodyClass: on-paper
 title: Calendar
-description: "Upcoming and past performances by Adán Fernández — organ and harpsichord recitals, conducting engagements, and festival appearances."
+description: "Upcoming and recent performances by Adán Fernández: organ and harpsichord recitals, conducting engagements, and festival appearances."
 ---
 {%- set next = performances.items | upcoming %}
 {%- set gone = performances.items | past %}
@@ -12,14 +12,14 @@ description: "Upcoming and past performances by Adán Fernández — organ and h
   <div class="wrap">
     <p class="eyebrow">Calendar</p>
     <h1>Where to hear him.</h1>
-    <p class="lede">Dates move from Upcoming to Past on their own. For a full engagement history, see the <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass)">CV</a>.</p>
+    <p class="lede">Recitals, services, and concerts, with the venue for each. The full engagement history is in the <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass)">CV</a>.</p>
   </div>
 </section>
 
+{%- if next | length %}
 <section class="section">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Upcoming</span><span class="rule"></span></div>
-    {%- if next | length %}
     <ol class="events">
     {%- for e in next %}
       <li class="event reveal">
@@ -32,16 +32,14 @@ description: "Upcoming and past performances by Adán Fernández — organ and h
       </li>
     {%- endfor %}
     </ol>
-    {%- else %}
-    <p class="lede reveal">Nothing on the public calendar at the moment. New dates go up as they are confirmed — <a href="/contact/" style="border-bottom:1px solid var(--brass-deep)">get in touch</a> about booking one.</p>
-    {%- endif %}
   </div>
 </section>
+{%- endif %}
 
 {%- if gone | length %}
-<section class="section tint">
+<section class="section">
   <div class="wrap">
-    <div class="rule-head reveal"><span class="lbl">Past</span><span class="rule"></span></div>
+    <div class="rule-head reveal"><span class="lbl">Recent</span><span class="rule"></span></div>
     <ol class="events">
     {%- for e in gone %}
       <li class="event reveal">
@@ -59,11 +57,17 @@ description: "Upcoming and past performances by Adán Fernández — organ and h
 
 <section class="section dark">
   <div class="wrap">
-    <div class="rule-head reveal"><span class="lbl">Earlier</span><span class="rule"></span></div>
+    <div class="rule-head reveal"><span class="lbl">Highlights</span><span class="rule"></span></div>
     <div class="stack">
     {%- for h in performances.highlights %}
       <div class="entry reveal"><span class="yr">{{ h.year }}</span><div>{{ h.text }}</div></div>
     {%- endfor %}
     </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <p class="lede reveal">New dates go up as they are confirmed. To book one, <a href="/contact/" style="border-bottom:1px solid var(--brass-deep)">get in touch</a>.</p>
   </div>
 </section>

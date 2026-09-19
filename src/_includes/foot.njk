@@ -1,20 +1,21 @@
 <footer class="foot">
   <div class="wrap foot-grid">
     <div class="foot-brand">
+      {% set cls = "foot-mark" %}{% include "mark.njk" %}
       <p class="foot-name">{{ site.name }}</p>
       <p class="foot-roles">{{ site.roles }}</p>
     </div>
     <nav class="foot-col" aria-label="Footer">
       <p class="foot-h">The work</p>
       <a href="/about/">About</a>
-      <a href="/listen/">Listen &amp; watch</a>
+      <a href="/listen/">Listen</a>
       <a href="/performing/">Performing</a>
       <a href="/teaching/">Teaching</a>
-      <a href="/writing/">Writing &amp; scholarship</a>
+      <a href="/writing/">Writing</a>
     </nav>
     <nav class="foot-col" aria-label="Footer, more">
       <p class="foot-h">Get in touch</p>
-      <a href="/upcoming/">Calendar</a>
+      <a href="/calendar/">Calendar</a>
       <a href="/contact/">Contact</a>
       <a href="/press-kit/">Press kit</a>
       <a href="{{ site.cv }}" download>Curriculum vitae</a>

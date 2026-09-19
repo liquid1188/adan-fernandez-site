@@ -17,7 +17,7 @@ touching either.
 | Performing | `/performing/` | `src/performing.njk` |
 | Teaching | `/teaching/` | `src/teaching.njk` |
 | Writing & scholarship | `/writing/` | `src/writing.njk` |
-| Calendar | `/upcoming/` | `src/upcoming.njk` |
+| Calendar | `/calendar/` | `src/upcoming.njk` |
 | Press kit | `/press-kit/` | `src/press-kit.njk` |
 | Contact | `/contact/` | `src/contact.njk` |
 

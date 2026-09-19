@@ -1,7 +1,10 @@
 <header class="nav" id="nav">
   <a class="brand" href="/">
-    <span class="brand-name">Adán Fernández</span>
-    <span class="brand-tag">{{ site.roles }}</span>
+    {% set cls = "brand-mark" %}{% include "mark.njk" %}
+    <span class="brand-text">
+      <span class="brand-name">Adán Fernández</span>
+      <span class="brand-tag">{{ site.roles }}</span>
+    </span>
   </a>
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
@@ -12,7 +15,7 @@
     <a href="/performing/"{% if active == 'performing' %} class="active" aria-current="page"{% endif %}>Performing</a>
     <a href="/teaching/"{% if active == 'teaching' %} class="active" aria-current="page"{% endif %}>Teaching</a>
     <a href="/writing/"{% if active == 'writing' %} class="active" aria-current="page"{% endif %}>Writing</a>
-    <a href="/upcoming/"{% if active == 'upcoming' %} class="active" aria-current="page"{% endif %}>Calendar</a>
+    <a href="/calendar/"{% if active == 'calendar' %} class="active" aria-current="page"{% endif %}>Calendar</a>
     <a class="nav-cta{% if active == 'contact' %} is-current{% endif %}" href="/contact/">Contact</a>
   </nav>
 </header>
