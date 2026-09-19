@@ -165,7 +165,7 @@ body.on-paper .nav-toggle { color: var(--ink); }
 
 /* ---------- home strips ---------- */
 .roles-strip { background: var(--night-2); color: var(--bone); padding: 30px 0; border-top: 1px solid var(--rule-dark); }
-.roles-strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px 24px; align-items: center; text-align: center; }
+.roles-strip .wrap { display: flex; justify-content: center; align-items: center; gap: 12px clamp(2rem, 4.5vw, 4.5rem); text-align: center; }
 .roles-strip span { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); white-space: nowrap; }
 .roles-strip b { color: var(--brass-soft); font-weight: 600; }
 
@@ -209,7 +209,7 @@ body.on-paper .nav-toggle { color: var(--ink); }
 .roles .r-title { font-family: "EB Garamond", Georgia, serif; font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--bone); }
 .roles .r-place { color: var(--dim); }
 .roles .r-place em { display: block; font-style: normal; font-size: .9rem; color: #8496a5; margin-top: .3rem; }
-@media (max-width: 1000px) { .roles-strip .wrap { grid-template-columns: 1fr 1fr; row-gap: 14px; } }
+@media (max-width: 1000px) { .roles-strip .wrap { display: grid; grid-template-columns: 1fr 1fr; row-gap: 14px; } }
 @media (max-width: 720px) { .roles li { grid-template-columns: 1fr; gap: .4rem; } }
 @media (max-width: 600px) { .roles-strip .wrap { grid-template-columns: 1fr; row-gap: 12px; } .roles-strip span { white-space: normal; } }
 
