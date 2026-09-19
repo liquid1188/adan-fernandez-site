@@ -307,3 +307,14 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 .section.has-photo .head-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .section.has-photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to right, rgba(16,26,38,.96) 0%, rgba(16,26,38,.86) 55%, rgba(16,26,38,.55) 100%); }
 .section.has-photo .wrap { position: relative; z-index: 2; }
+
+/* video player over the page */
+.vmodal { position: fixed; inset: 0; z-index: 300; background: rgba(8, 13, 20, .92); display: none; align-items: center; justify-content: center; padding: clamp(16px, 4vw, 48px); }
+.vmodal.open { display: flex; }
+.vmodal-box { position: relative; width: min(100%, 1100px); }
+.vmodal-frame { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--rule-dark); }
+.vmodal-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.vmodal-cap { color: var(--dim); font-size: .95rem; margin: .8rem 0 0; text-align: center; }
+.vmodal-close { position: absolute; right: -8px; top: -46px; background: none; border: 0; color: var(--bone); font-size: 2rem; line-height: 1; cursor: pointer; padding: 6px 10px; }
+.vmodal-close:hover { color: var(--brass-soft); }
+@media (max-width: 640px) { .vmodal-close { top: -40px; right: 0; } }

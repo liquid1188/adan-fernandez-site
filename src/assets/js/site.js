@@ -51,19 +51,48 @@
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 
-  // YouTube embeds are heavy and there can be thirty of them. Each one starts
-  // as its own poster image and only becomes an iframe when someone asks for it.
+  // YouTube embeds are heavy and there can be thirty of them. Each one stays a
+  // poster image; clicking opens the video in a large player over the page,
+  // where YouTube's full control bar (with the volume slider) fits. In a
+  // 300px tile the player hides most of its controls.
+  var modal = document.createElement("div");
+  modal.className = "vmodal";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.innerHTML = '<div class="vmodal-box"><button class="vmodal-close" type="button" aria-label="Close">&times;</button><div class="vmodal-frame"></div><p class="vmodal-cap"></p></div>';
+  document.body.appendChild(modal);
+  var frameHost = modal.querySelector(".vmodal-frame");
+  var cap = modal.querySelector(".vmodal-cap");
+  var lastFocus = null;
+  function closeModal() {
+    modal.classList.remove("open");
+    frameHost.innerHTML = "";
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  function openModal(id, label) {
+    lastFocus = document.activeElement;
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + id + "?rel=0&autoplay=1";
+    f.title = label || "Video";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    f.allowFullscreen = true;
+    frameHost.innerHTML = "";
+    frameHost.appendChild(f);
+    cap.textContent = label ? label.replace(/^Play /, "") : "";
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    modal.querySelector(".vmodal-close").focus();
+  }
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal || e.target.classList.contains("vmodal-close")) closeModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+  });
   document.querySelectorAll("[data-yt]").forEach(function (box) {
     box.addEventListener("click", function () {
-      if (box.dataset.loaded) return;
-      box.dataset.loaded = "1";
-      var f = document.createElement("iframe");
-      f.src = "https://www.youtube-nocookie.com/embed/" + box.dataset.yt + "?rel=0&autoplay=1";
-      f.title = box.getAttribute("aria-label") || "Video";
-      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      f.allowFullscreen = true;
-      box.innerHTML = "";
-      box.appendChild(f);
+      openModal(box.dataset.yt, box.getAttribute("aria-label"));
     });
     box.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); box.click(); }
