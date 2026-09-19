@@ -528,3 +528,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .bib-title a:hover { color: var(--brass-deep); }
 .bib-title .lk { display: inline-block; margin-left: .35em; font-size: .75em; color: var(--brass-deep); }
 .bib-sub { display: block; font-size: .88rem; color: var(--ink-2); margin-top: .2rem; }
+
+.biblio .bib-sub:empty { display: none; }
+.dark .biblio, .dark .biblio li { border-color: var(--rule-dark); }
+.dark .bib-sub { color: var(--dim); }

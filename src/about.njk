@@ -10,7 +10,7 @@ description: "Dr. Adán Alejándro Fernández, organist, harpsichordist, and con
   <div class="wrap">
   <div class="head-text">
     <p class="eyebrow">Biography</p>
-    <h1>A musician <em>of the Church.</em></h1>
+    <h1>A musician of the <em>Church.</em></h1>
     <p class="lede">{{ bio.oneLine }}</p>
   </div>
   <figure class="head-photo wide"><img src="/assets/img/press/console-smiling-web.jpg" alt="" width="1600" height="1067" loading="eager"></figure>
@@ -65,7 +65,7 @@ description: "Dr. Adán Alejándro Fernández, organist, harpsichordist, and con
     </div>
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Fellowships &amp; awards</span><span class="rule"></span></div>
-      {% set items = education.honors %}{% set key = "year" %}{% include "timeline.njk" %}
+      {% set items = education.honors %}{% include "biblio.njk" %}
       <p class="fine" style="margin-top:1.4rem">{{ education.credential }}</p>
       <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Member of</span><span class="rule"></span></div>
       <ul class="pills">

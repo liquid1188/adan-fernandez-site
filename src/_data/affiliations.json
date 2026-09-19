@@ -2,25 +2,25 @@
   "items": [
     {
       "name": "Holy Family Catholic Church, Glendale",
-      "url": "https://hfglendale.org",
+      "url": "https://hfglendale.org/music",
       "text": "Holy Family",
       "sub": "Catholic Church, Glendale"
     },
     {
       "name": "California Lutheran University",
-      "url": "https://www.callutheran.edu",
+      "url": "https://www.callutheran.edu/faculty/profile.html?id=aafernandez",
       "img": "/assets/img/affil/cal-lutheran.png",
       "w": 196,
       "h": 120
     },
     {
       "name": "The Colburn School",
-      "url": "https://www.colburnschool.edu",
+      "url": "https://colburnschool.edu/faculty-listing/adan-fernandez-dma/",
       "text": "The Colburn School"
     },
     {
       "name": "Glendale Youth Symphony",
-      "url": "https://www.glendaleyouthsymphony.org",
+      "url": "https://glendaleyouthsymphony.org/team",
       "text": "Glendale Youth Symphony"
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "name": "The Hymn Society",
-      "url": "https://thehymnsociety.org",
+      "url": "https://congregationalsong.org/conversations/blog-connections/",
       "img": "/assets/img/affil/hymn-society.png",
       "w": 459,
       "h": 120

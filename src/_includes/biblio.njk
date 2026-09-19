@@ -1,8 +1,8 @@
 <ul class="biblio">
 {%- for it in items %}
   <li class="reveal">
-    <span class="bib-title">{% if it.link %}<a href="{{ it.link }}" rel="noopener">{{ it.title }}<span class="lk" aria-hidden="true">&nearr;</span></a>{% else %}{{ it.title }}{% endif %}</span>
-    <span class="bib-sub">{% if it.where %}<em>{{ it.where }}</em>{% endif %}{% if it.kind %} &middot; {{ it.kind }}{% endif %} &middot; {{ it.year }}</span>
+    <span class="bib-title">{% if it.link %}<a href="{{ it.link }}" rel="noopener">{{ it.title or it.text }}<span class="lk" aria-hidden="true">&nearr;</span></a>{% else %}{{ it.title or it.text }}{% endif %}</span>
+    <span class="bib-sub">{% if it.where %}<em>{{ it.where }}</em> &middot; {% endif %}{% if it.kind %}{{ it.kind }} &middot; {% endif %}{{ it.year }}</span>
   </li>
 {%- endfor %}
 </ul>
