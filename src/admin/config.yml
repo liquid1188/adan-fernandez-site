@@ -116,6 +116,11 @@ collections:
               - { name: year, label: Year, widget: string }
               - { name: text, label: Description, widget: text }
           - { name: credential, label: "Closing line", widget: string }
+          - name: memberships
+            label: Memberships
+            label_singular: Society
+            widget: list
+            field: { name: m, label: Name, widget: string }
 
   - name: writing
     label: "Writing & scholarship"
