@@ -115,9 +115,7 @@ body.on-paper .nav-toggle { color: var(--ink); }
 
 /* ---------- shared bits ---------- */
 .eyebrow { font-size: .74rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 600; color: var(--brass-deep); margin: 0 0 1rem; }
-.eyebrow::before { content: ""; display: inline-block; width: 22px; height: 1px; background: currentColor; vertical-align: middle; margin-right: 12px; opacity: .8; }
 .hero-eyebrow { color: var(--bone); background: rgba(16,26,38,.72); padding: .5rem .9rem; display: inline-block; backdrop-filter: blur(4px); letter-spacing: .3em; }
-.hero-eyebrow::before { background: var(--brass); opacity: 1; }
 .dark .eyebrow, .hero .eyebrow { color: var(--brass-soft); }
 .lede { font-size: clamp(1.06rem, 1.7vw, 1.25rem); color: var(--ink-2); max-width: 62ch; }
 .dark .lede { color: var(--dim); }
@@ -160,13 +158,15 @@ body.on-paper .nav-toggle { color: var(--ink); }
   linear-gradient(to right, rgba(16,26,38,.55) 0%, rgba(16,26,38,.25) 45%, rgba(16,26,38,0) 70%); }
 .hero-content { position: relative; width: 100%; padding-bottom: clamp(48px, 8vw, 92px); padding-top: 150px; }
 .hero h1 { color: var(--bone); text-shadow: 0 2px 30px rgba(0,0,0,.5); }
-.hero-sub { margin-top: 1.4rem; max-width: 48ch; color: #e2dccf; font-size: clamp(1rem, 1.6vw, 1.15rem); }
+.hero-sub { margin-top: 1.4rem; max-width: 62ch; color: #e2dccf; font-size: clamp(1rem, 1.6vw, 1.15rem); }
 .hero-sub strong { font-weight: 600; color: var(--bone); }
+.hero-sub .line { display: block; }
+.hero-sub .line + .line { margin-top: .35rem; }
 
 /* ---------- home strips ---------- */
 .roles-strip { background: var(--night-2); color: var(--bone); padding: 30px 0; border-top: 1px solid var(--rule-dark); }
-.roles-strip .wrap { display: flex; flex-wrap: wrap; gap: 10px 34px; align-items: center; justify-content: center; }
-.roles-strip span { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); }
+.roles-strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px 24px; align-items: center; text-align: center; }
+.roles-strip span { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); white-space: nowrap; }
 .roles-strip b { color: var(--brass-soft); font-weight: 600; }
 
 .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
@@ -209,7 +209,9 @@ body.on-paper .nav-toggle { color: var(--ink); }
 .roles .r-title { font-family: "EB Garamond", Georgia, serif; font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--bone); }
 .roles .r-place { color: var(--dim); }
 .roles .r-place em { display: block; font-style: normal; font-size: .9rem; color: #8496a5; margin-top: .3rem; }
+@media (max-width: 1000px) { .roles-strip .wrap { grid-template-columns: 1fr 1fr; row-gap: 14px; } }
 @media (max-width: 720px) { .roles li { grid-template-columns: 1fr; gap: .4rem; } }
+@media (max-width: 600px) { .roles-strip .wrap { grid-template-columns: 1fr; row-gap: 12px; } .roles-strip span { white-space: normal; } }
 
 .stack { display: grid; gap: 1.5rem; }
 .entry { display: grid; grid-template-columns: 76px 1fr; gap: 1.4rem; align-items: baseline; padding-bottom: 1.4rem; border-bottom: 1px solid var(--rule-light); }
@@ -285,7 +287,6 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 @media (max-width: 640px) {
   .hero-img { object-position: 68% 22%; }
   .hero-eyebrow { font-size: .6rem; letter-spacing: .18em; padding: .45rem .7rem; }
-  .hero-eyebrow::before { width: 14px; margin-right: 8px; }
   .brand-tag { display: none; }
   .brand-mark { width: 26px; height: 26px; }
   .page-head::after { width: 140px; right: -20px; bottom: -10px; opacity: .06; }
