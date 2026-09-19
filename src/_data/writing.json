@@ -1,5 +1,5 @@
 {
-  "intro": "Adán writes and lectures on liturgy, hymnody, and the sacred music of Latin America. He is a columnist for GIA Publications and an editor for the Hymn Society, and his choral music is published by MusicSpoke and GIA.",
+  "intro": "Adán writes and lectures on liturgy, hymnody, and the sacred music of Latin America. He is a columnist for GIA Publications, edits Puentes for the Hymn Society's Center for Congregational Song, and is managing editor of Res facta. His choral music is published by MusicSpoke and GIA.",
   "publications": [
     {
       "year": "2026",
@@ -58,7 +58,12 @@
     },
     {
       "name": "The Hymn Society",
-      "note": "Editorial work"
+      "note": "Editor of Puentes, the Center for Congregational Song"
+    },
+    {
+      "name": "Res facta",
+      "note": "Managing editor",
+      "link": "https://medium.com/res-facta"
     }
   ],
   "choral": [

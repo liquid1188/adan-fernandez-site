@@ -22,9 +22,19 @@
       "icon": "youtube"
     },
     {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/Adanfernandezmusic",
+      "icon": "instagram"
+    },
+    {
       "name": "Facebook",
       "url": "https://www.facebook.com/adan.a.fernandez.18/",
       "icon": "facebook"
+    },
+    {
+      "name": "SoundCloud",
+      "url": "https://soundcloud.com/adan-alejandro-fernandez",
+      "icon": "soundcloud"
     },
     {
       "name": "LinkedIn",

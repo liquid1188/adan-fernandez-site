@@ -1,5 +1,5 @@
 {
-  "credit": "Photographs courtesy of Seven Eight Artists.",
+  "credit": "Photographs courtesy of Seven Eight Artists and Ad\u00e1n Fern\u00e1ndez.",
   "items": [
     {
       "file": "/assets/img/press/portrait-purple.jpg",
@@ -42,9 +42,29 @@
       "shape": "Landscape"
     },
     {
+      "file": "/assets/img/press/conducting-cathedral.jpg",
+      "web": "/assets/img/press/conducting-cathedral-web.jpg",
+      "alt": "Conducting at the Cathedral of Our Lady of the Angels",
+      "w": 1024,
+      "h": 1024,
+      "ww": 1024,
+      "wh": 1024,
+      "shape": "Square"
+    },
+    {
       "file": "/assets/img/press/conducting-church.jpg",
       "web": "/assets/img/press/conducting-church-web.jpg",
       "alt": "Conducting in the church",
+      "w": 960,
+      "h": 958,
+      "ww": 960,
+      "wh": 958,
+      "shape": "Square"
+    },
+    {
+      "file": "/assets/img/press/conducting-strings.jpg",
+      "web": "/assets/img/press/conducting-strings-web.jpg",
+      "alt": "Conducting with orchestra in the church",
       "w": 960,
       "h": 958,
       "ww": 960,
