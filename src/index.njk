@@ -90,11 +90,14 @@ active: home
     <div class="rule-head reveal"><span class="lbl">In print</span><span class="rule"></span></div>
     <div class="feat-grid">
     {%- for f in writing.featured | limit(2) %}
-      <article class="feat reveal">
+      <article class="feat reveal{% if f.page %} has-page{% endif %}">
+        {%- if f.page %}<a class="feat-page" href="{{ f.link }}" rel="noopener" tabindex="-1" aria-hidden="true"><img src="{{ f.page }}" alt="" width="560" height="792" loading="lazy"></a>{% endif %}
+        <div class="feat-body">
         <p class="feat-kicker">{{ f.kicker }}</p>
         <p class="feat-cite">{{ f.cite }}</p>
         <h3><a href="{{ f.link }}" rel="noopener">{{ f.title }}</a></h3>
         <a class="go" href="{{ f.link }}" rel="noopener">{{ f.cta }} &rarr;</a>
+        </div>
       </article>
     {%- endfor %}
     </div>
