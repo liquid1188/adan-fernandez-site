@@ -49,9 +49,13 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 <section class="section tint">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Published by</span><span class="rule"></span></div>
-    <div class="cards four">
+    <div class="pubs">
     {%- for p in writing.publishers %}
-      {% if p.link %}<a class="card reveal" href="{{ p.link }}" rel="noopener"><h3>{{ p.name }}</h3><p>{{ p.note }}</p></a>{% else %}<div class="card reveal"><h3>{{ p.name }}</h3><p>{{ p.note }}</p></div>{% endif %}
+      <a class="pub reveal" href="{{ p.link }}" rel="noopener">
+        <span class="pub-logo">{% if p.img %}<img src="{{ p.img }}" alt="" width="{{ p.w }}" height="{{ p.h }}" loading="lazy">{% else %}<span class="wordmark">{{ p.name }}</span>{% endif %}</span>
+        <span class="pub-name">{{ p.name }}</span>
+        <span class="pub-note">{{ p.note }}</span>
+      </a>
     {%- endfor %}
     </div>
   </div>

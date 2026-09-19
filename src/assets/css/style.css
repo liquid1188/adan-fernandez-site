@@ -503,3 +503,16 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 
 /* a landscape photograph in the split head shows whole */
 .page-head.split .head-photo.wide img { aspect-ratio: 3 / 2; height: auto; min-height: 0; max-height: none; object-fit: cover; }
+
+/* publishers: logo, name, one line, all linked */
+.pubs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; }
+@media (max-width: 900px) { .pubs { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .pubs { grid-template-columns: 1fr; } }
+.pub { display: block; border-top: 2px solid var(--brass-deep); padding-top: 1.2rem; color: var(--ink); text-decoration: none; }
+.pub-logo { display: flex; align-items: center; height: 44px; margin-bottom: .9rem; opacity: .6; transition: opacity .2s; }
+.pub:hover .pub-logo { opacity: 1; }
+.pub-logo img { height: 38px; width: auto; }
+.pub-logo .wordmark { font-size: 1.5rem; }
+.pub-name { display: block; font-family: "EB Garamond", Georgia, serif; font-size: 1.3rem; margin-bottom: .25rem; }
+.pub:hover .pub-name { color: var(--brass-deep); }
+.pub-note { display: block; font-size: .92rem; color: var(--ink-2); }
