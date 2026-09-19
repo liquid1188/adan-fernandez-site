@@ -430,3 +430,14 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
   .page-head.split .head-photo img { min-height: 0; max-height: none; aspect-ratio: 4 / 3; border-right: 1px solid var(--rule-dark); }
 }
 .section.dark.tiled { background-image: inherit; }
+
+/* contact form */
+.cform { display: grid; gap: 1.1rem; }
+.cform .f2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+@media (max-width: 560px) { .cform .f2 { grid-template-columns: 1fr; } }
+.cform label { display: grid; gap: .4rem; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink-2); }
+.cform input, .cform select, .cform textarea { font: inherit; font-size: 1rem; letter-spacing: 0; text-transform: none; font-weight: 400; color: var(--ink); background: #fff; border: 1px solid var(--rule-light); padding: .75rem .9rem; border-radius: 0; width: 100%; }
+.cform input:focus, .cform select:focus, .cform textarea:focus { outline: none; border-color: var(--brass); box-shadow: 0 0 0 3px rgba(192,138,62,.18); }
+.cform textarea { resize: vertical; min-height: 140px; }
+.cform button { justify-self: start; cursor: pointer; }
+.cform .fine { margin: 0; color: var(--ink-2); }

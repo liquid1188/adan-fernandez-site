@@ -10,42 +10,49 @@ description: "Concert bookings, teaching and masterclasses, writing and speaking
   <div class="head-text">
     <p class="eyebrow">Contact</p>
     <h1>Work with Adán.</h1>
-    <p class="lede">Concerts, teaching, and writing. Each of these goes straight to him.</p>
+    <p class="lede">Concerts, teaching, and writing. The form goes straight to him.</p>
   </div>
-  <figure class="head-photo"><img src="/assets/img/press/conducting-strings-web.jpg" alt="" width="960" height="958" style="object-position:60% 25%" loading="eager"></figure>
+  <figure class="head-photo"><img src="/assets/img/press/portrait-purple-web.jpg" alt="Portrait of Adán Fernández" width="1369" height="1600" style="object-position:50% 25%" loading="eager"></figure>
   </div>
 </section>
 
-<section class="section dark" style="padding-top:clamp(40px,6vw,64px)">
-  <div class="wrap">
-    <div class="cards">
-      <a class="card reveal" href="mailto:{{ site.email }}?subject=Concert%20booking%20enquiry%20for%20Ad%C3%A1n%20Fern%C3%A1ndez">
-        <h3>Concert bookings</h3>
-        <p>Organ and harpsichord recitals, dedications, conducting engagements and festival appearances.</p>
-        <span class="go">Enquire about a date &rarr;</span>
-      </a>
-      <a class="card reveal" href="mailto:{{ site.email }}?subject=Teaching%20or%20masterclass%20enquiry%20for%20Ad%C3%A1n%20Fern%C3%A1ndez">
-        <h3>Teaching &amp; masterclasses</h3>
-        <p>Organ and piano instruction, university residencies, and workshops for parish musicians.</p>
-        <span class="go">Ask about teaching &rarr;</span>
-      </a>
-      <a class="card reveal" href="mailto:{{ site.email }}?subject=Writing%20or%20speaking%20enquiry%20for%20Ad%C3%A1n%20Fern%C3%A1ndez">
-        <h3>Writing &amp; speaking</h3>
-        <p>Commissions, essays, editorial work, and lectures on liturgy and Latin American sacred music.</p>
-        <span class="go">Start a conversation &rarr;</span>
-      </a>
+<section class="section">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Write to him</span><span class="rule"></span></div>
+      <form class="cform" action="https://formsubmit.co/{{ site.email }}" method="POST">
+        <input type="hidden" name="_subject" value="Enquiry from adanfernandez site">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="{{ site.url }}/contact/thanks/">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="f2">
+          <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label>Organisation or venue<input type="text" name="organisation" autocomplete="organization"></label>
+        <label>This is about
+          <select name="about">
+            <option>A concert or recital</option>
+            <option>Conducting or a residency</option>
+            <option>Teaching or a masterclass</option>
+            <option>Writing or speaking</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Dates, instrument, and anything else that helps<textarea name="message" rows="6" required></textarea></label>
+        <button class="btn btn-brass" type="submit">Send</button>
+        <p class="fine">Goes straight to Adán at {{ site.email }}. Nothing is stored on this site.</p>
+      </form>
     </div>
-
-    <div class="two-col" style="margin-top:clamp(2.5rem,5vw,4rem)">
-      <div class="reveal">
-        <div class="rule-head"><span class="lbl">Direct</span><span class="rule"></span></div>
-        <p class="lede">Email <a href="mailto:{{ site.email }}" style="border-bottom:1px solid var(--brass)">{{ site.email }}</a>, or call <a href="tel:{{ site.phoneHref }}" style="border-bottom:1px solid var(--brass)">{{ site.phone }}</a>.</p>
-      </div>
-      <div class="reveal">
-        <div class="rule-head"><span class="lbl">Management</span><span class="rule"></span></div>
-        <p class="lede">Represented by <a href="{{ site.management.url }}" rel="noopener" style="border-bottom:1px solid var(--brass)">{{ site.management.name }}</a>. For bookings through management, write to {{ site.management.contact }} at <a href="mailto:{{ site.management.email }}" style="border-bottom:1px solid var(--brass)">{{ site.management.email }}</a>.</p>
-        <div class="cta-row"><a class="btn btn-ghost" href="/press-kit/">Press kit &amp; photos</a></div>
-      </div>
+    <div class="reveal">
+      <div class="rule-head"><span class="lbl">Direct</span><span class="rule"></span></div>
+      <p class="lede">Email <a href="mailto:{{ site.email }}" style="border-bottom:1px solid var(--brass-deep)">{{ site.email }}</a>, or call <a href="tel:{{ site.phoneHref }}" style="border-bottom:1px solid var(--brass-deep)">{{ site.phone }}</a>.</p>
+      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Management</span><span class="rule"></span></div>
+      <p class="lede">Represented by <a href="{{ site.management.url }}" rel="noopener" style="border-bottom:1px solid var(--brass-deep)">{{ site.management.name }}</a>. For bookings through management, write to {{ site.management.contact }} at <a href="mailto:{{ site.management.email }}" style="border-bottom:1px solid var(--brass-deep)">{{ site.management.email }}</a>.</p>
+      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">For presenters</span><span class="rule"></span></div>
+      <p>Biographies, photographs, programs, and the one-sheet are on the press kit page.</p>
+      <div class="cta-row"><a class="btn btn-outline" href="/press-kit/">Press kit &amp; photos</a></div>
     </div>
   </div>
 </section>
