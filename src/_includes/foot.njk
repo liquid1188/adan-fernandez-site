@@ -1,8 +1,10 @@
 <footer class="foot">
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      {% set cls = "foot-mark" %}{% include "mark.njk" %}
-      <p class="foot-name">{{ site.name }}</p>
+      <a class="foot-home" href="/" aria-label="Home">
+        {% set cls = "foot-mark" %}{% include "mark.njk" %}
+        <span class="foot-name">{{ site.name }}</span>
+      </a>
       <p class="foot-roles">{{ site.roles }}</p>
       <ul class="social" aria-label="Elsewhere">
       {%- for s in site.social %}

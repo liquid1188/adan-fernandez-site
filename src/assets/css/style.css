@@ -271,7 +271,10 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 .foot-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.2fr; gap: 2rem; }
 @media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .foot-grid { grid-template-columns: 1fr; } }
-.foot-name { font-family: "EB Garamond", Georgia, serif; font-size: 1.5rem; color: var(--bone); margin: 0; }
+.foot-home { display: block; color: var(--bone); text-decoration: none; }
+.foot-home:hover .foot-name { color: var(--brass-soft); }
+.foot-home:hover .foot-mark { color: var(--brass-soft); }
+.foot-name { display: block; font-family: "EB Garamond", Georgia, serif; font-size: 1.5rem; color: var(--bone); margin: 0; transition: color .2s; }
 .foot-roles { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brass); margin-top: .5rem; white-space: nowrap; }
 .social { list-style: none; margin: 1.4rem 0 0; padding: 0; display: flex; gap: .6rem; }
 .social a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--rule-dark); border-radius: 50%; color: var(--dim); transition: color .2s, border-color .2s, background .2s; }
