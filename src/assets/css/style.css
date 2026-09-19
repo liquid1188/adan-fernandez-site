@@ -519,3 +519,12 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .pub-name { display: block; font-family: "EB Garamond", Georgia, serif; font-size: 1.3rem; margin-bottom: .25rem; }
 .pub:hover .pub-name { color: var(--brass-deep); }
 .pub-note { display: block; font-size: .92rem; color: var(--ink-2); }
+
+/* bibliography: one line per work, no year groups */
+.biblio { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule-light); }
+.biblio li { padding: 1rem 0; border-bottom: 1px solid var(--rule-light); }
+.bib-title { display: block; font-family: "EB Garamond", Georgia, serif; font-size: 1.22rem; line-height: 1.3; }
+.bib-title a { color: inherit; }
+.bib-title a:hover { color: var(--brass-deep); }
+.bib-title .lk { display: inline-block; margin-left: .35em; font-size: .75em; color: var(--brass-deep); }
+.bib-sub { display: block; font-size: .88rem; color: var(--ink-2); margin-top: .2rem; }

@@ -41,7 +41,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 <section class="section tint">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Selected publications</span><span class="rule"></span></div>
-    {% set items = writing.publications %}{% set key = "year" %}{% include "timeline.njk" %}
+    {% set items = writing.publications %}{% include "biblio.njk" %}
     <p class="fine reveal" style="margin-top:1.6rem">The complete list of publications, compositions and lectures is in his <a href="{{ site.cv }}" download style="border-bottom:1px solid var(--brass-deep)">curriculum vitae</a>.</p>
   </div>
 </section>
@@ -64,7 +64,7 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
 <section class="section">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Selected lectures</span><span class="rule"></span></div>
-    {% set items = writing.lectures %}{% set key = "year" %}{% include "timeline.njk" %}
+    {% set items = writing.lectures %}{% include "biblio.njk" %}
   </div>
 </section>
 
