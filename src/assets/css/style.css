@@ -268,7 +268,11 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 @media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .foot-grid { grid-template-columns: 1fr; } }
 .foot-name { font-family: "EB Garamond", Georgia, serif; font-size: 1.5rem; color: var(--bone); margin: 0; }
-.foot-roles { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brass); margin-top: .5rem; }
+.foot-roles { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brass); margin-top: .5rem; white-space: nowrap; }
+.social { list-style: none; margin: 1.4rem 0 0; padding: 0; display: flex; gap: .6rem; }
+.social a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--rule-dark); border-radius: 50%; color: var(--dim); transition: color .2s, border-color .2s, background .2s; }
+.social a:hover { color: #12100c; background: var(--brass); border-color: var(--brass); }
+.social svg { width: 18px; height: 18px; }
 .foot-h { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brass-soft); margin: 0 0 .7rem; font-weight: 600; }
 .foot-col a { display: block; font-size: .95rem; padding: .22rem 0; transition: color .2s; }
 .foot-col a:hover { color: var(--bone); }

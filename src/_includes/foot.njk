@@ -4,6 +4,11 @@
       {% set cls = "foot-mark" %}{% include "mark.njk" %}
       <p class="foot-name">{{ site.name }}</p>
       <p class="foot-roles">{{ site.roles }}</p>
+      <ul class="social" aria-label="Elsewhere">
+      {%- for s in site.social %}
+        <li><a href="{{ s.url }}" rel="noopener" aria-label="{{ s.name }}" title="{{ s.name }}">{% set icon = s.icon %}{% include "icons.njk" %}</a></li>
+      {%- endfor %}
+      </ul>
     </div>
     <nav class="foot-col" aria-label="Footer">
       <p class="foot-h">The work</p>
@@ -19,7 +24,6 @@
       <a href="/contact/">Contact</a>
       <a href="/press-kit/">Press kit</a>
       <a href="{{ site.cv }}" download>Curriculum vitae</a>
-      <a href="{{ site.youtube }}" rel="noopener">YouTube</a>
     </nav>
     <div class="foot-col">
       <p class="foot-h">Management</p>

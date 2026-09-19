@@ -90,6 +90,36 @@
       "composer": "Adán Fernández"
     },
     {
+      "id": "VYkhJp4cBAQ",
+      "group": "Organ",
+      "piece": "Prelude and Fugue in A minor, BWV 543",
+      "composer": "Johann Sebastian Bach"
+    },
+    {
+      "id": "OKXIedI6WdI",
+      "group": "Organ",
+      "piece": "Fantasia in G minor, BWV 542",
+      "composer": "Johann Sebastian Bach"
+    },
+    {
+      "id": "1tG_huDHq1M",
+      "group": "Organ",
+      "piece": "Fugue in G minor, BWV 542",
+      "composer": "Johann Sebastian Bach"
+    },
+    {
+      "id": "e3pu_c1Z03k",
+      "group": "Organ",
+      "piece": "Vallée d'Obermann, from Années de pèlerinage",
+      "composer": "Franz Liszt"
+    },
+    {
+      "id": "NvxxOoEeOQ8",
+      "group": "Organ",
+      "piece": "Improvisation on Lasst uns erfreuen",
+      "composer": "Adán Fernández"
+    },
+    {
       "id": "y5YLUZqMKaE",
       "group": "Harpsichord & early music",
       "piece": "Villancicos",
@@ -174,6 +204,38 @@
       "group": "Conducting",
       "piece": "Sinfony, from El Mesías",
       "composer": "George Frideric Handel"
+    },
+    {
+      "id": "5g56b_LBDKs",
+      "group": "Conducting",
+      "piece": "Les sept paroles du Christ sur la croix",
+      "composer": "Charles Gounod"
+    },
+    {
+      "id": "COtRtxMdLtQ",
+      "group": "Conducting",
+      "piece": "Messiah",
+      "composer": "George Frideric Handel",
+      "note": "Complete performance"
+    },
+    {
+      "id": "lM1m7fIW0H0",
+      "group": "Conducting",
+      "piece": "Dies irae, from the Requiem",
+      "composer": "Wolfgang Amadeus Mozart"
+    },
+    {
+      "id": "rv_7bmVVgFU",
+      "group": "Conducting",
+      "piece": "Agnus Dei, from the Requiem",
+      "composer": "Gabriel Fauré"
+    },
+    {
+      "id": "qZSq-9q9Ytw",
+      "group": "Conducting",
+      "piece": "Violin Concerto in E minor: Allegro molto appassionato",
+      "composer": "Felix Mendelssohn",
+      "note": "Glendale Youth Symphony"
     },
     {
       "id": "WCuWLkhduxY",

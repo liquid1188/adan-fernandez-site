@@ -14,5 +14,22 @@
     "email": "michael@seveneightartists.com"
   },
   "cv": "/assets/cv/Adan-Alejandro-Fernandez-CV.pdf",
-  "photoCredit": "Photographs courtesy of Seven Eight Artists."
+  "photoCredit": "Photographs courtesy of Seven Eight Artists.",
+  "social": [
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@AdanFernandezMusic",
+      "icon": "youtube"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/adan.a.fernandez.18/",
+      "icon": "facebook"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/ad%C3%A1nsacredmusic/",
+      "icon": "linkedin"
+    }
+  ]
 }
