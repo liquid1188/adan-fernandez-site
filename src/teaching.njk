@@ -44,6 +44,10 @@ description: "Organ, piano and music theory at California Lutheran University an
       <ul class="pills">
       {%- for o in teaching.offers %}<li>{{ o }}</li>{% endfor %}
       </ul>
+      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Courses he has taught</span><span class="rule"></span></div>
+      <ul class="pills">
+      {%- for o in teaching.courses %}<li>{{ o }}</li>{% endfor %}
+      </ul>
       <div class="cta-row">
         <a class="btn btn-brass" href="/contact/">Ask about teaching</a>
       </div>

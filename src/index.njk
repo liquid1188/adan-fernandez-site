@@ -85,6 +85,23 @@ active: home
 {%- endif %}
 
 
+<section class="section">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">In print</span><span class="rule"></span></div>
+    <div class="feat-grid">
+    {%- for f in writing.featured | limit(2) %}
+      <article class="feat reveal">
+        <p class="feat-kicker">{{ f.kicker }}</p>
+        <p class="feat-cite">{{ f.cite }}</p>
+        <h3><a href="{{ f.link }}" rel="noopener">{{ f.title }}</a></h3>
+        <a class="go" href="{{ f.link }}" rel="noopener">{{ f.cta }} &rarr;</a>
+      </article>
+    {%- endfor %}
+    </div>
+    <div class="cta-row"><a class="btn btn-outline" href="/writing/">All writing and scholarship</a></div>
+  </div>
+</section>
+
 <section class="affil">
   <div class="wrap">
     <p class="eyebrow" style="text-align:center">Affiliations</p>

@@ -165,7 +165,9 @@ collections:
             widget: list
             summary: "{{fields.title}}"
             fields:
-              - { name: kicker, label: "Where and when", widget: string }
+              - { name: kicker, label: "Journal or publisher", widget: string }
+              - { name: cite, label: "Volume, issue, year", widget: string, required: false }
+              - { name: doi, label: "DOI (optional)", widget: string, required: false }
               - { name: title, label: Title, widget: string }
               - { name: blurb, label: "One or two sentences", widget: text }
               - { name: link, label: Link, widget: string }

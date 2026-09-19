@@ -84,6 +84,10 @@ description: "Biographies at three lengths, photographs, and the curriculum vita
       <ul class="plain">
       {%- for m in presskit.media %}<li>{{ m }}</li>{% endfor %}
       </ul>
+      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Press</span><span class="rule"></span></div>
+      <ul class="plain">
+      {%- for m in presskit.press %}<li><a href="{{ m.link }}" rel="noopener" style="border-bottom:1px solid var(--brass-deep)">{{ m.title }}</a><span class="tl-sub"><em>{{ m.where }}</em>, {{ m.year }}</span></li>{% endfor %}
+      </ul>
     </div>
   </div>
 </section>

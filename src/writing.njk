@@ -25,9 +25,10 @@ description: "Publications, editions and lectures by Adán Fernández on liturgy
     {%- for f in writing.featured %}
       <article class="feat reveal">
         <p class="feat-kicker">{{ f.kicker }}</p>
+        <p class="feat-cite">{{ f.cite }}</p>
         <h3><a href="{{ f.link }}" rel="noopener">{{ f.title }}</a></h3>
         <p>{{ f.blurb }}</p>
-        <a class="go" href="{{ f.link }}" rel="noopener">{{ f.cta }} &rarr;</a>
+        <a class="go" href="{{ f.link }}" rel="noopener">{{ f.cta }} &rarr;</a>{% if f.doi %}<span class="feat-doi">doi {{ f.doi }}</span>{% endif %}
       </article>
     {%- endfor %}
     </div>

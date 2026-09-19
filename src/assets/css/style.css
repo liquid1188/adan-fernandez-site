@@ -487,3 +487,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .cards.four { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 900px) { .cards.four { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .cards.four { grid-template-columns: 1fr; } }
+
+.feat .feat-kicker { font-size: 1.7rem; margin: 0 0 .1rem; color: var(--brass-deep); }
+.feat .feat-cite { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-2); margin: 0 0 .8rem; }
+.feat .feat-doi { display: block; margin-top: .5rem; font-size: .74rem; color: var(--ink-2); letter-spacing: .04em; }

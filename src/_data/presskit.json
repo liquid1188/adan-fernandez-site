@@ -7,7 +7,7 @@
     },
     {
       "k": "Positions",
-      "v": "Director of Music and Liturgy and Organist, Holy Family Catholic Church, Glendale; University Organist and Interim Director of Choral Activities, California Lutheran University; Music Theory Faculty, The Colburn School"
+      "v": "Director of Music and Liturgy and Organist, Holy Family Catholic Church, Glendale; University Organist and Interim Director of Choral Activities, California Lutheran University; Music Theory Faculty, The Colburn School; Choir Director for the High Holy Days, Kol Tikvah"
     },
     {
       "k": "Degrees",
@@ -139,5 +139,13 @@
     "Director of Organ and Chant, San Pedro Region advisory board, Archdiocese of Los Angeles, 2018 to 2021"
   ],
   "technical": "Organ recitals are played on the presenter's instrument; he asks for practice time on the instrument the day before and the day of the concert, and a registrant if the console requires one. Harpsichord programs need a tuned instrument at A=415 or A=440 as agreed in advance. For choral residencies he sends scores and rehearsal plans six weeks ahead. Travel and hospitality are arranged through Seven Eight Artists.",
-  "onesheet": "/assets/press/Adan-Fernandez-One-Sheet.pdf"
+  "onesheet": "/assets/press/Adan-Fernandez-One-Sheet.pdf",
+  "press": [
+    {
+      "year": "2025",
+      "title": "Meet Dr. Adán Fernández, Executive Director and Artistic Director of the Glendale Youth Symphony",
+      "where": "Shout Out LA",
+      "link": "https://shoutoutla.com/meet-dr-adan-fernandez-executive-director-and-artistic-director-of-the-glendale-youth-symphony/"
+    }
+  ]
 }

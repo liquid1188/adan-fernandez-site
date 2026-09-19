@@ -109,6 +109,16 @@
       "where": "The Hymn Society, Montreal"
     },
     {
+      "year": "2022",
+      "title": "Catholic Music in South and Central America: Misa Criolla, Misa Campesina Nicaragüense, and Pilgrimage",
+      "where": "Loyola University Maryland"
+    },
+    {
+      "year": "2021",
+      "title": "Music of the Holocaust: Terezín and Auschwitz",
+      "where": "California Lutheran University"
+    },
+    {
       "year": "2019",
       "title": "Sacred Counterpoint: Emotion and Reason in the Sixteenth-Century Motet",
       "where": "Christian Congregational Music Conference, Ripon College Cuddesdon"
@@ -121,28 +131,34 @@
   ],
   "featured": [
     {
-      "kicker": "Religions, 2025",
+      "kicker": "Religions",
+      "cite": "Vol. 16, no. 5, 2025 · Peer-reviewed, open access",
       "title": "The Precedent for Vernacular and Multilingual Liturgies in the Catholic Church in Latin America",
-      "blurb": "How folk Masses in local languages, from the Misa Campesina onward, grew out of Vatican II and became a form of theological and cultural resistance in Latin America. Peer-reviewed, open access.",
+      "blurb": "How folk Masses in local languages, from the Misa Campesina onward, grew out of Vatican II and became a form of theological and cultural resistance, and what that history says about the vernacular liturgy today.",
       "link": "https://doi.org/10.3390/rel16050586",
-      "cta": "Read the article"
+      "cta": "Read the article",
+      "doi": "10.3390/rel16050586"
     },
     {
-      "kicker": "Religions, 2022",
+      "kicker": "Religions",
+      "cite": "Vol. 13, no. 3, 2022 · Peer-reviewed, open access",
       "title": "Liberationist Perspectives on the Misa Criolla by Ariel Ramírez",
-      "blurb": "A reading of the best-known Latin American Mass setting through its history, theology, and music, and what its localisation of the Roman rite meant after the Council. Peer-reviewed, open access.",
+      "blurb": "A reading of the best-known Latin American Mass setting through its history, theology, and music, and what its localisation of the Roman rite meant after the Council.",
       "link": "https://doi.org/10.3390/rel13030189",
-      "cta": "Read the article"
+      "cta": "Read the article",
+      "doi": "10.3390/rel13030189"
     },
     {
-      "kicker": "GIA Publications, 2023",
+      "kicker": "GIA Publications",
+      "cite": "Edition, 2023",
       "title": "Tres Corales de Bach",
       "blurb": "His edition of three Bach chorales for GIA, part of his work for Spanish-speaking parishes. He also serves on the editorial board of GIA's Spanish hymnal.",
       "link": "https://www.giamusic.com",
       "cta": "GIA Publications"
     },
     {
-      "kicker": "Choral Arts Initiative, 2024",
+      "kicker": "Choral Arts Initiative",
+      "cite": "World premiere, 2024",
       "title": "Concert of Silences",
       "blurb": "His own choral work, premiered at Concordia University Irvine. The recording is on the Listen page.",
       "link": "https://www.youtube.com/watch?v=w6xluVF3x98",
