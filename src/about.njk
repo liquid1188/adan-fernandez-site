@@ -67,6 +67,10 @@ description: "Dr. Adán Alejándro Fernández, organist, harpsichordist, and con
       <div class="rule-head"><span class="lbl">Fellowships &amp; awards</span><span class="rule"></span></div>
       {% set items = education.honors %}{% set key = "year" %}{% include "timeline.njk" %}
       <p class="fine" style="margin-top:1.4rem">{{ education.credential }}</p>
+      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Member of</span><span class="rule"></span></div>
+      <ul class="pills">
+      {%- for m in education.memberships %}<li>{{ m }}</li>{% endfor %}
+      </ul>
     </div>
   </div>
 </section>
