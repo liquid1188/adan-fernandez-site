@@ -1,0 +1,29 @@
+{
+  "label": "Writes for",
+  "items": [
+    {
+      "name": "GIA Publications",
+      "url": "https://giamusic.com/"
+    },
+    {
+      "name": "The Hymn Society",
+      "url": "https://thehymnsociety.org/"
+    },
+    {
+      "name": "Reformed Worship",
+      "url": "https://reformedworship.org/author/adan-alejandro-fernandez"
+    },
+    {
+      "name": "Religions",
+      "url": "https://www.mdpi.com/journal/religions"
+    },
+    {
+      "name": "CrossAccent",
+      "url": "https://alcm.org/publications/crossaccent/"
+    },
+    {
+      "name": "ChorTeach",
+      "url": "https://acda.org/chorteach/"
+    }
+  ]
+}

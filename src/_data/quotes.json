@@ -1,0 +1,9 @@
+{
+  "_comment": "Endorsements and review quotes. The homepage band only renders when featured is filled in. Add the big one to featured, and up to two shorter ones to supporting.",
+  "featured": {
+    "quote": "",
+    "name": "",
+    "role": ""
+  },
+  "supporting": []
+}

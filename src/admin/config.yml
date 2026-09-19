@@ -64,6 +64,68 @@ collections:
               - { name: composer, label: Composer, widget: string }
               - { name: note, label: "Note (optional)", widget: string, required: false }
 
+  - name: homepage
+    label: Home page
+    icon: home
+    files:
+      - name: quotes
+        label: "Endorsements (home page)"
+        file: src/_data/quotes.json
+        fields:
+          - name: featured
+            label: "Main quote"
+            hint: "Leave the quote empty and this whole section stays off the home page."
+            widget: object
+            fields:
+              - { name: quote, label: Quote, widget: text, required: false }
+              - { name: name, label: "Who said it", widget: string, required: false }
+              - { name: role, label: "Their title and institution", widget: string, required: false }
+          - name: supporting
+            label: "Two shorter quotes (optional)"
+            label_singular: Quote
+            widget: list
+            max: 2
+            required: false
+            summary: "{{fields.name}}"
+            fields:
+              - { name: quote, label: Quote, widget: text }
+              - { name: name, label: "Who said it", widget: string }
+              - { name: role, label: "Their title and institution", widget: string, required: false }
+      - name: feature
+        label: "Featured band (home page)"
+        file: src/_data/feature.json
+        fields:
+          - { name: kicker, label: "Small label above the headline", widget: string }
+          - { name: title, label: Headline, widget: string }
+          - { name: body, label: Paragraph, widget: text }
+          - { name: image, label: "Background photo", widget: image }
+          - { name: imageWeb, label: "Background photo (web version)", widget: image, required: false }
+          - { name: alt, label: "Photo description", widget: string }
+          - { name: credit, label: "Photo credit line", widget: string, required: false }
+          - name: actions
+            label: Buttons
+            label_singular: Button
+            widget: list
+            max: 2
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "Button text", widget: string }
+              - { name: href, label: "Links to", widget: string }
+              - { name: primary, label: "Solid (rather than outlined)", widget: boolean, default: false }
+      - name: press
+        label: "Writes for (home page)"
+        file: src/_data/press.json
+        fields:
+          - { name: label, label: "Strip heading", widget: string }
+          - name: items
+            label: Outlets
+            label_singular: Outlet
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: url, label: "Link (optional)", widget: string, required: false }
+
   - name: biography
     label: Biography
     icon: person

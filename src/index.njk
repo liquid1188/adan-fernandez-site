@@ -27,6 +27,17 @@ active: home
   </div>
 </div>
 
+<div class="press-strip">
+  <div class="wrap">
+    <p class="press-label">{{ press.label }}</p>
+    <ul class="press-row">
+    {%- for p in press.items %}
+      <li>{% if p.url %}<a href="{{ p.url }}" rel="noopener">{{ p.name }}</a>{% else %}<span>{{ p.name }}</span>{% endif %}</li>
+    {%- endfor %}
+    </ul>
+  </div>
+</div>
+
 <section class="section">
   <div class="wrap two-col">
     <div class="reveal">
@@ -65,6 +76,45 @@ active: home
 </section>
 
 {%- if next | length %}
+{% if quotes.featured.quote %}
+<section class="band-quote">
+  <div class="wrap">
+    <blockquote class="big-q">
+      <span class="qmark" aria-hidden="true">&ldquo;</span>
+      <p>{{ quotes.featured.quote | safe }}</p>
+      <cite><span class="q-name">{{ quotes.featured.name }}</span>{% if quotes.featured.role %}<span class="q-role">{{ quotes.featured.role }}</span>{% endif %}</cite>
+    </blockquote>
+    {%- if quotes.supporting | length %}
+    <div class="q-two">
+    {%- for q in quotes.supporting %}
+      <blockquote class="q-small">
+        <p>{{ q.quote | safe }}</p>
+        <cite><span class="q-name">{{ q.name }}</span>{% if q.role %}<span class="q-role">{{ q.role }}</span>{% endif %}</cite>
+      </blockquote>
+    {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{% endif %}
+
+<section class="feature">
+  <img class="feature-img" src="{{ feature.imageWeb or feature.image }}" alt="" width="1024" height="1024" loading="lazy" sizes="100vw">
+  <div class="wrap">
+    <div class="feature-copy">
+      <p class="kicker">{{ feature.kicker }}</p>
+      <h2>{{ feature.title }}</h2>
+      <p class="feature-body">{{ feature.body | safe }}</p>
+      <div class="cta-row">
+      {%- for a in feature.actions %}
+        <a class="btn {% if a.primary %}btn-brass{% else %}btn-ghost{% endif %}" href="{{ a.href }}">{{ a.label }}</a>
+      {%- endfor %}
+      </div>
+    </div>
+  </div>
+  <p class="feature-credit">{{ feature.credit }}</p>
+</section>
+
 <section class="section tint">
   <div class="wrap">
     <div class="rule-head reveal"><span class="lbl">Next</span><span class="rule"></span></div>
@@ -138,6 +188,25 @@ active: home
         <p>Articles, lectures, and choral music, published by GIA, MusicSpoke, and the Hymn Society.</p>
         <span class="go">Read the work &rarr;</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="mailing">
+  <div class="wrap">
+    <div class="ml-inner">
+      <div class="ml-text">
+        <h3>Join the mailing list.</h3>
+        <p>Recital dates and new writing, a few times a year.</p>
+      </div>
+      <form class="ml-form" action="https://formsubmit.co/{{ site.email }}" method="POST">
+        <input type="hidden" name="_subject" value="Mailing list signup">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+        <label class="sr-only" for="ml-email">Email address</label>
+        <input id="ml-email" type="email" name="email" placeholder="Email address" required>
+        <button type="submit" class="btn btn-brass">Subscribe</button>
+      </form>
     </div>
   </div>
 </section>
