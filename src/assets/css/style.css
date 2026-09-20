@@ -219,6 +219,8 @@ body.on-paper .nav-toggle { color: var(--ink); }
 
 .stack { display: grid; gap: 1.1rem; }
 .entry { display: grid; grid-template-columns: 76px 1fr; gap: 1.4rem; align-items: baseline; padding-bottom: 1.1rem; border-bottom: 1px solid var(--rule-light); }
+.glance .entry { grid-template-columns: 148px 1fr; }
+@media (max-width: 560px) { .glance .entry { grid-template-columns: 1fr; } }
 .dark .entry { border-bottom-color: var(--rule-dark); }
 .entry .yr { font-size: .8rem; letter-spacing: .14em; font-weight: 600; color: var(--brass-deep); }
 .dark .entry .yr { color: var(--brass-soft); }
