@@ -80,6 +80,16 @@
       "ww": 960,
       "wh": 960,
       "shape": "Square"
+    },
+    {
+      "file": "/assets/img/press/console-bw-smiling.jpg",
+      "web": "/assets/img/press/console-bw-smiling.jpg",
+      "alt": "At the organ console, black and white, smiling",
+      "w": 1206,
+      "h": 1500,
+      "ww": 1206,
+      "wh": 1500,
+      "shape": "Portrait"
     }
   ]
 }
