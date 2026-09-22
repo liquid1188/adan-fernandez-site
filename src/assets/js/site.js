@@ -94,8 +94,5 @@
     box.addEventListener("click", function () {
       openModal(box.dataset.yt, box.getAttribute("aria-label"));
     });
-    box.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); box.click(); }
-    });
   });
 })();

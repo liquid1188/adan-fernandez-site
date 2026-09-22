@@ -13,7 +13,7 @@ description: "Recordings of Adán Fernández at the organ and harpsichord, condu
     <h1>Recordings.</h1>
     <p class="lede">Organ and harpsichord, choral and orchestral conducting, his own music, and a few lectures. Everything here is on his <a href="{{ site.youtube }}" rel="noopener" style="border-bottom:1px solid var(--brass)">YouTube channel</a>, which holds a good deal more.</p>
   </div>
-  <figure class="head-photo"><img src="/assets/img/press/conducting-bw-web.jpg" alt="" width="960" height="960" style="object-position:50% 30%" loading="eager"></figure>
+  <figure class="head-photo"><img src="/assets/img/press/conducting-bw-web.jpg" alt="Adán Fernández conducting" width="960" height="960" style="object-position:50% 30%" loading="eager"></figure>
   </div>
 </section>
 
@@ -24,10 +24,10 @@ description: "Recordings of Adán Fernández at the organ and harpsichord, condu
     <div class="video-grid">
     {%- for v in g.items %}
       <figure class="vid reveal">
-        <div class="frame" data-yt="{{ v.id }}" role="button" tabindex="0" aria-label="Play {{ v.piece }} by {{ v.composer }}">
+        <button type="button" class="frame" data-yt="{{ v.id }}" aria-label="Play {{ v.piece }} by {{ v.composer }}">
           <img src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'" alt="" loading="lazy" width="1280" height="720">
           <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        </div>
+        </button>
         <figcaption>
           <span class="piece">{{ v.piece }}</span>
           <span class="composer">{{ v.composer }}</span>

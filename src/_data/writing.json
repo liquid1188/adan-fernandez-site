@@ -15,16 +15,11 @@
       "link": "https://doi.org/10.3390/rel16050586"
     },
     {
-      "year": "2023",
-      "title": "Tres Corales de Bach",
-      "where": "GIA Publications",
-      "kind": "Edition"
-    },
-    {
-      "year": "2023",
+      "year": "2022",
       "title": "The Music of the Great Religions: The Philosophy of a New Course at Cal Lutheran University",
       "where": "CrossAccent",
-      "kind": "Journal article"
+      "kind": "Journal article",
+      "link": "https://alcm.org/product/ca-2022-vol-30-no-3-teach-us-to-pray-church-music-education/"
     },
     {
       "year": "2022",
@@ -32,6 +27,13 @@
       "where": "Religions",
       "kind": "Journal article",
       "link": "https://doi.org/10.3390/rel13030189"
+    },
+    {
+      "year": "2019",
+      "title": "Report: The Fifth Biennial Christian Congregational Music Conference: Local and Global Perspectives",
+      "where": "CrossAccent",
+      "kind": "Conference report",
+      "link": "https://alcm.org/product/ca-2019-vol-27-no-3-2019-conference-doing-common-things-uncommonly-well/"
     },
     {
       "year": "2018",
@@ -81,18 +83,23 @@
   ],
   "choral": [
     {
+      "year": "2024",
       "title": "Concert of Silences",
-      "note": "Premiered by the Choral Arts Initiative, Concordia University Irvine, 2024",
-      "video": "w6xluVF3x98"
+      "where": "Choral Arts Initiative, Concordia University Irvine",
+      "kind": "World premiere",
+      "link": "https://www.youtube.com/watch?v=w6xluVF3x98"
     },
     {
       "title": "Te Cubrirá",
-      "note": "Choral, with a recording on the channel",
-      "video": "WCuWLkhduxY"
+      "kind": "Choral, recording on the channel",
+      "link": "https://www.youtube.com/watch?v=WCuWLkhduxY"
     },
     {
+      "year": "2023",
       "title": "Tres Corales de Bach",
-      "note": "Edition, GIA Publications, 2023"
+      "where": "GIA Publications",
+      "kind": "Choral edition",
+      "link": "https://giamusic.com/resource/tres-corales-de-bach-three-bach-chorales-pdf-d10834"
     }
   ],
   "lectures": [
@@ -168,7 +175,7 @@
       "cite": "Edition, 2023",
       "title": "Tres Corales de Bach",
       "blurb": "His edition of three Bach chorales for GIA, part of his work for Spanish-speaking parishes. He also serves on the editorial board of GIA's Spanish hymnal.",
-      "link": "https://www.giamusic.com",
+      "link": "https://giamusic.com/resource/tres-corales-de-bach-three-bach-chorales-pdf-d10834",
       "cta": "GIA Publications"
     },
     {
