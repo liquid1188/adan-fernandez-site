@@ -199,7 +199,7 @@ body.on-paper .nav-toggle { color: var(--ink); }
 /* Each embed starts as its own YouTube poster and only becomes an iframe on
    click — thirty live iframes on one page is a minute of loading and a lot of
    third-party script for a visitor who wants to watch one thing. */
-.vid .frame[data-yt] { cursor: pointer; display: grid; place-items: center; border: 0; padding: 0; margin: 0; font: inherit; -webkit-appearance: none; appearance: none; touch-action: manipulation; }
+.vid .frame[data-yt] { cursor: pointer; display: grid; place-items: center; width: 100%; padding: 0; margin: 0; color: inherit; font: inherit; -webkit-appearance: none; appearance: none; touch-action: manipulation; }
 .vid .frame[data-yt] img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .vid .frame[data-yt] .play { position: relative; width: 64px; height: 64px; border-radius: 50%; background: rgba(16, 26, 38, .68); display: grid; place-items: center; transition: background .18s, transform .18s; }
 .vid .frame[data-yt]:hover .play { background: var(--brass); transform: scale(1.07); }
@@ -742,3 +742,6 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .choir-strip figure { margin: 0; }
 .choir-strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border: 1px solid var(--rule-light); }
 @media (max-width: 760px) { .choir-strip { grid-template-columns: 1fr; } }
+
+/* Keys and pipes are an instrument: no scroll or zoom gestures that would cancel a held note */
+.organ-keyboard, .organ-facade { touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }

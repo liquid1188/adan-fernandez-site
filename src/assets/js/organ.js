@@ -129,39 +129,54 @@
 
   function noteTarget(event) { return event.target.closest("[data-midi]"); }
 
+  var activePointers = new Set();
+
+  function releasePointer(event) {
+    activePointers.delete(event.pointerId);
+    pointerDown = activePointers.size > 0;
+    Array.from(voices.keys())
+      .filter(function (k) { return k.indexOf("pointer" + event.pointerId + ":") === 0; })
+      .forEach(function (k) { stop(Number(k.split(":")[1]), "pointer" + event.pointerId); });
+  }
+
   document.addEventListener("pointerdown", function (event) {
     var el = noteTarget(event);
     if (!el) return;
     event.preventDefault();
-    // Capture synchronously, before any await: the pointer is only
-    // guaranteed "active" for setPointerCapture during this same tick.
-    // Skip capture for touch: capturing locks all further events to this
-    // one element, which would stop a dragged finger from ever reaching
-    // pointerover on the next key — exactly the gesture touch users need
-    // in place of hovering with a mouse.
-    if (event.pointerType !== "touch") {
-      try { el.setPointerCapture && el.setPointerCapture(event.pointerId); } catch (e) {}
-    }
+    activePointers.add(event.pointerId);
     pointerDown = true;
+    // Touch pointers are captured to the first element automatically; release
+    // that so a finger sliding along the keyboard reaches each key it crosses.
+    // A mouse keeps capture so a press that leaves the key still ends cleanly.
+    try {
+      if (event.pointerType === "touch") el.releasePointerCapture && el.releasePointerCapture(event.pointerId);
+      else el.setPointerCapture && el.setPointerCapture(event.pointerId);
+    } catch (e) {}
     var midi = Number(el.dataset.midi);
-    var source = "pointer" + event.pointerId;
-    (soundEnabled ? Promise.resolve() : enableSound()).then(function () { play(midi, source); });
+    var id = event.pointerId;
+    (soundEnabled ? Promise.resolve() : enableSound()).then(function () {
+      // The first tap waits for audio to wake up; a quick tap may already be
+      // lifted by then, and starting the note now would leave it ringing.
+      if (activePointers.has(id)) play(midi, "pointer" + id);
+    });
   });
-  document.addEventListener("pointerup", function (event) {
-    pointerDown = false;
-    Array.from(voices.keys())
-      .filter(function (k) { return k.indexOf("pointer" + event.pointerId + ":") === 0; })
-      .forEach(function (k) { stop(Number(k.split(":")[1]), "pointer" + event.pointerId); });
-  });
+  document.addEventListener("pointerup", releasePointer);
+  document.addEventListener("pointercancel", releasePointer);
   document.addEventListener("pointerover", function (event) {
     var el = noteTarget(event);
-    if (!el || (!pointerDown && !hoverEnabled) || !soundEnabled) return;
-    play(Number(el.dataset.midi), pointerDown ? "pointer" + event.pointerId : "hover");
+    if (!el || !soundEnabled) return;
+    if (activePointers.has(event.pointerId)) play(Number(el.dataset.midi), "pointer" + event.pointerId);
+    else if (hoverEnabled && event.pointerType === "mouse") play(Number(el.dataset.midi), "hover");
   });
   document.addEventListener("pointerout", function (event) {
     var el = noteTarget(event);
     if (!el) return;
-    stop(Number(el.dataset.midi), pointerDown ? "pointer" + event.pointerId : "hover");
+    stop(Number(el.dataset.midi), activePointers.has(event.pointerId) ? "pointer" + event.pointerId : "hover");
+  });
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) return;
+    Array.from(voices.keys()).forEach(function (k) { stop(Number(k.split(":")[1]), k.split(":")[0]); });
+    activePointers.clear(); pointerDown = false;
   });
 
   window.addEventListener("keydown", function (event) {
@@ -181,6 +196,7 @@
   window.addEventListener("blur", function () {
     Array.from(voices.keys()).forEach(function (k) { stop(Number(k.split(":")[1]), k.split(":")[0]); });
     heldKeys.clear();
+    activePointers.clear();
     pointerDown = false;
   });
 
