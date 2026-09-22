@@ -223,6 +223,8 @@ body.on-paper .nav-toggle { color: var(--ink); }
 
 .stack { display: grid; gap: 1.1rem; }
 .entry { display: grid; grid-template-columns: 76px 1fr; gap: 1.4rem; align-items: baseline; padding-bottom: 1.1rem; border-bottom: 1px solid var(--rule-light); }
+.glance .entry { grid-template-columns: 148px 1fr; }
+@media (max-width: 560px) { .glance .entry { grid-template-columns: 1fr; } }
 .dark .entry { border-bottom-color: var(--rule-dark); }
 .entry .yr { font-size: .8rem; letter-spacing: .14em; font-weight: 600; color: var(--brass-deep); }
 .dark .entry .yr { color: var(--brass-soft); }
@@ -600,3 +602,126 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .ml-form input[type="email"]:focus { outline: 2px solid var(--brass); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 @media (max-width: 640px) { .ml-inner { flex-direction: column; align-items: flex-start; } .ml-form { width: 100%; } .ml-form input[type="email"] { flex: 1; min-width: 0; } }
+
+/* ---------- playable organ (homepage) ---------- */
+.organ-widget { max-width: 860px; margin: 0 auto; }
+.organ-facade {
+  position: relative;
+  height: clamp(200px, 32vw, 320px);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: clamp(3px, .7vw, 7px);
+  overflow: hidden;
+  padding: 28px clamp(10px, 2.4vw, 26px) 0;
+  background: linear-gradient(var(--night-3), var(--night));
+  border: 1px solid var(--rule-dark);
+  border-bottom: 0;
+  box-shadow: inset 0 14px 36px rgba(0,0,0,.4);
+  isolation: isolate;
+}
+.organ-pipe {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 40px;
+  min-width: 7px;
+  height: var(--height);
+  padding: 0;
+  border: 0;
+  border-radius: 2px 2px 1px 1px;
+  background: linear-gradient(90deg, var(--brass-deep), var(--brass) 46%, var(--brass-deep));
+  box-shadow: inset 1px 0 0 rgba(255,255,255,.1), inset -1px 0 0 rgba(0,0,0,.25), 0 4px 10px rgba(0,0,0,.35);
+  touch-action: none;
+  user-select: none;
+  transition: filter .12s ease, transform .12s ease;
+}
+.organ-pipe::before {
+  content: "";
+  position: absolute;
+  left: 22%; right: 22%; top: 24%;
+  height: 1.5px;
+  background: rgba(16,26,38,.55);
+}
+.organ-pipe:hover, .organ-pipe.is-playing, .organ-pipe:focus-visible {
+  filter: brightness(1.14);
+  transform: translateY(-2px);
+  outline: none;
+}
+.organ-pipe.is-playing::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: 0 0 14px rgba(221,177,115,.4);
+}
+.organ-console {
+  position: relative;
+  z-index: 2;
+  padding: 16px clamp(10px, 2vw, 20px) 20px;
+  background: var(--night-2);
+  border: 1px solid var(--rule-dark);
+  border-top: 2px solid var(--brass-deep);
+}
+.organ-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 12px; margin-bottom: 14px; }
+.organ-btn {
+  min-height: 28px;
+  padding: 5px 11px;
+  border: 1px solid rgba(221,177,115,.4);
+  color: var(--brass-soft);
+  background: transparent;
+  font-size: .66rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.organ-btn:hover { border-color: var(--brass); background: rgba(221,177,115,.08); }
+.organ-btn[aria-pressed="true"] { color: var(--brass-soft); background: rgba(221,177,115,.14); border-color: var(--brass); }
+.organ-volume { display: flex; align-items: center; gap: 7px; color: var(--dim); font-size: .7rem; }
+.organ-volume input { width: 80px; accent-color: var(--brass); }
+.organ-keyboard {
+  position: relative;
+  height: clamp(110px, 18vw, 170px);
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--rule-dark);
+  background: var(--night);
+  touch-action: none;
+  user-select: none;
+}
+.organ-key {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-right: 1px solid var(--rule-light);
+  background: linear-gradient(180deg, var(--bone) 88%, var(--bone-2));
+  transition: background .1s ease;
+  touch-action: none;
+}
+.organ-key:last-of-type { border-right: 0; }
+.organ-key.is-playing { background: linear-gradient(180deg, var(--brass-soft) 88%, var(--brass)); }
+.organ-key--black {
+  position: absolute;
+  z-index: 2;
+  left: calc(var(--x) * 100% / 15 - 2.15%);
+  width: 4.3%;
+  height: 60%;
+  border: 0;
+  background: linear-gradient(180deg, var(--ink), var(--night-3) 92%);
+  box-shadow: 0 4px 6px rgba(0,0,0,.5);
+  transition: background .1s ease;
+}
+.organ-key--black.is-playing { background: linear-gradient(180deg, var(--brass-deep), var(--night-3) 92%); }
+.organ-key:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
+.organ-hint { margin: 12px 0 0; text-align: center; color: var(--dim); font-size: .7rem; opacity: .7; letter-spacing: .01em; }
+@media (max-width: 560px) {
+  .organ-pipe:nth-child(-n+2), .organ-pipe:nth-last-child(-n+2) { display: none; }
+  .organ-facade { height: 190px; }
+  .organ-keyboard { height: 130px; }
+}
+@media (prefers-reduced-motion: reduce) { .organ-pipe { transition: none; } }

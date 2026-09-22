@@ -75,6 +75,23 @@ active: home
   </div>
 </section>
 
+<section class="section dark">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Try it</span><span class="rule"></span></div>
+    <h2 class="reveal" style="margin-bottom:2rem">Now you play the <em>pipes.</em></h2>
+    <div class="organ-widget reveal">
+      <div class="organ-facade" id="organFacade" aria-label="Playable organ pipes"></div>
+      <div class="organ-console">
+        <div class="organ-controls" aria-label="Organ controls">
+          <button class="organ-btn" id="organHoverToggle" type="button" aria-pressed="false">Hover play</button>
+          <label class="organ-volume">Volume <input id="organVolume" type="range" min="0" max="100" value="58"></label>
+        </div>
+        <div class="organ-keyboard" id="organKeyboard" aria-label="Two-octave organ keyboard"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {%- if next | length %}
 {% if quotes.featured.quote %}
 <section class="band-quote">
