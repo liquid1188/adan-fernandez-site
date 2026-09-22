@@ -306,9 +306,12 @@ a.card:hover { border-color: var(--brass); transform: translateY(-3px); }
 
 /* Phones: keep his face and hands in the hero crop, and hide the roles line under the mark to save the row */
 @media (max-width: 640px) {
-  .hero-img { object-position: 68% 22%; }
-  .hero { min-height: min(78vh, 640px); padding-bottom: 24px; }
-  .hero-content { padding-bottom: 36px; padding-top: 100px; }
+  /* Photo becomes a band under the nav; text sits below it, never over his face */
+  .hero { display: block; min-height: 0; padding-bottom: 0; background: var(--night); }
+  .hero-img { position: relative; inset: auto; height: min(58vh, 440px); object-position: 66% 30%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent); mask-image: linear-gradient(to bottom, #000 72%, transparent); }
+  .hero-shade { background: linear-gradient(to bottom, rgba(16,26,38,.55) 0%, rgba(16,26,38,0) 22%); bottom: auto; height: min(58vh, 440px); }
+  .hero-content { padding-top: 8px; padding-bottom: 40px; }
   .hero h1 { font-size: 2rem; }
   .hero-sub { font-size: 0.95rem; margin-top: 1rem; }
   .hero-eyebrow { font-size: .6rem; letter-spacing: .18em; padding: .45rem .7rem; }
