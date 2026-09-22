@@ -117,7 +117,7 @@ active: home
 {% endif %}
 
 <section class="feature">
-  <img class="feature-img" src="{{ feature.imageWeb or feature.image }}" alt="" width="1206" height="750" loading="lazy" sizes="100vw">
+  <picture><source media="(max-width: 720px)" srcset="/assets/img/press/cathedral-offcenter-mobile.jpg" width="1206" height="1100"><img class="feature-img" src="{{ feature.imageWeb or feature.image }}" alt="" width="1206" height="750" loading="lazy" sizes="100vw"></picture>
   <div class="wrap">
     <div class="feature-copy">
       <p class="kicker">{{ feature.kicker }}</p>

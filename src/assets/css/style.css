@@ -590,7 +590,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .feature-credit { position: absolute; right: var(--pad); bottom: 1rem; margin: 0; font-size: .66rem; letter-spacing: .04em; color: rgba(246,242,233,.78); text-align: right; max-width: 40ch; background: rgba(16,26,38,.55); padding: .4rem .7rem; backdrop-filter: blur(2px); }
 @media (max-width: 720px) {
   .feature { display: block; min-height: 0; padding: 0 0 clamp(40px, 7vw, 56px); background: var(--night); }
-  .feature-img { position: static; inset: auto; z-index: auto; height: 280px; object-position: 60% 30%; display: block; }
+  .feature-img { position: static; inset: auto; z-index: auto; height: auto; display: block; }
   .feature::before { display: none; }
   .feature > .wrap { display: block; padding-top: clamp(28px, 6vw, 40px); }
   .feature-copy { max-width: none; }
