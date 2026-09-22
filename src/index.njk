@@ -64,7 +64,7 @@ active: home
     {%- for v in feat %}
       <figure class="vid reveal">
         <button type="button" class="frame" data-yt="{{ v.id }}" aria-label="Play {{ v.piece }} by {{ v.composer }}">
-          <img src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'" alt="" loading="lazy" width="1280" height="720">
+          <img src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'" onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'}" alt="" loading="lazy" width="1280" height="720">
           <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
         </button>
         <figcaption><span class="piece">{{ v.piece }}</span><span class="composer">{{ v.composer }}</span>{% if v.note %}<span class="note">{{ v.note }}</span>{% endif %}</figcaption>
@@ -117,7 +117,7 @@ active: home
 {% endif %}
 
 <section class="feature">
-  <picture><source media="(max-width: 720px)" srcset="/assets/img/press/cathedral-offcenter-mobile.jpg" width="1206" height="1100"><img class="feature-img" src="{{ feature.imageWeb or feature.image }}" alt="" width="1206" height="750" loading="lazy" sizes="100vw"></picture>
+  <img class="feature-img" src="{{ feature.imageWeb or feature.image }}" alt="Adán Fernández conducting at the Cathedral of Our Lady of the Angels" width="1206" height="1606" loading="lazy">
   <div class="wrap">
     <div class="feature-copy">
       <p class="kicker">{{ feature.kicker }}</p>

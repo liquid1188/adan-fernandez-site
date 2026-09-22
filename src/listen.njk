@@ -25,7 +25,7 @@ description: "Recordings of Adán Fernández at the organ and harpsichord, condu
     {%- for v in g.items %}
       <figure class="vid reveal">
         <button type="button" class="frame" data-yt="{{ v.id }}" aria-label="Play {{ v.piece }} by {{ v.composer }}">
-          <img src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'" alt="" loading="lazy" width="1280" height="720">
+          <img src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'" onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg'}" alt="" loading="lazy" width="1280" height="720">
           <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
         </button>
         <figcaption>

@@ -759,3 +759,35 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
   .vid .frame[data-yt] .play { width: 52px; height: 52px; }
   .vid .piece { font-size: 1.1rem; }
 }
+
+/* ── No cropping: every photo shows its whole frame ──
+   (The desktop home hero is the one full-bleed background; it trims a sliver top and bottom.) */
+.page-head.split .head-photo { align-self: center; }
+.page-head.split .head-photo img, .page-head.split .head-photo.wide img { height: auto; min-height: 0; max-height: none; aspect-ratio: auto; object-fit: contain; }
+.card-photo > img { aspect-ratio: 4 / 5; height: auto; object-fit: contain; background: var(--bone-2); }
+.choir-strip { display: flex; gap: clamp(12px, 2vw, 22px); align-items: flex-start; }
+.choir-strip figure { flex: var(--ar, 1) 1 0; min-width: 0; }
+.choir-strip img { aspect-ratio: auto; height: auto; object-fit: contain; }
+.photo-grid { display: block; columns: 4; column-gap: 1.2rem; }
+.photo { break-inside: avoid; margin-bottom: 1.6rem; }
+.photo > a { aspect-ratio: auto; }
+.photo img { height: auto; object-fit: contain; }
+.photo > a:hover img { transform: none; }
+.feature { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1fr); grid-template-areas: "img copy" "img credit"; align-items: center; min-height: 0; padding: 0; background: var(--night); }
+.feature-img { grid-area: img; position: static; inset: auto; z-index: auto; width: auto; max-width: 100%; height: auto; max-height: 88vh; object-fit: contain; justify-self: end; align-self: center; }
+.feature > .wrap { grid-area: copy; display: block; width: auto; max-width: none; margin: 0; padding: clamp(40px, 5vw, 72px) clamp(24px, 5vw, 72px) 0; }
+.feature-copy { background: none; padding: 0 0 0 clamp(18px, 2.4vw, 28px); max-width: 44ch; }
+.feature-credit { grid-area: credit; position: static; align-self: start; text-align: left; background: none; backdrop-filter: none; max-width: 44ch; margin: 1.4rem clamp(24px, 5vw, 72px) clamp(40px, 5vw, 72px); padding: 0; }
+@media (max-width: 1000px) { .photo-grid { columns: 2; } }
+@media (max-width: 720px) {
+  .feature { display: block; }
+  .feature-img { width: 100%; max-height: none; }
+  .feature > .wrap { padding: clamp(28px, 6vw, 40px) var(--pad) 0; }
+  .feature-credit { margin: 1.2rem var(--pad) 0; padding-bottom: 40px; }
+}
+@media (max-width: 760px) { .choir-strip { flex-direction: column; } .choir-strip figure { flex: none; width: 100%; } }
+@media (max-width: 640px) {
+  .hero { padding-top: 78px; }
+  .hero-img { height: auto; object-fit: contain; -webkit-mask-image: none; mask-image: none; }
+  .hero-shade { display: none; }
+}
