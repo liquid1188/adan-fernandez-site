@@ -664,6 +664,11 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
   border-top: 2px solid var(--brass-deep);
 }
 .organ-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 12px; margin-bottom: 14px; }
+.organ-touch-hint { display: none; font-size: .82rem; color: var(--dim); }
+@media (hover: none) {
+  #organHoverToggle { display: none; }
+  .organ-touch-hint { display: inline; }
+}
 .organ-btn {
   min-height: 28px;
   padding: 5px 11px;

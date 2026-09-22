@@ -135,7 +135,13 @@
     event.preventDefault();
     // Capture synchronously, before any await: the pointer is only
     // guaranteed "active" for setPointerCapture during this same tick.
-    try { el.setPointerCapture && el.setPointerCapture(event.pointerId); } catch (e) {}
+    // Skip capture for touch: capturing locks all further events to this
+    // one element, which would stop a dragged finger from ever reaching
+    // pointerover on the next key — exactly the gesture touch users need
+    // in place of hovering with a mouse.
+    if (event.pointerType !== "touch") {
+      try { el.setPointerCapture && el.setPointerCapture(event.pointerId); } catch (e) {}
+    }
     pointerDown = true;
     var midi = Number(el.dataset.midi);
     var source = "pointer" + event.pointerId;
