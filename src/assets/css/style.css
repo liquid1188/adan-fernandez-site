@@ -733,3 +733,9 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
   .organ-keyboard { height: 130px; }
 }
 @media (prefers-reduced-motion: reduce) { .organ-pipe { transition: none; } }
+
+/* ── choir photo strip (Teaching) ── */
+.choir-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 2vw, 22px); }
+.choir-strip figure { margin: 0; }
+.choir-strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border: 1px solid var(--rule-light); }
+@media (max-width: 760px) { .choir-strip { grid-template-columns: 1fr; } }
