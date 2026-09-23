@@ -85,14 +85,29 @@
     return impulse;
   }
 
+  function running() { return !!audio && audio.state === "running"; }
+
+  // Browsers only let audio start from certain gestures: a mouse press, a key
+  // press, or lifting a finger (not touching down). This is called from all of
+  // them. iOS also mutes web audio in silent mode unless the page asks to play
+  // as media, and needs a sound started inside the gesture to fully unlock.
   function enableSound() {
     initAudio();
-    var resumed = audio.state === "suspended" ? audio.resume() : Promise.resolve();
-    return resumed.then(function () { soundEnabled = true; });
+    try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
+    if (running()) { soundEnabled = true; return Promise.resolve(); }
+    var resumed;
+    try { resumed = audio.resume(); } catch (e) { resumed = Promise.resolve(); }
+    try {
+      var silent = audio.createBufferSource();
+      silent.buffer = audio.createBuffer(1, 1, 22050);
+      silent.connect(audio.destination);
+      silent.start(0);
+    } catch (e) {}
+    return Promise.resolve(resumed).then(function () { soundEnabled = running(); }, function () { soundEnabled = running(); });
   }
 
   function play(midi, source) {
-    if (!soundEnabled || voices.has(source + ":" + midi)) return;
+    if (!running() || voices.has(source + ":" + midi)) return;
     var now = audio.currentTime;
     var gain = audio.createGain();
     var filter = audio.createBiquadFilter();
@@ -132,33 +147,46 @@
   function noteTarget(event) { return event.target.closest("[data-midi]"); }
 
   var activePointers = new Set();
+  var pointerNote = new Map();   // pointer id -> note it pressed, for the first-tap fallback
 
   function releasePointer(event) {
-    activePointers.delete(event.pointerId);
+    var id = event.pointerId;
+    activePointers.delete(id);
     pointerDown = activePointers.size > 0;
-    Array.from(voices.keys())
-      .filter(function (k) { return k.indexOf("pointer" + event.pointerId + ":") === 0; })
-      .forEach(function (k) { stop(Number(k.split(":")[1]), "pointer" + event.pointerId); });
+    var sounding = Array.from(voices.keys()).filter(function (k) { return k.indexOf("pointer" + id + ":") === 0; });
+    sounding.forEach(function (k) { stop(Number(k.split(":")[1]), "pointer" + id); });
+    var midi = pointerNote.get(id);
+    pointerNote.delete(id);
+    // On phones the first touch-down cannot start audio; lifting the finger
+    // can. If that press made no sound, unlock now and play it as a short tap.
+    if (event.type === "pointerup" && midi !== undefined && !sounding.length) {
+      enableSound().then(function () {
+        if (!running()) return;
+        play(midi, "tap" + id);
+        setTimeout(function () { stop(midi, "tap" + id); }, 320);
+      });
+    }
   }
 
   document.addEventListener("pointerdown", function (event) {
     var el = noteTarget(event);
     if (!el) return;
     event.preventDefault();
-    activePointers.add(event.pointerId);
+    var id = event.pointerId;
+    var midi = Number(el.dataset.midi);
+    activePointers.add(id);
+    pointerNote.set(id, midi);
     pointerDown = true;
     // Touch pointers are captured to the first element automatically; release
     // that so a finger sliding along the keyboard reaches each key it crosses.
     // A mouse keeps capture so a press that leaves the key still ends cleanly.
     try {
-      if (event.pointerType === "touch") el.releasePointerCapture && el.releasePointerCapture(event.pointerId);
-      else el.setPointerCapture && el.setPointerCapture(event.pointerId);
+      if (event.pointerType === "touch") el.releasePointerCapture && el.releasePointerCapture(id);
+      else el.setPointerCapture && el.setPointerCapture(id);
     } catch (e) {}
-    var midi = Number(el.dataset.midi);
-    var id = event.pointerId;
-    (soundEnabled ? Promise.resolve() : enableSound()).then(function () {
-      // The first tap waits for audio to wake up; a quick tap may already be
-      // lifted by then, and starting the note now would leave it ringing.
+    if (running()) { play(midi, "pointer" + id); return; }
+    enableSound().then(function () {
+      // Audio may wake after a quick tap is already lifted; don't start it then.
       if (activePointers.has(id)) play(midi, "pointer" + id);
     });
   });
@@ -166,7 +194,7 @@
   document.addEventListener("pointercancel", releasePointer);
   document.addEventListener("pointerover", function (event) {
     var el = noteTarget(event);
-    if (!el || !soundEnabled) return;
+    if (!el || !running()) return;
     if (activePointers.has(event.pointerId)) play(Number(el.dataset.midi), "pointer" + event.pointerId);
     else if (hoverEnabled && event.pointerType === "mouse") play(Number(el.dataset.midi), "hover");
   });

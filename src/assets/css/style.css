@@ -637,7 +637,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
   border-radius: 2px 2px 1px 1px;
   background: linear-gradient(90deg, var(--brass-deep), var(--brass) 46%, var(--brass-deep));
   box-shadow: inset 1px 0 0 rgba(255,255,255,.1), inset -1px 0 0 rgba(0,0,0,.25), 0 4px 10px rgba(0,0,0,.35);
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
   transition: filter .12s ease, transform .12s ease;
 }
@@ -699,7 +699,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
   overflow: hidden;
   border: 1px solid var(--rule-dark);
   background: var(--night);
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
 }
 .organ-key {
@@ -712,7 +712,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
   border-right: 1px solid var(--rule-light);
   background: linear-gradient(180deg, var(--bone) 88%, var(--bone-2));
   transition: background .1s ease;
-  touch-action: none;
+  touch-action: pan-y;
 }
 .organ-key:last-of-type { border-right: 0; }
 .organ-key.is-playing { background: linear-gradient(180deg, var(--brass-soft) 88%, var(--brass)); }
@@ -743,8 +743,8 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .choir-strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border: 1px solid var(--rule-light); }
 @media (max-width: 760px) { .choir-strip { grid-template-columns: 1fr; } }
 
-/* Keys and pipes are an instrument: no scroll or zoom gestures that would cancel a held note */
-.organ-keyboard, .organ-facade { touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+/* Keys and pipes: vertical swipes scroll the page; sideways drags slide across the keys */
+.organ-keyboard, .organ-facade { touch-action: pan-y; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 
 /* Phones: videos stack in a normal vertical list, each tile a bit narrower than the screen */
 @media (max-width: 640px) {
