@@ -672,6 +672,37 @@ collections:
         - Portrait
         - Landscape
         - Square
+- name: gallery
+  label: Gallery
+  files:
+  - name: gallery
+    label: Gallery page
+    file: src/_data/gallery.json
+    fields:
+    - name: intro
+      label: Line under the heading
+      widget: text
+    - name: items
+      label: Photos
+      widget: list
+      summary: '{{fields.alt}}'
+      hint: Drag to reorder. Photos show whole, in the order listed.
+      fields:
+      - name: src
+        label: Photo
+        widget: image
+      - name: alt
+        label: Caption
+        widget: string
+      - name: w
+        label: Width in pixels
+        widget: number
+        value_type: int
+        hint: Helps the page lay out before the photo loads. A rough number is fine.
+      - name: h
+        label: Height in pixels
+        widget: number
+        value_type: int
 - name: settings
   label: Contact details
   icon: settings
@@ -748,3 +779,11 @@ collections:
     - name: photoCredit
       label: Photo credit line
       widget: string
+    - name: instagram
+      label: Instagram profile link
+      widget: string
+    - name: beholdFeedId
+      label: Behold feed ID (Instagram feed)
+      widget: string
+      required: false
+      hint: 'From behold.so: open the feed, click Embed code, and copy only the feed-id value. Leave empty to show just the Follow on Instagram button.'

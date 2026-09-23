@@ -1,0 +1,60 @@
+---
+layout: base.njk
+permalink: /gallery/
+active: gallery
+bodyClass: on-paper
+title: Gallery
+description: "Photographs of Adán Fernández at the organ, conducting, and with his choirs, plus his latest posts from Instagram."
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Gallery</p>
+    <h1>At the console and on the <em>podium.</em></h1>
+    <p class="lede">{{ gallery.intro }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <ul class="gallery-grid" id="gallery">
+    {%- for g in gallery.items %}
+      <li class="reveal"><button type="button" class="gallery-item" data-index="{{ loop.index0 }}" data-src="{{ g.src | url }}" data-alt="{{ g.alt }}" aria-label="View larger: {{ g.alt }}"><img src="{{ g.src }}" alt="{{ g.alt }}" width="{{ g.w }}" height="{{ g.h }}" loading="lazy"></button></li>
+    {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">On Instagram</span><span class="rule"></span></div>
+    {%- if site.beholdFeedId %}
+    <behold-widget feed-id="{{ site.beholdFeedId }}"></behold-widget>
+    <script type="module" src="https://w.behold.so/widget.js"></script>
+    {%- endif %}
+    <p class="reveal" style="margin-top:1.4rem"><a class="btn btn-outline" href="{{ site.instagram }}" rel="noopener">Follow on Instagram</a></p>
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button type="button" class="lb-close" aria-label="Close">&times;</button>
+  <button type="button" class="lb-prev" aria-label="Previous photo">&lsaquo;</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button type="button" class="lb-next" aria-label="Next photo">&rsaquo;</button>
+</dialog>
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
+  var box = document.getElementById('lightbox'); if (!box || !items.length) return;
+  var img = box.querySelector('img'), cap = box.querySelector('figcaption'), i = 0, x0 = null;
+  function show(n) { i = (n + items.length) % items.length; img.src = items[i].dataset.src; img.alt = items[i].dataset.alt; cap.textContent = items[i].dataset.alt; }
+  items.forEach(function (b, n) { b.addEventListener('click', function () { show(n); box.showModal(); }); });
+  box.querySelector('.lb-close').onclick = function () { box.close(); };
+  box.querySelector('.lb-prev').onclick = function () { show(i - 1); };
+  box.querySelector('.lb-next').onclick = function () { show(i + 1); };
+  box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+  box.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+  box.addEventListener('close', function () { items[i].focus(); });
+  box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1); x0 = null; });
+})();
+</script>

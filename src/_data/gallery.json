@@ -1,0 +1,95 @@
+{
+  "intro": "Photographs from concerts, services, and rehearsals.",
+  "items": [
+    {
+      "src": "/assets/img/press/console-wide-web.jpg",
+      "alt": "At the organ console, from the loft",
+      "w": 1600,
+      "h": 1067
+    },
+    {
+      "src": "/assets/img/press/cathedral-offcenter.jpg",
+      "alt": "Conducting the Carlos Colón Requiem, Cathedral of Our Lady of the Angels, 2025",
+      "w": 1206,
+      "h": 1606
+    },
+    {
+      "src": "/assets/img/press/portrait-purple-web.jpg",
+      "alt": "Portrait",
+      "w": 1369,
+      "h": 1600
+    },
+    {
+      "src": "/assets/img/press/choir-loft.jpg",
+      "alt": "With the choir in the loft",
+      "w": 1206,
+      "h": 725
+    },
+    {
+      "src": "/assets/img/press/console-bw-smiling.jpg",
+      "alt": "At the organ console",
+      "w": 1206,
+      "h": 1500
+    },
+    {
+      "src": "/assets/img/press/altar-choir.jpg",
+      "alt": "Choir and orchestra before the altar",
+      "w": 1206,
+      "h": 1506
+    },
+    {
+      "src": "/assets/img/press/conducting-church-web.jpg",
+      "alt": "Conducting in church",
+      "w": 960,
+      "h": 958
+    },
+    {
+      "src": "/assets/img/press/gys-orchestra.jpg",
+      "alt": "Conducting the Glendale Youth Symphony",
+      "w": 1206,
+      "h": 792
+    },
+    {
+      "src": "/assets/img/press/console-smiling-web.jpg",
+      "alt": "At the organ console",
+      "w": 1600,
+      "h": 1067
+    },
+    {
+      "src": "/assets/img/press/childrens-choir.jpg",
+      "alt": "Leading the children’s choir",
+      "w": 1206,
+      "h": 1499
+    },
+    {
+      "src": "/assets/img/press/conducting-bw-web.jpg",
+      "alt": "Conducting",
+      "w": 960,
+      "h": 960
+    },
+    {
+      "src": "/assets/img/press/conducting-strings-web.jpg",
+      "alt": "Conducting with orchestra in church",
+      "w": 960,
+      "h": 958
+    },
+    {
+      "src": "/assets/img/press/portrait-grey-web.jpg",
+      "alt": "Portrait",
+      "w": 960,
+      "h": 960
+    },
+    {
+      "src": "/assets/img/press/console-playing-web.jpg",
+      "alt": "At the organ console, playing",
+      "w": 1600,
+      "h": 1067
+    },
+    {
+      "src": "/assets/img/press/conducting-orchestra-web.jpg",
+      "alt": "Conducting a student orchestra",
+      "w": 638,
+      "h": 638
+    }
+  ]
+}
