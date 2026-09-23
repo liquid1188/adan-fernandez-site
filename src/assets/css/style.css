@@ -866,3 +866,19 @@ body { top: 0 !important; }
   .saint-img { width: 104px; margin-bottom: 1.6rem; }
   .saint-cite { flex-direction: column; gap: .35rem; }
 }
+
+/* ── Affiliations, balanced: equal cells, capped logo sizes, one type size ── */
+.affil-row { gap: 30px 0; align-items: stretch; }
+.affil-row { max-width: 1000px; margin: 0 auto; }
+.affil-row li { flex: 0 0 25%; justify-content: center; min-height: 64px; padding: 0 10px; box-sizing: border-box; }
+.affil-row a { justify-content: center; width: 100%; }
+.affil-row img { height: auto; width: auto; max-height: 48px; max-width: 150px; filter: grayscale(1); transition: filter .2s; }
+.affil-row a:hover img, .affil-row a:focus-visible img { filter: none; }
+.affil-row .wordmark { font-size: 1.2rem; line-height: 1.12; max-width: 13ch; margin: 0 auto; }
+.affil-row .wordmark small { white-space: nowrap; font-size: .54rem; letter-spacing: .14em; line-height: 1.35; margin-top: .3rem; }
+@media (max-width: 640px) {
+  .affil-row { gap: 26px 0; }
+  .affil-row li { flex-basis: 50%; }
+  .affil-row img { max-height: 38px; max-width: 124px; }
+  .affil-row .wordmark { font-size: 1.05rem; }
+}
