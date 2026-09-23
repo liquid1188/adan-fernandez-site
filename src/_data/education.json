@@ -57,13 +57,37 @@
   ],
   "credential": "Certified Colleague (CAGO) and Choirmaster (ChM), American Guild of Organists. Rudolph Polk Memorial Scholarship.",
   "memberships": [
-    "American Musicological Society",
-    "American Guild of Organists",
-    "American Choral Directors Association",
-    "American Early Music Society",
-    "North American Academy of Liturgy",
-    "Organization of American Kodály Educators",
-    "American Academy of Religion",
-    "Music Teachers' Association of California"
+    {
+      "name": "American Musicological Society",
+      "url": "https://www.amsmusicology.org"
+    },
+    {
+      "name": "American Guild of Organists",
+      "url": "https://www.agohq.org"
+    },
+    {
+      "name": "American Choral Directors Association",
+      "url": "https://acda.org"
+    },
+    {
+      "name": "American Early Music Society",
+      "url": ""
+    },
+    {
+      "name": "North American Academy of Liturgy",
+      "url": "https://www.naal-liturgy.org"
+    },
+    {
+      "name": "Organization of American Kodály Educators",
+      "url": "https://www.oake.org"
+    },
+    {
+      "name": "American Academy of Religion",
+      "url": "https://www.aarweb.org"
+    },
+    {
+      "name": "Music Teachers' Association of California",
+      "url": "https://www.mtac.org"
+    }
   ]
 }

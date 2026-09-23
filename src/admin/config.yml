@@ -433,10 +433,16 @@ collections:
       label: Memberships
       label_singular: Society
       widget: list
-      field:
-        name: m
-        label: Name
+      summary: '{{fields.name}}'
+      fields:
+      - name: name
+        label: Organization
         widget: string
+      - name: url
+        label: Website (optional)
+        widget: string
+        required: false
+        hint: Leave empty and the name shows without a link.
 - name: writing
   label: Writing & scholarship
   icon: article

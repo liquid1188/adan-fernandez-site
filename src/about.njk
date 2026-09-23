@@ -67,10 +67,17 @@ description: "Dr. Adán Alejándro Fernández, organist, harpsichordist, and con
       <div class="rule-head"><span class="lbl">Fellowships &amp; awards</span><span class="rule"></span></div>
       {% set items = education.honors %}{% include "biblio.njk" %}
       <p class="fine" style="margin-top:1.4rem">{{ education.credential }}</p>
-      <div class="rule-head" style="margin-top:2.4rem"><span class="lbl">Member of</span><span class="rule"></span></div>
-      <ul class="pills">
-      {%- for m in education.memberships %}<li>{{ m }}</li>{% endfor %}
-      </ul>
     </div>
+  </div>
+</section>
+
+<section class="members" aria-labelledby="members-title">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl" id="members-title">Member of</span><span class="rule"></span></div>
+    <ul class="member-grid">
+    {%- for m in education.memberships %}
+      <li class="reveal">{% if m.url %}<a class="member" href="{{ m.url }}" target="_blank" rel="noopener"><span class="member-name">{{ m.name }}</span><span class="member-url">{{ m.url | replace("https://", "") | replace("www.", "") }} <span aria-hidden="true">&nearr;</span></span></a>{% else %}<div class="member"><span class="member-name">{{ m.name }}</span></div>{% endif %}</li>
+    {%- endfor %}
+    </ul>
   </div>
 </section>
