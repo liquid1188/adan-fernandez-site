@@ -2,7 +2,7 @@ backend:
   name: github
   repo: liquid1188/adan-fernandez-site
   branch: main
-site_url: https://liquid1188.github.io/adan-fernandez-site
+site_url: https://adanfernandezmusic.com
 media_folder: src/assets/img/uploads
 public_folder: /assets/img/uploads
 media_libraries:

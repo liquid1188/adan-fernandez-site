@@ -2,11 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-// GitHub Pages serves this repo at /adan-fernandez-site/, not at the root, so
-// every absolute path in the templates would 404. The templates stay written
-// as if the site lived at the root and this plugin rewrites the output.
-// When a custom domain is added: set this to "/" and update url in site.json.
-const PATH_PREFIX = "/adan-fernandez-site/";
+// The site lives at the root of adanfernandezmusic.com. (It was first served
+// from github.io/adan-fernandez-site/, which needed a prefix; templates stay
+// written for the root and this plugin rewrites the output if one is set.)
+
+const PATH_PREFIX = "/";
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
