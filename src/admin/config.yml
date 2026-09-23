@@ -263,7 +263,7 @@ collections:
         widget: string
         required: false
   - name: saints
-    label: Patron saint quotes
+    label: Patron saint quotes (patrons section)
     file: src/_data/saints.json
     fields:
     - name: _comment
@@ -271,7 +271,7 @@ collections:
       widget: hidden
       required: false
     - name: hildegard
-      label: Saint Hildegard (after the organ)
+      label: Saint Hildegard
       widget: object
       fields:
       - name: quote
@@ -309,7 +309,7 @@ collections:
         label: Portrait description
         widget: string
     - name: romero
-      label: Saint Óscar Romero (after the Latin American section)
+      label: Saint Óscar Romero
       widget: object
       fields:
       - name: quote

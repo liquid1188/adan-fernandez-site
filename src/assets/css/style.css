@@ -896,3 +896,9 @@ a.member:hover, a.member:focus-visible { border-color: var(--brass); background:
 a.member:hover .member-url { opacity: 1; }
 @media (max-width: 1000px) { .member-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .member-grid { grid-template-columns: 1fr; gap: 10px; } .member { min-height: 0; gap: .5rem; padding: 16px 18px; } }
+.patron-q { display: block; margin-top: .8rem; padding-left: .8rem; border-left: 2px solid var(--brass); font-family: "EB Garamond", Georgia, serif; font-style: italic; font-size: 1.08rem; line-height: 1.3; color: var(--ink); quotes: "“" "”"; }
+/* quotes under the patron portraits */
+.patron-q { margin: .9rem 0 0; padding-left: 12px; border-left: 2px solid var(--brass); }
+.patron-q p { margin: 0; font-family: "EB Garamond", Georgia, serif; font-style: italic; font-size: 1.05rem; line-height: 1.3; color: var(--ink); }
+.patron-q p::before { content: "“"; } .patron-q p::after { content: "”"; }
+.patron-q cite { display: block; margin-top: .4rem; font-style: normal; font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); line-height: 1.4; }
