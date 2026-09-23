@@ -731,6 +731,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .organ-key:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
 .organ-hint { margin: 12px 0 0; text-align: center; color: var(--dim); font-size: .7rem; opacity: .7; letter-spacing: .01em; }
 @media (max-width: 560px) {
+  .organ-facade { gap: 2px; padding-inline: 8px; }
   .organ-facade { height: 190px; }
   .organ-keyboard { height: 130px; }
 }
@@ -743,7 +744,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 @media (max-width: 760px) { .choir-strip { grid-template-columns: 1fr; } }
 
 /* Keys and pipes are an instrument: no scroll or zoom gestures that would cancel a held note */
-.organ-keyboard { touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.organ-keyboard, .organ-facade { touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 
 /* Phones: videos stack in a normal vertical list, each tile a bit narrower than the screen */
 @media (max-width: 640px) {
@@ -803,12 +804,3 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
 .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
 behold-widget { display: block; min-height: 240px; }
-
-/* ── Organ facade as the menu: eight labeled pipes ── */
-.organ-facade { gap: clamp(6px, 1.4vw, 14px); padding-top: 22px; }
-.organ-pipe { flex: 1 1 0; max-width: 84px; min-width: 0; display: flex; align-items: flex-start; justify-content: center; text-decoration: none; touch-action: manipulation; }
-.organ-pipe::before { top: auto; bottom: 9px; }
-.organ-pipe-label { writing-mode: vertical-rl; transform: rotate(180deg); margin-top: auto; margin-bottom: 20px; font: 600 clamp(.62rem, 1.35vw, .8rem)/1 var(--sans, system-ui); letter-spacing: .16em; text-transform: uppercase; color: #1a140b; white-space: nowrap; }
-.organ-pipe[aria-current="page"] { filter: brightness(1.18); }
-.organ-pipe:focus-visible { outline: 2px solid var(--bone); outline-offset: 3px; }
-@media (max-width: 560px) { .organ-facade { gap: 5px; padding-inline: 10px; height: 250px; } .organ-pipe-label { font-size: .6rem; letter-spacing: .12em; } }
