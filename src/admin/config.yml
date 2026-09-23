@@ -2,293 +2,749 @@ backend:
   name: github
   repo: liquid1188/adan-fernandez-site
   branch: main
-
-media_folder: src/assets/img
-public_folder: /assets/img
-
+site_url: https://liquid1188.github.io/adan-fernandez-site
+media_folder: src/assets/img/uploads
+public_folder: /assets/img/uploads
+media_libraries:
+  all:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 88
+        width: 2560
+        height: 2560
+      svg:
+        optimize: true
+  default:
+    config:
+      max_file_size: 104857600
+      slugify_filename: true
 collections:
-  - name: calendar
-    label: Calendar
-    icon: calendar_month
-    description: "Add a recital and it appears under Upcoming. On the day after, it moves itself to Past — you never have to come back and tidy up."
-    files:
-      - name: performances
-        label: Performances
-        file: src/_data/performances.json
-        fields:
-          - name: items
-            label: Dated performances
-            label_singular: Performance
-            widget: list
-            summary: "{{fields.date}}  ·  {{fields.title}}"
-            fields:
-              - { name: date, label: Date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, picker_utc: true }
-              - { name: title, label: Title, widget: string }
-              - { name: tag, label: "Small label (optional)", hint: "Something like 'Conductor' or the name of the organ.", widget: string, required: false }
-              - { name: venue, label: Venue, widget: string }
-              - { name: city, label: "City and state", widget: string }
-          - name: highlights
-            label: "Earlier highlights (undated)"
-            label_singular: Highlight
-            widget: list
-            summary: "{{fields.year}}  ·  {{fields.text}}"
-            fields:
-              - { name: year, label: Year, widget: string }
-              - { name: text, label: Description, widget: text }
-
-  - name: recordings
-    label: Recordings
-    icon: play_circle
-    description: "Paste the eleven-character YouTube ID from the video's address — in youtube.com/watch?v=ABC123, the ID is ABC123."
-    files:
-      - name: videos
-        label: Videos
-        file: src/_data/videos.json
-        fields:
-          - name: featured
-            label: "Featured on the home page (three IDs)"
-            widget: list
-            field: { name: id, label: YouTube ID, widget: string }
-          - name: items
-            label: All recordings
-            label_singular: Recording
-            widget: list
-            summary: "{{fields.piece}}  ·  {{fields.composer}}"
-            fields:
-              - { name: id, label: YouTube ID, widget: string }
-              - name: group
-                label: Section
-                widget: select
-                options: ["Organ", "Harpsichord & early music", "Conducting", "His own music", "Lectures"]
-              - { name: piece, label: Piece, widget: string }
-              - { name: composer, label: Composer, widget: string }
-              - { name: note, label: "Note (optional)", widget: string, required: false }
-
-  - name: homepage
-    label: Home page
-    icon: home
-    files:
-      - name: quotes
-        label: "Endorsements (home page)"
-        file: src/_data/quotes.json
-        fields:
-          - name: featured
-            label: "Main quote"
-            hint: "Leave the quote empty and this whole section stays off the home page."
-            widget: object
-            fields:
-              - { name: quote, label: Quote, widget: text, required: false }
-              - { name: name, label: "Who said it", widget: string, required: false }
-              - { name: role, label: "Their title and institution", widget: string, required: false }
-          - name: supporting
-            label: "Two shorter quotes (optional)"
-            label_singular: Quote
-            widget: list
-            max: 2
-            required: false
-            summary: "{{fields.name}}"
-            fields:
-              - { name: quote, label: Quote, widget: text }
-              - { name: name, label: "Who said it", widget: string }
-              - { name: role, label: "Their title and institution", widget: string, required: false }
-      - name: feature
-        label: "Featured band (home page)"
-        file: src/_data/feature.json
-        fields:
-          - { name: kicker, label: "Small label above the headline", widget: string }
-          - { name: title, label: Headline, widget: string }
-          - { name: body, label: Paragraph, widget: text }
-          - { name: image, label: "Background photo", widget: image }
-          - { name: imageWeb, label: "Background photo (web version)", widget: image, required: false }
-          - { name: alt, label: "Photo description", widget: string }
-          - { name: credit, label: "Photo credit line", widget: string, required: false }
-          - name: actions
-            label: Buttons
-            label_singular: Button
-            widget: list
-            max: 2
-            summary: "{{fields.label}}"
-            fields:
-              - { name: label, label: "Button text", widget: string }
-              - { name: href, label: "Links to", widget: string }
-              - { name: primary, label: "Solid (rather than outlined)", widget: boolean, default: false }
-      - name: press
-        label: "Writes for (home page)"
-        file: src/_data/press.json
-        fields:
-          - { name: label, label: "Strip heading", widget: string }
-          - name: items
-            label: Outlets
-            label_singular: Outlet
-            widget: list
-            summary: "{{fields.name}}"
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: url, label: "Link (optional)", widget: string, required: false }
-
-  - name: biography
+- name: calendar
+  label: Calendar
+  icon: calendar_month
+  description: Add a recital and it appears under Upcoming. On the day after, it moves itself to Past — you never have to come back and tidy up.
+  files:
+  - name: performances
+    label: Performances
+    file: src/_data/performances.json
+    fields:
+    - name: items
+      label: Dated performances
+      label_singular: Performance
+      widget: list
+      summary: '{{fields.date}}  ·  {{fields.title}}'
+      fields:
+      - name: date
+        label: Date
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        picker_utc: true
+      - name: title
+        label: Title
+        widget: string
+      - name: tag
+        label: Small label (optional)
+        hint: Something like 'Conductor' or the name of the organ.
+        widget: string
+        required: false
+      - name: venue
+        label: Venue
+        widget: string
+      - name: city
+        label: City and state
+        widget: string
+    - name: highlights
+      label: Earlier highlights (undated)
+      label_singular: Highlight
+      widget: list
+      summary: '{{fields.year}}  ·  {{fields.text}}'
+      fields:
+      - name: year
+        label: Year
+        widget: string
+      - name: text
+        label: Description
+        widget: text
+- name: recordings
+  label: Recordings
+  icon: play_circle
+  description: Paste the eleven-character YouTube ID from the video's address — in youtube.com/watch?v=ABC123, the ID is ABC123.
+  files:
+  - name: videos
+    label: Videos
+    file: src/_data/videos.json
+    fields:
+    - name: featured
+      label: Featured on the home page (three IDs)
+      widget: list
+      field:
+        name: id
+        label: YouTube ID
+        widget: string
+    - name: items
+      label: All recordings
+      label_singular: Recording
+      widget: list
+      summary: '{{fields.piece}}  ·  {{fields.composer}}'
+      fields:
+      - name: id
+        label: YouTube ID
+        widget: string
+      - name: group
+        label: Section
+        widget: select
+        options:
+        - Organ
+        - Harpsichord & early music
+        - Conducting
+        - His own music
+        - Lectures
+      - name: piece
+        label: Piece
+        widget: string
+      - name: composer
+        label: Composer
+        widget: string
+      - name: note
+        label: Note (optional)
+        widget: string
+        required: false
+- name: homepage
+  label: Home page
+  icon: home
+  files:
+  - name: quotes
+    label: Endorsements (home page)
+    file: src/_data/quotes.json
+    fields:
+    - name: _comment
+      label: Note
+      widget: hidden
+      required: false
+    - name: featured
+      label: Main quote
+      hint: Leave the quote empty and this whole section stays off the home page.
+      widget: object
+      fields:
+      - name: quote
+        label: Quote
+        widget: text
+        required: false
+      - name: name
+        label: Who said it
+        widget: string
+        required: false
+      - name: role
+        label: Their title and institution
+        widget: string
+        required: false
+    - name: supporting
+      label: Two shorter quotes (optional)
+      label_singular: Quote
+      widget: list
+      max: 2
+      required: false
+      summary: '{{fields.name}}'
+      fields:
+      - name: quote
+        label: Quote
+        widget: text
+      - name: name
+        label: Who said it
+        widget: string
+      - name: role
+        label: Their title and institution
+        widget: string
+        required: false
+  - name: feature
+    label: Featured band (home page)
+    file: src/_data/feature.json
+    fields:
+    - name: kicker
+      label: Small label above the headline
+      widget: string
+    - name: title
+      label: Headline
+      widget: string
+    - name: body
+      label: Paragraph
+      widget: text
+    - name: image
+      label: Photo
+      widget: image
+      hint: Shown whole, beside the text on computers and above it on phones. A tall photo works best.
+    - name: imageWeb
+      label: Photo, smaller copy (optional)
+      widget: image
+      required: false
+    - name: alt
+      label: Photo description
+      widget: string
+    - name: credit
+      label: Photo credit line
+      widget: string
+      required: false
+    - name: actions
+      label: Buttons
+      label_singular: Button
+      widget: list
+      max: 2
+      summary: '{{fields.label}}'
+      fields:
+      - name: label
+        label: Button text
+        widget: string
+      - name: href
+        label: Links to
+        widget: string
+      - name: primary
+        label: Solid (rather than outlined)
+        widget: boolean
+        default: false
+  - name: press
+    label: Writes for (home page)
+    file: src/_data/press.json
+    fields:
+    - name: label
+      label: Strip heading
+      widget: string
+    - name: items
+      label: Outlets
+      label_singular: Outlet
+      widget: list
+      summary: '{{fields.name}}'
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: url
+        label: Link (optional)
+        widget: string
+        required: false
+  - name: affiliations
+    label: Affiliations band
+    file: src/_data/affiliations.json
+    fields:
+    - name: items
+      label: Affiliations
+      widget: list
+      summary: '{{fields.name}}'
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: url
+        label: Link
+        widget: string
+        required: false
+      - name: img
+        label: Logo (optional)
+        widget: image
+        required: false
+        hint: If there is no logo, the name below is set in type instead.
+      - name: w
+        label: Logo width in pixels
+        widget: number
+        value_type: int
+        required: false
+      - name: h
+        label: Logo height in pixels
+        widget: number
+        value_type: int
+        required: false
+      - name: text
+        label: Name as shown without a logo
+        widget: string
+        required: false
+      - name: sub
+        label: Small line under the name
+        widget: string
+        required: false
+- name: biography
+  label: Biography
+  icon: person
+  files:
+  - name: bio
     label: Biography
-    icon: person
-    files:
-      - name: bio
-        label: Biography
-        file: src/_data/bio.json
-        fields:
-          - { name: oneLine, label: "One line", widget: text }
-          - { name: short, label: "Short biography", widget: text }
-          - name: long
-            label: "Full biography (one entry per paragraph)"
-            label_singular: Paragraph
-            widget: list
-            field: { name: p, label: Paragraph, widget: text }
-      - name: positions
-        label: Positions
-        file: src/_data/positions.json
-        fields:
-          - name: items
-            label: Positions
-            label_singular: Position
-            widget: list
-            summary: "{{fields.title}}  ·  {{fields.place}}"
-            fields:
-              - { name: title, label: Title, widget: string }
-              - { name: place, label: Institution, widget: string }
-              - { name: city, label: "City and state", widget: string }
-              - { name: note, label: "Note (optional)", widget: text, required: false }
-      - name: education
-        label: "Education & honors"
-        file: src/_data/education.json
-        fields:
-          - name: degrees
-            label: Degrees
-            label_singular: Degree
-            widget: list
-            summary: "{{fields.year}}  ·  {{fields.award}}"
-            fields:
-              - { name: year, label: Year, widget: string }
-              - { name: award, label: Degree, widget: string }
-              - { name: school, label: Institution, widget: string }
-              - { name: note, label: "Teachers or note (optional)", widget: string, required: false }
-          - name: honors
-            label: "Fellowships & awards"
-            label_singular: Award
-            widget: list
-            summary: "{{fields.year}}  ·  {{fields.text}}"
-            fields:
-              - { name: year, label: Year, widget: string }
-              - { name: text, label: Description, widget: text }
-          - { name: credential, label: "Closing line", widget: string }
-          - name: memberships
-            label: Memberships
-            label_singular: Society
-            widget: list
-            field: { name: m, label: Name, widget: string }
-
+    file: src/_data/bio.json
+    fields:
+    - name: oneLine
+      label: One line
+      widget: text
+    - name: short
+      label: Short biography
+      widget: text
+    - name: long
+      label: Full biography (one entry per paragraph)
+      label_singular: Paragraph
+      widget: list
+      field:
+        name: p
+        label: Paragraph
+        widget: text
+  - name: positions
+    label: Positions
+    file: src/_data/positions.json
+    fields:
+    - name: items
+      label: Positions
+      label_singular: Position
+      widget: list
+      summary: '{{fields.title}}  ·  {{fields.place}}'
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: place
+        label: Institution
+        widget: string
+      - name: city
+        label: City and state
+        widget: string
+      - name: note
+        label: Note (optional)
+        widget: text
+        required: false
+  - name: education
+    label: Education & honors
+    file: src/_data/education.json
+    fields:
+    - name: degrees
+      label: Degrees
+      label_singular: Degree
+      widget: list
+      summary: '{{fields.year}}  ·  {{fields.award}}'
+      fields:
+      - name: year
+        label: Year
+        widget: string
+      - name: award
+        label: Degree
+        widget: string
+      - name: school
+        label: Institution
+        widget: string
+      - name: note
+        label: Teachers or note (optional)
+        widget: string
+        required: false
+    - name: honors
+      label: Fellowships & awards
+      label_singular: Award
+      widget: list
+      summary: '{{fields.year}}  ·  {{fields.text}}'
+      fields:
+      - name: year
+        label: Year
+        widget: string
+      - name: text
+        label: Description
+        widget: text
+    - name: credential
+      label: Closing line
+      widget: string
+    - name: memberships
+      label: Memberships
+      label_singular: Society
+      widget: list
+      field:
+        name: m
+        label: Name
+        widget: string
+- name: writing
+  label: Writing & scholarship
+  icon: article
+  files:
   - name: writing
-    label: "Writing & scholarship"
-    icon: article
-    files:
-      - name: writing
-        label: "Writing & scholarship"
-        file: src/_data/writing.json
-        fields:
-          - { name: intro, label: Introduction, widget: text }
-          - name: publications
-            label: Publications
-            label_singular: Publication
-            widget: list
-            summary: "{{fields.year}}  ·  {{fields.title}}"
-            fields:
-              - { name: year, label: Year, widget: string }
-              - { name: title, label: Title, widget: string }
-              - { name: where, label: "Journal or publisher", widget: string }
-              - { name: kind, label: "Kind", hint: "Journal article, Edition, Paper, Article", widget: string }
-              - { name: link, label: "Link (optional)", widget: string, required: false }
-          - name: publishers
-            label: Publishers
-            label_singular: Publisher
-            widget: list
-            summary: "{{fields.name}}"
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: note, label: Note, widget: string }
-          - name: choral
-            label: Choral music
-            label_singular: Work
-            widget: list
-            summary: "{{fields.title}}"
-            fields:
-              - { name: title, label: Title, widget: string }
-              - { name: note, label: Note, widget: string, required: false }
-              - { name: video, label: "YouTube ID (optional)", widget: string, required: false }
-          - name: featured
-            label: Featured work
-            label_singular: Work
-            widget: list
-            summary: "{{fields.title}}"
-            fields:
-              - { name: kicker, label: "Journal or publisher", widget: string }
-              - { name: cite, label: "Volume, issue, year", widget: string, required: false }
-              - { name: doi, label: "DOI (optional)", widget: string, required: false }
-              - { name: title, label: Title, widget: string }
-              - { name: blurb, label: "One or two sentences", widget: text }
-              - { name: link, label: Link, widget: string }
-              - { name: cta, label: "Link text", widget: string }
-          - name: lectures
-            label: Selected lectures
-            label_singular: Lecture
-            widget: list
-            summary: "{{fields.year}} {{fields.title}}"
-            fields:
-              - { name: year, label: Year, widget: string }
-              - { name: title, label: Title, widget: string }
-              - { name: where, label: Where, widget: string }
-
+    label: Writing & scholarship
+    file: src/_data/writing.json
+    fields:
+    - name: intro
+      label: Introduction
+      widget: text
+    - name: publications
+      label: Publications
+      label_singular: Publication
+      widget: list
+      summary: '{{fields.year}}  ·  {{fields.title}}'
+      fields:
+      - name: year
+        label: Year
+        widget: string
+      - name: title
+        label: Title
+        widget: string
+      - name: where
+        label: Journal or publisher
+        widget: string
+      - name: kind
+        label: Kind
+        hint: Journal article, Edition, Paper, Article
+        widget: string
+      - name: link
+        label: Link (optional)
+        widget: string
+        required: false
+    - name: publishers
+      label: Publishers
+      label_singular: Publisher
+      widget: list
+      summary: '{{fields.name}}'
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: note
+        label: Note
+        widget: string
+      - name: link
+        label: Link
+        widget: string
+        required: false
+      - name: img
+        label: Logo
+        widget: image
+        required: false
+      - name: w
+        label: Logo width in pixels
+        widget: number
+        value_type: int
+        required: false
+        hint: Leave as is unless you replace the logo.
+      - name: h
+        label: Logo height in pixels
+        widget: number
+        value_type: int
+        required: false
+    - name: choral
+      label: Choral music
+      label_singular: Work
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: year
+        label: Year
+        widget: string
+        required: false
+      - name: where
+        label: Published by or premiered at
+        widget: string
+        required: false
+        hint: For example GIA Publications, or the ensemble that premiered it.
+      - name: kind
+        label: Kind
+        widget: string
+        required: false
+        hint: For example Choral edition, World premiere, or Choral.
+      - name: link
+        label: Link (optional)
+        widget: string
+        required: false
+        hint: A publisher page or a YouTube link.
+    - name: featured
+      label: Featured work
+      label_singular: Work
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - name: kicker
+        label: Journal or publisher
+        widget: string
+      - name: cite
+        label: Volume, issue, year
+        widget: string
+        required: false
+      - name: doi
+        label: DOI (optional)
+        widget: string
+        required: false
+      - name: title
+        label: Title
+        widget: string
+      - name: blurb
+        label: One or two sentences
+        widget: text
+      - name: link
+        label: Link
+        widget: string
+      - name: cta
+        label: Link text
+        widget: string
+      - name: page
+        label: Picture of the first page
+        widget: image
+        required: false
+        hint: Shown on the homepage card and beside the article.
+    - name: lectures
+      label: Selected lectures
+      label_singular: Lecture
+      widget: list
+      summary: '{{fields.year}} {{fields.title}}'
+      fields:
+      - name: year
+        label: Year
+        widget: string
+      - name: title
+        label: Title
+        widget: string
+      - name: where
+        label: Where
+        widget: string
+- name: teaching
+  label: Teaching
+  icon: school
+  files:
   - name: teaching
     label: Teaching
-    icon: school
-    files:
-      - name: teaching
-        label: Teaching
-        file: src/_data/teaching.json
-        fields:
-          - { name: intro, label: Introduction, widget: text }
-          - name: areas
-            label: "What he teaches"
-            label_singular: Area
-            widget: list
-            summary: "{{fields.title}}  ·  {{fields.place}}"
-            fields:
-              - { name: title, label: Title, widget: string }
-              - { name: place, label: Institution, widget: string }
-              - { name: body, label: Description, widget: text }
-          - name: offers
-            label: "Masterclasses and residencies"
-            label_singular: Offering
-            widget: list
-            field: { name: item, label: Offering, widget: string }
-
-  - name: settings
+    file: src/_data/teaching.json
+    fields:
+    - name: intro
+      label: Introduction
+      widget: text
+    - name: areas
+      label: What he teaches
+      label_singular: Area
+      widget: list
+      summary: '{{fields.title}}  ·  {{fields.place}}'
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: place
+        label: Institution
+        widget: string
+      - name: body
+        label: Description
+        widget: text
+    - name: offers
+      label: Masterclasses and residencies
+      label_singular: Offering
+      widget: list
+      field:
+        name: item
+        label: Offering
+        widget: string
+    - name: courses
+      label: Courses he has taught
+      widget: list
+      field:
+        name: course
+        label: Course
+        widget: string
+- name: presskit
+  label: Press kit
+  files:
+  - name: presskit
+    label: Press kit text
+    file: src/_data/presskit.json
+    fields:
+    - name: pronunciation
+      label: How to say his name
+      widget: string
+    - name: glance
+      label: At a glance
+      widget: list
+      summary: '{{fields.k}}'
+      fields:
+      - name: k
+        label: Label
+        widget: string
+      - name: v
+        label: Text
+        widget: text
+    - name: programs
+      label: Recital programs
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - name: title
+        label: Program title
+        widget: string
+      - name: desc
+        label: Description
+        widget: text
+    - name: topics
+      label: Lecture topics
+      widget: list
+      field:
+        name: topic
+        label: Topic
+        widget: string
+    - name: venues
+      label: Venues and ensembles
+      widget: text
+    - name: media
+      label: Media appearances
+      widget: list
+      field:
+        name: item
+        label: Appearance
+        widget: string
+    - name: honors
+      label: Honors
+      widget: list
+      summary: '{{fields.year}} · {{fields.text}}'
+      fields:
+      - name: year
+        label: Year
+        widget: string
+      - name: text
+        label: Description
+        widget: text
+    - name: service
+      label: Service and boards
+      widget: list
+      field:
+        name: item
+        label: Role
+        widget: string
+    - name: technical
+      label: Technical requirements
+      widget: text
+    - name: onesheet
+      label: One-sheet PDF
+      widget: file
+      hint: The printable one-page PDF presenters download.
+    - name: press
+      label: Press coverage
+      widget: list
+      summary: '{{fields.year}} · {{fields.where}}'
+      fields:
+      - name: year
+        label: Year
+        widget: string
+      - name: title
+        label: Headline
+        widget: string
+      - name: where
+        label: Publication
+        widget: string
+      - name: link
+        label: Link (optional)
+        widget: string
+        required: false
+  - name: photos
+    label: Press photos
+    file: src/_data/photos.json
+    fields:
+    - name: credit
+      label: Photo credit line
+      widget: string
+    - name: items
+      label: Photos
+      widget: list
+      summary: '{{fields.alt}}'
+      fields:
+      - name: file
+        label: Full-size photo (download)
+        widget: image
+      - name: web
+        label: Smaller copy shown on the page
+        widget: image
+      - name: alt
+        label: Caption
+        widget: string
+      - name: w
+        label: Full-size width in pixels
+        widget: number
+        value_type: int
+      - name: h
+        label: Full-size height in pixels
+        widget: number
+        value_type: int
+      - name: ww
+        label: Smaller copy width
+        widget: number
+        value_type: int
+      - name: wh
+        label: Smaller copy height
+        widget: number
+        value_type: int
+      - name: shape
+        label: Shape
+        widget: select
+        options:
+        - Portrait
+        - Landscape
+        - Square
+- name: settings
+  label: Contact details
+  icon: settings
+  files:
+  - name: site
     label: Contact details
-    icon: settings
-    files:
-      - name: site
-        label: Contact details
-        file: src/_data/site.json
-        fields:
-          - { name: name, label: "Full name", widget: string }
-          - { name: shortName, label: "Short name", widget: string }
-          - { name: roles, label: "Roles line", widget: string }
-          - { name: url, label: "Site address", widget: string }
-          - { name: email, label: Email, widget: string }
-          - { name: phone, label: "Phone (as displayed)", widget: string }
-          - { name: phoneHref, label: "Phone (dialable, +1…)", widget: string }
-          - { name: youtube, label: "YouTube channel", widget: string }
-          - name: management
-            label: Management
-            widget: object
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: url, label: Link, widget: string }
-          - { name: cv, label: "CV path", widget: string }
-          - { name: photoCredit, label: "Photo credit line", widget: string }
+    file: src/_data/site.json
+    fields:
+    - name: name
+      label: Full name
+      widget: string
+    - name: shortName
+      label: Short name
+      widget: string
+    - name: roles
+      label: Roles line
+      widget: string
+    - name: url
+      label: Site address
+      widget: string
+    - name: email
+      label: Email
+      widget: string
+    - name: phone
+      label: Phone (as displayed)
+      widget: string
+    - name: phoneHref
+      label: Phone (dialable, +1…)
+      widget: string
+    - name: youtube
+      label: YouTube channel
+      widget: string
+    - name: management
+      label: Management
+      widget: object
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: url
+        label: Link
+        widget: string
+      - name: contact
+        label: Contact person
+        widget: string
+        required: false
+      - name: email
+        label: Contact email
+        widget: string
+        required: false
+    - name: social
+      label: Social links
+      widget: list
+      summary: '{{fields.name}}'
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: url
+        label: Link
+        widget: string
+      - name: icon
+        label: Icon
+        widget: select
+        options:
+        - youtube
+        - instagram
+        - facebook
+        - soundcloud
+        - linkedin
+    - name: cv
+      label: CV path
+      widget: string
+    - name: photoCredit
+      label: Photo credit line
+      widget: string
