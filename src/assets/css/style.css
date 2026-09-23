@@ -95,7 +95,7 @@ body.on-paper .links a.nav-cta:hover { color: #12100c; }
 .nav-toggle { color: var(--bone); }
 body.on-paper .nav-toggle { color: var(--ink); }
 
-@media (max-width: 940px) {
+@media (max-width: 1200px) {
   .nav-toggle { display: block; }
   .links {
     position: fixed; inset: 0; flex-direction: column; justify-content: center;
@@ -819,3 +819,29 @@ behold-widget { display: block; min-height: 240px; }
 .patron-credit { margin-top: 1.6rem; font-size: .75rem; color: var(--ink-2); }
 @media (max-width: 560px) { .patron-row { flex-direction: column; } .patron-row figure { width: 78%; flex: none; } }
 .patrons h2 em { color: var(--brass-deep); }
+
+/* ── Language toggle (Google Translate) ── */
+.lang-toggle { background: none; border: 1px solid currentColor; border-radius: 999px; padding: 5px 12px; font: 500 .7rem/1 "Inter", system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); cursor: pointer; opacity: .85; }
+.lang-toggle:hover { opacity: 1; color: var(--bone); }
+body.on-paper .lang-toggle--menu { color: var(--ink-2); }
+body.on-paper .lang-toggle--menu:hover { color: var(--ink); }
+.lang-toggle--bar { display: none; margin-left: auto; margin-right: 10px; }
+body.on-paper .lang-toggle--bar { color: var(--ink-2); }
+@media (max-width: 1200px) {
+  .lang-toggle--bar { display: inline-block; }
+  .lang-toggle--menu { display: none; }
+  .nav.menu-open .lang-toggle--bar { color: var(--dim); }
+}
+.lang-foot { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.gt-note { font-size: .72rem; opacity: .75; }
+/* Keep Google's toolbar and hover popups off the page; the note in the footer says it's Google's translation */
+iframe.skiptranslate, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .VIpgJd-ZVi9od-ORHb-OEVmcd, .VIpgJd-ZVi9od-aZ2wEe-wOHMyf { display: none !important; }
+body { top: 0 !important; }
+.goog-text-highlight, font[style] { background: none !important; box-shadow: none !important; }
+.brand-tag { white-space: nowrap; }
+/* Between the hamburger and wide screens, tighten the menu so it fits in either language */
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .links { gap: 18px; }
+  .links a { letter-spacing: .1em; }
+  .links a.nav-cta { padding: 8px 14px; }
+}

@@ -6,6 +6,7 @@
       <span class="brand-tag">{{ site.roles }}</span>
     </span>
   </a>
+  <button class="lang-toggle lang-toggle--bar notranslate" type="button" data-lang-toggle lang="es">Español</button>
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -18,5 +19,6 @@
     <a href="/gallery/"{% if active == 'gallery' %} class="active" aria-current="page"{% endif %}>Gallery</a>
     <a href="/calendar/"{% if active == 'calendar' %} class="active" aria-current="page"{% endif %}>Calendar</a>
     <a class="nav-cta{% if active == 'contact' %} is-current{% endif %}" href="/contact/">Contact</a>
+    <button class="lang-toggle lang-toggle--menu notranslate" type="button" data-lang-toggle lang="es">Español</button>
   </nav>
 </header>
