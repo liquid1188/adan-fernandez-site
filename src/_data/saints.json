@@ -1,0 +1,25 @@
+{
+  "_comment": "Quotes from the patron saints, shown as full-width bands on the homepage. The original line is shown beneath the English in its own language.",
+  "hildegard": {
+    "quote": "Music softens hard hearts, draws forth the tears of compunction, and calls down the Holy Spirit.",
+    "original": "Symphonia dura corda emollit et umorem compunctionis inducit et Spiritum Sanctum advocat.",
+    "originalLang": "la",
+    "name": "Saint Hildegard of Bingen",
+    "source": "Scivias, Book III, Vision 13",
+    "img": "/assets/img/patrons/hildegard.jpg",
+    "w": 492,
+    "h": 720,
+    "alt": "Saint Hildegard of Bingen receiving a vision"
+  },
+  "romero": {
+    "quote": "The glory of God is the poor person fully alive.",
+    "original": "Gloria Dei, vivens pauper.",
+    "originalLang": "la",
+    "name": "Saint Óscar Romero",
+    "source": "Address at the University of Louvain, February 2, 1980",
+    "img": "/assets/img/patrons/romero.jpg",
+    "w": 631,
+    "h": 717,
+    "alt": "Saint Óscar Romero"
+  }
+}

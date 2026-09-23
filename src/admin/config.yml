@@ -262,6 +262,90 @@ collections:
         label: Small line under the name
         widget: string
         required: false
+  - name: saints
+    label: Patron saint quotes
+    file: src/_data/saints.json
+    fields:
+    - name: _comment
+      label: Note
+      widget: hidden
+      required: false
+    - name: hildegard
+      label: Saint Hildegard (after the organ)
+      widget: object
+      fields:
+      - name: quote
+        label: Quote in English
+        widget: text
+      - name: original
+        label: Quote in the original language
+        widget: text
+        required: false
+        hint: Shown smaller beneath the English.
+      - name: originalLang
+        label: Original language code
+        widget: string
+        required: false
+        hint: la for Latin, es for Spanish.
+      - name: name
+        label: Name
+        widget: string
+      - name: source
+        label: Source
+        widget: string
+        hint: Where the words come from, such as a book and chapter, or a talk and its date.
+      - name: img
+        label: Portrait
+        widget: image
+      - name: w
+        label: Portrait width in pixels
+        widget: number
+        value_type: int
+      - name: h
+        label: Portrait height in pixels
+        widget: number
+        value_type: int
+      - name: alt
+        label: Portrait description
+        widget: string
+    - name: romero
+      label: Saint Óscar Romero (after the Latin American section)
+      widget: object
+      fields:
+      - name: quote
+        label: Quote in English
+        widget: text
+      - name: original
+        label: Quote in the original language
+        widget: text
+        required: false
+        hint: Shown smaller beneath the English.
+      - name: originalLang
+        label: Original language code
+        widget: string
+        required: false
+        hint: la for Latin, es for Spanish.
+      - name: name
+        label: Name
+        widget: string
+      - name: source
+        label: Source
+        widget: string
+        hint: Where the words come from, such as a book and chapter, or a talk and its date.
+      - name: img
+        label: Portrait
+        widget: image
+      - name: w
+        label: Portrait width in pixels
+        widget: number
+        value_type: int
+      - name: h
+        label: Portrait height in pixels
+        widget: number
+        value_type: int
+      - name: alt
+        label: Portrait description
+        widget: string
 - name: biography
   label: Biography
   icon: person

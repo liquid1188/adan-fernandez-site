@@ -845,3 +845,24 @@ body { top: 0 !important; }
   .links a { letter-spacing: .1em; }
   .links a.nav-cta { padding: 8px 14px; }
 }
+
+/* ── Saint quote bands (home): full width, portrait shown whole, quote large, original beneath ── */
+.saint-band { padding: clamp(56px, 8vw, 104px) 0; border-top: 1px solid var(--rule-light); border-bottom: 1px solid var(--rule-light); }
+.saint-band--light { background: var(--bone-2); color: var(--ink); }
+.saint-band--dark { background: var(--night-2); color: var(--bone); border-color: var(--rule-dark); }
+.saint { margin: 0 auto; max-width: 1040px; display: grid; grid-template-columns: auto 1fr; grid-template-areas: "img q" "img cite"; column-gap: clamp(28px, 5vw, 64px); align-items: center; }
+.saint-img { grid-area: img; width: clamp(120px, 16vw, 190px); height: auto; display: block; border: 1px solid var(--rule-light); box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+.saint-band--dark .saint-img { border-color: var(--rule-dark); }
+.saint-q { grid-area: q; margin: 0; align-self: end; }
+.saint-text { margin: 0; font-family: "EB Garamond", Georgia, serif; font-style: italic; font-size: clamp(1.7rem, 3.6vw, 2.9rem); line-height: 1.18; letter-spacing: -.005em; text-wrap: balance; }
+.saint-text::before { content: "“"; } .saint-text::after { content: "”"; }
+.saint-orig { font-feature-settings: "locl" 0; margin: 1rem 0 0; font-family: "EB Garamond", Georgia, serif; font-size: clamp(1rem, 1.5vw, 1.2rem); opacity: .72; }
+.saint-cite { grid-area: cite; align-self: start; margin-top: 1.3rem; display: flex; flex-wrap: wrap; gap: .35rem 1rem; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; }
+.saint-cite span:first-child { color: var(--brass-deep); font-weight: 600; }
+.saint-band--dark .saint-cite span:first-child { color: var(--brass-soft); }
+.saint-cite span + span { opacity: .75; }
+@media (max-width: 640px) {
+  .saint { grid-template-columns: 1fr; grid-template-areas: "img" "q" "cite"; text-align: left; }
+  .saint-img { width: 104px; margin-bottom: 1.6rem; }
+  .saint-cite { flex-direction: column; gap: .35rem; }
+}

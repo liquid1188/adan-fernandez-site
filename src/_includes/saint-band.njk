@@ -1,0 +1,12 @@
+<section class="saint-band saint-band--{{ tone }}" aria-label="{{ s.name }}">
+  <div class="wrap">
+    <figure class="saint reveal">
+      <img class="saint-img" src="{{ s.img }}" alt="{{ s.alt }}" width="{{ s.w }}" height="{{ s.h }}" loading="lazy">
+      <blockquote class="saint-q">
+        <p class="saint-text">{{ s.quote }}</p>
+        {%- if s.original %}<p class="saint-orig notranslate" lang="{{ s.originalLang }}">{{ s.original }}</p>{% endif %}
+      </blockquote>
+      <figcaption class="saint-cite"><span class="notranslate">{{ s.name }}</span><span>{{ s.source }}</span></figcaption>
+    </figure>
+  </div>
+</section>

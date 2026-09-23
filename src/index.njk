@@ -93,6 +93,8 @@ active: home
   </div>
 </section>
 
+{% set s = saints.hildegard %}{% set tone = "light" %}{% include "saint-band.njk" %}
+
 {%- if next | length %}
 {% if quotes.featured.quote %}
 <section class="band-quote">
@@ -132,6 +134,8 @@ active: home
   </div>
   <p class="feature-credit">{{ feature.credit }}</p>
 </section>
+
+{% set s = saints.romero %}{% set tone = "dark" %}{% include "saint-band.njk" %}
 
 <section class="section tint">
   <div class="wrap">
@@ -238,11 +242,6 @@ active: home
       <figure style="--ar:.683"><img src="/assets/img/patrons/hildegard.jpg" alt="Saint Hildegard of Bingen receiving a vision, from the Scivias" width="492" height="720" loading="lazy"><figcaption><strong>Saint Hildegard of Bingen</strong><span>Composer and Doctor of the Church. Feast, September 17</span></figcaption></figure>
       <figure style="--ar:.667"><img src="/assets/img/patrons/guadalupe.jpg" alt="Our Lady of Guadalupe, the image on Saint Juan Diego's tilma" width="480" height="720" loading="lazy"><figcaption><strong>Our Lady of Guadalupe</strong><span>Patroness of the Americas. Feast, December 12</span></figcaption></figure>
     </div>
-    <blockquote class="patron-quote reveal" lang="es">
-      <p>«¿No estoy yo aquí, que soy tu madre?»</p>
-      <p class="tr" lang="en">Am I not here, I who am your mother?</p>
-      <cite lang="en">Our Lady of Guadalupe to Saint Juan Diego, 1531</cite>
-    </blockquote>
     <p class="patron-credit">Images in the public domain, via Wikimedia Commons.</p>
   </div>
 </section>
