@@ -804,3 +804,18 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
 .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
 .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
 behold-widget { display: block; min-height: 240px; }
+
+/* ── Patrons band (home) ── three whole images at one height, a quote beneath */
+.patrons h2 { max-width: 30ch; margin-bottom: 2rem; }
+.patron-row { display: flex; gap: clamp(12px, 2vw, 22px); align-items: flex-start; max-width: 760px; }
+.patron-row figure { flex: var(--ar, 1) 1 0; min-width: 0; margin: 0; }
+.patron-row img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-light); }
+.patron-row figcaption { margin-top: .7rem; font-size: .82rem; line-height: 1.4; color: var(--ink-2); }
+.patron-row figcaption strong { display: block; font-family: "EB Garamond", Georgia, serif; font-weight: 500; font-size: 1.05rem; color: var(--ink); margin-bottom: .15rem; }
+.patron-quote { margin: 2.4rem 0 0; padding-left: clamp(16px, 2vw, 24px); border-left: 3px solid var(--brass); max-width: 40ch; }
+.patron-quote p { margin: 0; font-family: "EB Garamond", Georgia, serif; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.25; font-style: italic; }
+.patron-quote .tr { font-size: 1.05rem; font-style: normal; color: var(--ink-2); margin-top: .5rem; font-family: inherit; }
+.patron-quote cite { display: block; margin-top: .6rem; font-style: normal; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brass-deep); }
+.patron-credit { margin-top: 1.6rem; font-size: .75rem; color: var(--ink-2); }
+@media (max-width: 560px) { .patron-row { flex-direction: column; } .patron-row figure { width: 78%; flex: none; } }
+.patrons h2 em { color: var(--brass-deep); }
