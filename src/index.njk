@@ -21,6 +21,25 @@ active: home
   </div>
 </section>
 
+<section class="section dark organ-section" aria-label="Organ menu and keyboard">
+  <div class="wrap">
+    <div class="rule-head reveal"><span class="lbl">Play or explore</span><span class="rule"></span></div>
+    <h2 class="reveal" style="margin-bottom:.6rem">Every pipe opens a page. The keys are yours to <em>play.</em></h2>
+    <p class="lede reveal" style="margin-bottom:2rem">Tap a pipe to go there. Press or drag across the keys to hear the organ.</p>
+    <div class="organ-widget reveal">
+      <div class="organ-facade" id="organFacade" aria-label="Site menu" role="navigation"></div>
+      <div class="organ-console">
+        <div class="organ-controls" aria-label="Organ controls">
+          <button class="organ-btn" id="organHoverToggle" type="button" aria-pressed="false">Hover play</button>
+          <span class="organ-touch-hint">Drag across the keys to play</span>
+          <label class="organ-volume">Volume <input id="organVolume" type="range" min="0" max="100" value="58"></label>
+        </div>
+        <div class="organ-keyboard" id="organKeyboard" aria-label="Two-octave organ keyboard"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="statement">
   <div class="wrap">
     <p>Working where the pipe organ, the Catholic liturgy, and the sacred music of <em>Latin America</em> meet.</p>
@@ -75,23 +94,6 @@ active: home
   </div>
 </section>
 
-<section class="section dark">
-  <div class="wrap">
-    <div class="rule-head reveal"><span class="lbl">Try it</span><span class="rule"></span></div>
-    <h2 class="reveal" style="margin-bottom:2rem">Now you play the <em>pipes.</em></h2>
-    <div class="organ-widget reveal">
-      <div class="organ-facade" id="organFacade" aria-label="Playable organ pipes"></div>
-      <div class="organ-console">
-        <div class="organ-controls" aria-label="Organ controls">
-          <button class="organ-btn" id="organHoverToggle" type="button" aria-pressed="false">Hover play</button>
-          <span class="organ-touch-hint">Drag across the keys to play</span>
-          <label class="organ-volume">Volume <input id="organVolume" type="range" min="0" max="100" value="58"></label>
-        </div>
-        <div class="organ-keyboard" id="organKeyboard" aria-label="Two-octave organ keyboard"></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 {%- if next | length %}
 {% if quotes.featured.quote %}

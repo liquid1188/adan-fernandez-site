@@ -1,5 +1,5 @@
-// Playable organ widget on the homepage: a facade of clickable pipes and a
-// two-octave keyboard, synthesized with Web Audio (no audio files to load).
+// Organ widget near the top of the homepage: a facade of pipes that work as
+// the site menu, and a playable two-octave keyboard, synthesized with Web Audio (no audio files to load).
 (function () {
   var facade = document.getElementById("organFacade");
   var keyboard = document.getElementById("organKeyboard");
@@ -21,16 +21,33 @@
   function labelFor(midi) { return NOTE_NAMES[midi % 12] + (Math.floor(midi / 12) - 1); }
 
   function build() {
-    var pipeMidis = Array.from({ length: 21 }, function (_, i) { return 48 + i; });
-    pipeMidis.forEach(function (midi, i) {
-      var distance = Math.abs(i - 10);
-      var pipe = document.createElement("button");
-      pipe.type = "button";
+    // The facade is the menu: eight pipes, one per page, tuned to a C major
+    // scale. They carry data-pipe-midi (not data-midi), so the keyboard's
+    // pointer handling never treats a pipe as a key.
+    var MENU = [["About", "/about/"], ["Listen", "/listen/"], ["Performing", "/performing/"], ["Teaching", "/teaching/"],
+                ["Writing", "/writing/"], ["Gallery", "/gallery/"], ["Calendar", "/calendar/"], ["Contact", "/contact/"]];
+    var SCALE = [60, 62, 64, 65, 67, 69, 71, 72];
+    var HEIGHTS = [66, 76, 86, 97, 97, 86, 76, 66];
+    var prefix = (document.querySelector('link[rel="stylesheet"][href*="/assets/css/"]') || { getAttribute: function () { return "/assets/css/"; } })
+      .getAttribute("href").split("/assets/css/")[0];
+    MENU.forEach(function (item, i) {
+      var pipe = document.createElement("a");
       pipe.className = "organ-pipe";
-      pipe.dataset.midi = midi;
-      pipe.style.setProperty("--height", (97 - distance * 5.6) + "%");
-      pipe.setAttribute("aria-label", "Pipe " + labelFor(midi));
-      pipe.title = labelFor(midi);
+      pipe.href = prefix + item[1];
+      pipe.dataset.pipeMidi = SCALE[i];
+      pipe.style.setProperty("--height", HEIGHTS[i] + "%");
+      pipe.innerHTML = '<span class="organ-pipe-label">' + item[0] + "</span>";
+      if (location.pathname === pipe.pathname) pipe.setAttribute("aria-current", "page");
+      pipe.addEventListener("click", function (event) {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button > 0) return;
+        event.preventDefault();
+        var go = function () { location.href = pipe.href; };
+        (soundEnabled ? Promise.resolve() : enableSound()).then(function () {
+          play(SCALE[i], "pipe");
+          setTimeout(function () { stop(SCALE[i], "pipe"); }, 420);
+          setTimeout(go, 480);
+        }, go);
+      });
       facade.appendChild(pipe);
     });
 
@@ -111,7 +128,7 @@
     });
     filter.connect(gain).connect(master);
     voices.set(source + ":" + midi, { oscillators: oscillators, gain: gain });
-    document.querySelectorAll('[data-midi="' + midi + '"]').forEach(function (el) { el.classList.add("is-playing"); });
+    document.querySelectorAll('[data-midi="' + midi + '"], [data-pipe-midi="' + midi + '"]').forEach(function (el) { el.classList.add("is-playing"); });
   }
 
   function stop(midi, source) {
@@ -124,7 +141,7 @@
     voice.oscillators.forEach(function (osc) { osc.stop(now + 0.5); });
     voices.delete(id);
     var stillPlaying = Array.from(voices.keys()).some(function (key) { return Number(key.split(":")[1]) === midi; });
-    if (!stillPlaying) document.querySelectorAll('[data-midi="' + midi + '"]').forEach(function (el) { el.classList.remove("is-playing"); });
+    if (!stillPlaying) document.querySelectorAll('[data-midi="' + midi + '"], [data-pipe-midi="' + midi + '"]').forEach(function (el) { el.classList.remove("is-playing"); });
   }
 
   function noteTarget(event) { return event.target.closest("[data-midi]"); }
