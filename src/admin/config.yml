@@ -263,75 +263,33 @@ collections:
         widget: string
         required: false
   - name: saints
-    label: Patron saint quotes (patrons section)
+    label: Patrons section
     file: src/_data/saints.json
     fields:
     - name: _comment
       label: Note
       widget: hidden
       required: false
-    - name: hildegard
-      label: Saint Hildegard
-      widget: object
-      fields:
-      - name: quote
-        label: Quote in English
-        widget: text
-      - name: original
-        label: Quote in the original language
-        widget: text
-        required: false
-        hint: Shown smaller beneath the English.
-      - name: originalLang
-        label: Original language code
-        widget: string
-        required: false
-        hint: la for Latin, es for Spanish.
-      - name: name
-        label: Name
-        widget: string
-      - name: source
-        label: Source
-        widget: string
-        hint: Where the words come from, such as a book and chapter, or a talk and its date.
-      - name: img
-        label: Portrait
-        widget: image
-      - name: w
-        label: Portrait width in pixels
-        widget: number
-        value_type: int
-      - name: h
-        label: Portrait height in pixels
-        widget: number
-        value_type: int
-      - name: alt
-        label: Portrait description
-        widget: string
     - name: romero
       label: Saint Óscar Romero
       widget: object
       fields:
-      - name: quote
-        label: Quote in English
-        widget: text
-      - name: original
-        label: Quote in the original language
-        widget: text
-        required: false
-        hint: Shown smaller beneath the English.
-      - name: originalLang
-        label: Original language code
-        widget: string
-        required: false
-        hint: la for Latin, es for Spanish.
       - name: name
         label: Name
         widget: string
-      - name: source
-        label: Source
+      - name: role
+        label: Line under the name
         widget: string
-        hint: Where the words come from, such as a book and chapter, or a talk and its date.
+        hint: For example, the title and the feast day.
+      - name: quote
+        label: Quote (English)
+        widget: text
+        required: false
+        hint: The Español button translates it automatically.
+      - name: source
+        label: Source of the quote
+        widget: string
+        required: false
       - name: img
         label: Portrait
         widget: image
@@ -346,6 +304,85 @@ collections:
       - name: alt
         label: Portrait description
         widget: string
+    - name: hildegard
+      label: Saint Hildegard of Bingen
+      widget: object
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: role
+        label: Line under the name
+        widget: string
+        hint: For example, the title and the feast day.
+      - name: quote
+        label: Quote (English)
+        widget: text
+        required: false
+        hint: The Español button translates it automatically.
+      - name: source
+        label: Source of the quote
+        widget: string
+        required: false
+      - name: img
+        label: Portrait
+        widget: image
+      - name: w
+        label: Portrait width in pixels
+        widget: number
+        value_type: int
+      - name: h
+        label: Portrait height in pixels
+        widget: number
+        value_type: int
+      - name: alt
+        label: Portrait description
+        widget: string
+    - name: guadalupe
+      label: Our Lady of Guadalupe
+      widget: object
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: role
+        label: Line under the name
+        widget: string
+        hint: For example, the title and the feast day.
+      - name: quote
+        label: Quote (English)
+        widget: text
+        required: false
+        hint: The Español button translates it automatically.
+      - name: source
+        label: Source of the quote
+        widget: string
+        required: false
+      - name: img
+        label: Portrait
+        widget: image
+      - name: w
+        label: Portrait width in pixels
+        widget: number
+        value_type: int
+      - name: h
+        label: Portrait height in pixels
+        widget: number
+        value_type: int
+      - name: alt
+        label: Portrait description
+        widget: string
+    - name: order
+      label: Order
+      widget: list
+      field:
+        name: key
+        label: Patron
+        widget: select
+        options:
+        - romero
+        - hildegard
+        - guadalupe
 - name: biography
   label: Biography
   icon: person

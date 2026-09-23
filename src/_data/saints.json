@@ -1,25 +1,38 @@
 {
-  "_comment": "Quotes from the patron saints, shown as full-width bands on the homepage. The original line is shown beneath the English in its own language.",
+  "_comment": "Quotes from the patron saints, shown in English under each portrait in the patrons section. The Español button translates them.",
   "hildegard": {
     "quote": "Music softens hard hearts, draws forth the tears of compunction, and calls down the Holy Spirit.",
-    "original": "Symphonia dura corda emollit et umorem compunctionis inducit et Spiritum Sanctum advocat.",
-    "originalLang": "la",
     "name": "Saint Hildegard of Bingen",
     "source": "Scivias, Book III, Vision 13",
     "img": "/assets/img/patrons/hildegard.jpg",
     "w": 492,
     "h": 720,
-    "alt": "Saint Hildegard of Bingen receiving a vision"
+    "alt": "Saint Hildegard of Bingen receiving a vision",
+    "role": "Composer and Doctor of the Church. Feast, September 17"
   },
   "romero": {
     "quote": "The glory of God is the poor person fully alive.",
-    "original": "",
-    "originalLang": "",
     "name": "Saint Óscar Romero",
     "source": "Address at the University of Louvain, February 2, 1980",
     "img": "/assets/img/patrons/romero.jpg",
     "w": 631,
     "h": 717,
-    "alt": "Saint Óscar Romero"
-  }
+    "alt": "Saint Óscar Romero",
+    "role": "Archbishop of San Salvador and martyr. Feast, March 24"
+  },
+  "guadalupe": {
+    "quote": "Am I not here, I who am your mother?",
+    "name": "Our Lady of Guadalupe",
+    "source": "To Saint Juan Diego, Nican Mopohua, 1531",
+    "img": "/assets/img/patrons/guadalupe.jpg",
+    "w": 480,
+    "h": 720,
+    "alt": "Our Lady of Guadalupe, the image on Saint Juan Diego's tilma",
+    "role": "Patroness of the Americas. Feast, December 12"
+  },
+  "order": [
+    "romero",
+    "hildegard",
+    "guadalupe"
+  ]
 }

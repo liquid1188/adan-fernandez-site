@@ -96,3 +96,16 @@
     });
   });
 })();
+
+// "View desktop version" on phones: widens the viewport to 1280px and
+// remembers the choice; the same button then switches back.
+(function () {
+  var btn = document.getElementById("viewToggle");
+  if (!btn) return;
+  var on = document.documentElement.classList.contains("view-desktop");
+  btn.textContent = on ? "View mobile version" : "View desktop version";
+  btn.addEventListener("click", function () {
+    try { on ? localStorage.removeItem("viewDesktop") : localStorage.setItem("viewDesktop", "1"); } catch (e) {}
+    location.reload();
+  });
+})();

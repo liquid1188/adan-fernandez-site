@@ -902,3 +902,25 @@ a.member:hover .member-url { opacity: 1; }
 .patron-q p { margin: 0; font-family: "EB Garamond", Georgia, serif; font-style: italic; font-size: 1.05rem; line-height: 1.3; color: var(--ink); }
 .patron-q p::before { content: "“"; } .patron-q p::after { content: "”"; }
 .patron-q cite { display: block; margin-top: .4rem; font-style: normal; font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); line-height: 1.4; }
+
+/* ── Patrons section, balanced: three equal columns across the full width ── */
+.patrons { text-align: center; }
+.patrons-eyebrow { color: var(--brass-deep); }
+.patrons h2 { max-width: 30ch; margin: .6rem auto clamp(2.2rem, 4vw, 3.2rem); }
+.patron-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+.patron { display: flex; flex-direction: column; align-items: center; }
+.patron-img { height: clamp(260px, 27vw, 360px); display: flex; align-items: flex-end; justify-content: center; }
+.patron-img img { height: 100%; width: auto; max-width: 100%; display: block; border: 1px solid var(--rule-light); box-shadow: 0 10px 28px rgba(16, 26, 38, .12); }
+.patron-name { margin: 1.3rem 0 .25rem; font-family: "EB Garamond", Georgia, serif; font-weight: 500; font-size: 1.4rem; }
+.patron-role { margin: 0; font-size: .85rem; color: var(--ink-2); line-height: 1.45; }
+.patrons .patron-q { margin: 1.2rem auto 0; padding: 1rem 0 0; border-left: 0; border-top: 1px solid var(--brass); max-width: 30ch; }
+.patrons .patron-q p { font-size: 1.12rem; }
+@media (max-width: 760px) {
+  .patron-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .patron-img { height: 300px; }
+}
+/* the desktop/mobile switch only matters on small screens */
+.view-toggle { display: none; }
+@media (max-width: 760px) { .view-toggle { display: inline-block; } }
+.view-desktop .view-toggle { display: inline-block; }
+@media (min-width: 761px) { .patron-role { min-height: 2.9em; } }
