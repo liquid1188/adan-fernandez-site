@@ -217,10 +217,10 @@ active: home
         <h3>Join the mailing list.</h3>
         <p>Recital dates and new writing, a few times a year.</p>
       </div>
-      <form class="ml-form" action="https://formsubmit.co/{{ site.email }}" method="POST">
-        <input type="hidden" name="_subject" value="Mailing list signup">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <form class="ml-form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+        <input type="hidden" name="subject" value="Mailing list signup">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <label class="sr-only" for="ml-email">Email address</label>
         <input id="ml-email" type="email" name="email" placeholder="Email address" required>
         <button type="submit" class="btn btn-brass">Subscribe</button>

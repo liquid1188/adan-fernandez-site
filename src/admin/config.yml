@@ -838,6 +838,11 @@ collections:
     label: Contact details
     file: src/_data/site.json
     fields:
+    - name: web3formsKey
+      label: Form access key (Web3Forms)
+      widget: string
+      required: false
+      hint: "Paste the access key from the Web3Forms email here. Every form on the site uses it; messages go to the email that key was made for."
     - name: name
       label: Full name
       widget: string

@@ -20,12 +20,11 @@ description: "Concert bookings, teaching and masterclasses, writing and speaking
   <div class="wrap two-col">
     <div class="reveal">
       <div class="rule-head"><span class="lbl">Write to him</span><span class="rule"></span></div>
-      <form class="cform" action="https://formsubmit.co/{{ site.email }}" method="POST">
-        <input type="hidden" name="_subject" value="Enquiry from adanfernandez site">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="{{ site.url }}/contact/thanks/">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <form class="cform" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+        <input type="hidden" name="subject" value="Enquiry from adanfernandez site">
+        <input type="hidden" name="redirect" value="{{ site.url }}/contact/thanks/">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div class="f2">
           <label>Your name<input type="text" name="name" required autocomplete="name"></label>
           <label>Email<input type="email" name="email" required autocomplete="email"></label>
